@@ -1,4 +1,4 @@
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:43:56         PAGE  1
+MPASM 5.68                     TESTLOOPS.ASM   8-23-2021  5:38:11         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -29,29 +29,63 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 2008   3FFF           00012  __CONFIG _CONFIG2, _BOR4V_BOR40V & _WRT_OFF
                       00013 
                       00014     LIST p=16F887
-                      00015  
-  00000020            00016 VAR     equ     0x20    ; Registro F
-                      00017     
-                      00018     org 0x00
-0000   2???           00019     goto INIT
-                      00020 
-0001                  00021 INIT
-0001   3003           00022     movlw 0x03
-0002   3E04           00023     ADDLW 0x04
-0003   00A0           00024     MOVWF VAR
-0004   0000           00025     NOP
-0005   30B5           00026     MOVLW 0xB5
-0006   3AAF           00027     XORLW 0xAF
-0007   0000           00028     NOP
-0008   30B5           00029     MOVLW 0xB5
-0009   3AB5           00030     XORLW 0xB5
-000A   0000           00031     NOP
-000B   2???           00032     goto result
-                      00033     
-000C                  00034 result    
-000C   00A0           00035     MOVWF VAR
-2FF1 3FFF             00036    end
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:43:56         PAGE  2
+                      00015 
+  00000020            00016 var     equ     0x20    ; Registro F
+  00000021            00017 var2    equ     0x21    
+  00000022            00018 count   equ     0x22
+                      00019     
+                      00020     org 0x00
+0000   2???           00021     goto INIT
+                      00022 
+0001                  00023 INIT
+                      00024     ;BANK 0
+0001   1283           00025     BCF STATUS,RP0
+0002   1303           00026     BCF STATUS,RP1
+0003   3003           00027     MOVLW 0x03
+0004   00A0           00028     MOVWF var
+0005   1C06           00029     BTFSS PORTB,0
+0006   2???           00030     GOTO INIT
+                      00031     
+0007                  00032 ESCAPE
+0007   3005           00033     MOVLW 0x5
+0008   00A1           00034     MOVWF var2    
+0009   3008           00035     MOVLW 0x8
+000A   00A2           00036     MOVWF count
+                      00037     
+000B                  00038 LOOP
+000B   3003           00039     MOVLW 0x03
+000C   00A0           00040     MOVWF var
+000D   0BA2           00041     DECFSZ count,1
+000E   2???           00042     GOTO LOOP
+MPASM 5.68                     TESTLOOPS.ASM   8-23-2021  5:38:11         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00043     
+000F                  00044 ESCAPE1
+000F   3005           00045     MOVLW 0x5
+0010   00A1           00046     MOVWF var2
+0011   0606           00047     XORWF PORTB,0
+0012   1D03           00048     BTFSS STATUS,Z
+0013   2???           00049     GOTO ESCAPE1
+0014   3004           00050     MOVLW 0x4
+0015   00A1           00051     MOVWF var2
+0016   01A2           00052     CLRF count
+                      00053     
+0017                  00054 LOOP_INC
+0017   0AA2           00055     INCF count,1
+0018   300A           00056     MOVLW 0x0A
+0019   0622           00057     XORWF count,0
+001A   1D03           00058     BTFSS STATUS,Z
+001B   2???           00059     GOTO LOOP_INC
+001C   3007           00060     MOVLW 0x7
+001D   00A1           00061     MOVWF var2
+                      00062     
+                      00063     
+2FF1 3FFF             00064     END
+MPASM 5.68                     TESTLOOPS.ASM   8-23-2021  5:38:11         PAGE  3
 
 
 SYMBOL TABLE
@@ -110,7 +144,7 @@ BRG6                              00000006
 BRG7                              00000007
 BRG8                              00000000
 BRG9                              00000001
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:43:56         PAGE  3
+MPASM 5.68                     TESTLOOPS.ASM   8-23-2021  5:38:11         PAGE  4
 
 
 SYMBOL TABLE
@@ -169,7 +203,7 @@ CHS0                              00000002
 CHS1                              00000003
 CHS2                              00000004
 CHS3                              00000005
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:43:56         PAGE  4
+MPASM 5.68                     TESTLOOPS.ASM   8-23-2021  5:38:11         PAGE  5
 
 
 SYMBOL TABLE
@@ -206,6 +240,8 @@ EEDATH                            0000010E
 EEIE                              00000004
 EEIF                              00000004
 EEPGD                             00000007
+ESCAPE                            00000007
+ESCAPE1                           0000000F
 F                                 00000001
 FERR                              00000002
 FSR                               00000004
@@ -226,14 +262,14 @@ INTCON                            0000000B
 INTE                              00000004
 INTEDG                            00000006
 INTF                              00000001
-IOCB                              00000096
-IOCB0                             00000000
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:43:56         PAGE  5
+MPASM 5.68                     TESTLOOPS.ASM   8-23-2021  5:38:11         PAGE  6
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+IOCB                              00000096
+IOCB0                             00000000
 IOCB1                             00000001
 IOCB2                             00000002
 IOCB3                             00000003
@@ -245,6 +281,8 @@ IRCF0                             00000004
 IRCF1                             00000005
 IRCF2                             00000006
 IRP                               00000007
+LOOP                              0000000B
+LOOP_INC                          00000017
 LTS                               00000001
 MC1OUT                            00000007
 MC2OUT                            00000006
@@ -283,16 +321,16 @@ P1M0                              00000006
 P1M1                              00000007
 PCL                               00000002
 PCLATH                            0000000A
-PCON                              0000008E
-PDC0                              00000000
-PDC1                              00000001
-PDC2                              00000002
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:43:56         PAGE  6
+MPASM 5.68                     TESTLOOPS.ASM   8-23-2021  5:38:11         PAGE  7
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+PCON                              0000008E
+PDC0                              00000000
+PDC1                              00000001
+PDC2                              00000002
 PDC3                              00000003
 PDC4                              00000004
 PDC5                              00000005
@@ -342,16 +380,16 @@ RB7                               00000007
 RBIE                              00000003
 RBIF                              00000000
 RC0                               00000000
-RC1                               00000001
-RC2                               00000002
-RC3                               00000003
-RC4                               00000004
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:43:56         PAGE  7
+MPASM 5.68                     TESTLOOPS.ASM   8-23-2021  5:38:11         PAGE  8
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+RC1                               00000001
+RC2                               00000002
+RC3                               00000003
+RC4                               00000004
 RC5                               00000005
 RC6                               00000006
 RC7                               00000007
@@ -401,16 +439,16 @@ SRCON                             00000185
 SREN                              00000005
 SSPADD                            00000093
 SSPBUF                            00000013
-SSPCON                            00000014
-SSPCON2                           00000091
-SSPEN                             00000005
-SSPIE                             00000003
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:43:56         PAGE  8
+MPASM 5.68                     TESTLOOPS.ASM   8-23-2021  5:38:11         PAGE  9
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+SSPCON                            00000014
+SSPCON2                           00000091
+SSPEN                             00000005
+SSPIE                             00000003
 SSPIF                             00000003
 SSPM0                             00000000
 SSPM1                             00000001
@@ -460,16 +498,16 @@ TMR2IF                            00000001
 TMR2ON                            00000002
 TOUTPS0                           00000003
 TOUTPS1                           00000004
-TOUTPS2                           00000005
-TOUTPS3                           00000006
-TRISA                             00000085
-TRISA0                            00000000
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:43:56         PAGE  9
+MPASM 5.68                     TESTLOOPS.ASM   8-23-2021  5:38:11         PAGE 10
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+TOUTPS2                           00000005
+TOUTPS3                           00000006
+TRISA                             00000085
+TRISA0                            00000000
 TRISA1                            00000001
 TRISA2                            00000002
 TRISA3                            00000003
@@ -519,22 +557,21 @@ TX8_9                             00000006
 TX9                               00000006
 TX9D                              00000000
 TXD8                              00000000
-TXEN                              00000005
-TXIE                              00000004
-TXIF                              00000004
-TXREG                             00000019
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:43:56         PAGE 10
+MPASM 5.68                     TESTLOOPS.ASM   8-23-2021  5:38:11         PAGE 11
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+TXEN                              00000005
+TXIE                              00000004
+TXIF                              00000004
+TXREG                             00000019
 TXSTA                             00000098
 UA                                00000001
 ULPWUE                            00000005
 ULPWUIE                           00000002
 ULPWUIF                           00000002
-VAR                               00000020
 VCFG0                             00000004
 VCFG1                             00000005
 VR0                               00000000
@@ -579,15 +616,15 @@ _BOR_NSLEEP                       00003EFF
 _BOR_OFF                          00003CFF
 _BOR_ON                           00003FFF
 _BOR_SBODEN                       00003DFF
-_CONFIG1                          00002007
-_CONFIG2                          00002008
-_CPD_OFF                          00003FFF
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:43:56         PAGE 11
+MPASM 5.68                     TESTLOOPS.ASM   8-23-2021  5:38:11         PAGE 12
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+_CONFIG1                          00002007
+_CONFIG2                          00002008
+_CPD_OFF                          00003FFF
 _CPD_ON                           00003F7F
 _CP_OFF                           00003FFF
 _CP_ON                            00003FBF
@@ -637,13 +674,15 @@ _WRT_HALF                         000039FF
 _WRT_OFF                          00003FFF
 _XT_OSC                           00003FF9
 __16F887                          00000001
-result                            0000000C
-
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:43:56         PAGE 12
-
+count                             00000022
+MPASM 5.68                     TESTLOOPS.ASM   8-23-2021  5:38:11         PAGE 13
 
 
+SYMBOL TABLE
+  LABEL                             VALUE 
 
+var                               00000020
+var2                              00000021
 
 Errors   :     0
 Warnings :     0 reported,     0 suppressed

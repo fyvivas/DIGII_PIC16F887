@@ -1,14 +1,15 @@
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:44:26         PAGE  1
+MPASM 5.68                         TEST1.ASM   9-2-2021  10:05:04         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                      00001 ; PIC16F887 Configuration Bit Settings
-                      00002 
-                      00003 ; ASM source line config statements
-                      00004 
-                      00005 #include "p16F887.inc"
+                      00001 
+                      00002 ; PIC16F887 Configuration Bit Settings
+                      00003 
+                      00004 ; ASM source line config statements
+                      00005 
+                      00006 #include "p16F887.inc"
                       00001         LIST
                       00002 
                       00003 ;==========================================================================
@@ -19,39 +20,129 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00008 ;==========================================================================
                       00009 
                       00810         LIST
-                      00006 
-                      00007 ; CONFIG1
-                      00008 ; __config 0xEFF1
-2007   2FF1           00009  __CONFIG _CONFIG1, _FOSC_XT & _WDTE_OFF & _PWRTE_OFF & _MCLRE_ON & _CP_OFF & _CPD_OFF & _BOREN_ON & _IE
-                            SO_ON & _FCMEN_ON & _LVP_OFF
-                      00010 ; CONFIG2
-                      00011 ; __config 0xFFFF
-2008   3FFF           00012  __CONFIG _CONFIG2, _BOR4V_BOR40V & _WRT_OFF
-                      00013 
-                      00014     LIST p=16F887
-                      00015  
-  00000020            00016 VAR     equ     0x20    ; Registro F
-                      00017     
-                      00018     org 0x00
-0000   2???           00019     goto INIT
-                      00020 
-0001                  00021 INIT
-0001   3003           00022     movlw 0x03
-0002   3E04           00023     ADDLW 0x04
-0003   00A0           00024     MOVWF VAR
-0004   0000           00025     NOP
-0005   30B5           00026     MOVLW 0xB5
-0006   3AAF           00027     XORLW 0xAF
-0007   0000           00028     NOP
-0008   30B5           00029     MOVLW 0xB5
-0009   3AB5           00030     XORLW 0xB5
-000A   0000           00031     NOP
-000B   2???           00032     goto result
-                      00033     
-000C                  00034 result    
-000C   00A0           00035     MOVWF VAR
-2FF1 3FFF             00036    end
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:44:26         PAGE  2
+                      00007 
+                      00008 ; CONFIG1
+                      00009 ; __config 0xFFF1
+2007   3FF1           00010  __CONFIG _CONFIG1, _FOSC_XT & _WDTE_OFF & _PWRTE_OFF & _MCLRE_ON & _CP_OFF & _CPD_OFF & _BOREN_ON & _IE
+                            SO_ON & _FCMEN_ON & _LVP_ON
+                      00011 ; CONFIG2
+                      00012 ; __config 0xFFFF
+2008   3FFF           00013  __CONFIG _CONFIG2, _BOR4V_BOR40V & _WRT_OFF
+                      00014 
+                      00015 
+                      00016      LIST p=16F887
+                      00017      
+  00000020            00018 var1 equ 0x20
+  0000007F            00019 VAL_HIGH equ .127
+  00000040            00020 VAL_LOW  equ .64
+  00000000            00021 LED_RED  equ 0
+  00000001            00022 LED_GREEN equ 1
+  00000002            00023 LED_YELLOW equ 2
+                      00024  
+                      00025     org 0x00
+                      00026 
+0000   3000           00027     MOVLW .0
+0001   00A0           00028     MOVWF var1
+                      00029 
+0002                  00030 VERIF_127
+0002   0820           00031     MOVF var1,0
+0003   3C7F           00032     SUBLW VAL_HIGH
+0004   1803           00033     BTFSC STATUS,C
+0005   2???           00034     GOTO VERIF_64
+0006   2???           00035     GOTO LED_VERDE_FUNC
+                      00036  
+0007                  00037 VERIF_64
+0007   0820           00038     MOVF var1,0
+0008   3C40           00039     SUBLW VAL_LOW
+0009   1803           00040     BTFSC STATUS,C
+000A   2???           00041     GOTO LED_ROJO_FUNC
+000B   2???           00042     GOTO LED_AMARI_FUNC    
+MPASM 5.68                         TEST1.ASM   9-2-2021  10:05:04         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00043     
+000C                  00044 LED_VERDE_FUNC
+000C   0000           00045     NOP
+000D   0000           00046     NOP
+000E   2???           00047     GOTO INC_VAR
+                      00048 
+000F                  00049 LED_AMARI_FUNC
+000F   0000           00050     NOP
+0010   0000           00051     NOP
+0011   2???           00052     GOTO INC_VAR
+                      00053    
+0012                  00054 LED_ROJO_FUNC
+0012   0000           00055     NOP
+0013   0000           00056     NOP
+0014   2???           00057     GOTO INC_VAR
+                      00058     
+0015                  00059 INC_VAR
+0015   0AA0           00060     INCF var1,1
+0016   2???           00061     GOTO VERIF_127
+                      00062     
+                      00063     
+                      00064     
+                      00065     
+                      00066     
+                      00067     
+0017   3082           00068     MOVLW .130
+0018   00A0           00069     MOVWF var1
+0019   3C7F           00070     SUBLW .127
+001A   1803           00071     BTFSC STATUS,C
+001B   2???           00072     GOTO DEC_MED
+001C   2???           00073     GOTO LED_GREEN_FUNC
+                      00074 
+001D                  00075 DEC_MED
+001D   0820           00076     MOVF var1,0
+001E   3C40           00077     SUBLW .64
+001F   1803           00078     BTFSC STATUS,C
+0020   2???           00079     GOTO LED_RED_FUNC
+0021   2???           00080     GOTO LED_YELLOW_FUNC
+                      00081   
+0022                  00082 INIT
+0022   0820           00083     MOVF var1,0
+0023   3A7F           00084     XORLW VAL_HIGH
+0024   1D03           00085     BTFSS STATUS,Z
+0025   03A0           00086     DECF var1,1
+0026   1D03           00087     BTFSS STATUS,Z
+0027   2801           00088     GOTO LED_GREEN
+0028   1C06           00089     BTFSS PORTB,0
+0029   2800           00090     GOTO LED_RED
+                      00091      
+002A   300A           00092     MOVLW 0x0a
+                      00093     
+                      00094 ;CONFIG
+                      00095 
+MPASM 5.68                         TEST1.ASM   9-2-2021  10:05:04         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00096     
+002B                  00097 LED_RED_FUNC
+002B   1406           00098     BSF PORTB,LED_RED
+002C   1086           00099     BCF PORTB,LED_GREEN
+002D   1106           00100     BCF PORTB,LED_YELLOW
+002E   2???           00101     GOTO INIT
+                      00102     
+002F                  00103 LED_GREEN_FUNC
+002F   1486           00104     BSF PORTB,LED_GREEN
+0030   1006           00105     BCF PORTB,LED_RED
+0031   1106           00106     BCF PORTB,LED_YELLOW
+0032   2???           00107     GOTO INIT
+                      00108         
+0033                  00109 LED_YELLOW_FUNC
+0033   1506           00110     BSF PORTB,LED_YELLOW
+0034   1006           00111     BCF PORTB,LED_RED
+0035   1086           00112     BCF PORTB,LED_GREEN
+0036   2???           00113     GOTO INIT
+                      00114     
+3FF1 3FFF             00115     end
+MPASM 5.68                         TEST1.ASM   9-2-2021  10:05:04         PAGE  4
 
 
 SYMBOL TABLE
@@ -110,7 +201,7 @@ BRG6                              00000006
 BRG7                              00000007
 BRG8                              00000000
 BRG9                              00000001
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:44:26         PAGE  3
+MPASM 5.68                         TEST1.ASM   9-2-2021  10:05:04         PAGE  5
 
 
 SYMBOL TABLE
@@ -169,7 +260,7 @@ CHS0                              00000002
 CHS1                              00000003
 CHS2                              00000004
 CHS3                              00000005
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:44:26         PAGE  4
+MPASM 5.68                         TEST1.ASM   9-2-2021  10:05:04         PAGE  6
 
 
 SYMBOL TABLE
@@ -189,6 +280,7 @@ DC1B0                             00000004
 DC1B1                             00000005
 DC2B0                             00000004
 DC2B1                             00000005
+DEC_MED                           0000001D
 D_A                               00000005
 D_NOT_A                           00000005
 ECCPAS                            0000009C
@@ -220,20 +312,21 @@ I2C_DATA                          00000005
 I2C_READ                          00000002
 I2C_START                         00000003
 I2C_STOP                          00000004
+INC_VAR                           00000015
 INDF                              00000000
-INIT                              00000001
+INIT                              00000022
 INTCON                            0000000B
 INTE                              00000004
 INTEDG                            00000006
 INTF                              00000001
-IOCB                              00000096
-IOCB0                             00000000
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:44:26         PAGE  5
+MPASM 5.68                         TEST1.ASM   9-2-2021  10:05:04         PAGE  7
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+IOCB                              00000096
+IOCB0                             00000000
 IOCB1                             00000001
 IOCB2                             00000002
 IOCB3                             00000003
@@ -245,6 +338,15 @@ IRCF0                             00000004
 IRCF1                             00000005
 IRCF2                             00000006
 IRP                               00000007
+LED_AMARI_FUNC                    0000000F
+LED_GREEN                         00000001
+LED_GREEN_FUNC                    0000002F
+LED_RED                           00000000
+LED_RED_FUNC                      0000002B
+LED_ROJO_FUNC                     00000012
+LED_VERDE_FUNC                    0000000C
+LED_YELLOW                        00000002
+LED_YELLOW_FUNC                   00000033
 LTS                               00000001
 MC1OUT                            00000007
 MC2OUT                            00000006
@@ -276,6 +378,12 @@ OPTION_REG                        00000081
 OSCCON                            0000008F
 OSCTUNE                           00000090
 OSFIE                             00000007
+MPASM 5.68                         TEST1.ASM   9-2-2021  10:05:04         PAGE  8
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 OSFIF                             00000007
 OSTS                              00000003
 P                                 00000004
@@ -287,12 +395,6 @@ PCON                              0000008E
 PDC0                              00000000
 PDC1                              00000001
 PDC2                              00000002
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:44:26         PAGE  6
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 PDC3                              00000003
 PDC4                              00000004
 PDC5                              00000005
@@ -335,6 +437,12 @@ RB0                               00000000
 RB1                               00000001
 RB2                               00000002
 RB3                               00000003
+MPASM 5.68                         TEST1.ASM   9-2-2021  10:05:04         PAGE  9
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 RB4                               00000004
 RB5                               00000005
 RB6                               00000006
@@ -346,12 +454,6 @@ RC1                               00000001
 RC2                               00000002
 RC3                               00000003
 RC4                               00000004
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:44:26         PAGE  7
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 RC5                               00000005
 RC6                               00000006
 RC7                               00000007
@@ -394,6 +496,12 @@ SENDB                             00000003
 SMP                               00000007
 SPBRG                             00000099
 SPBRGH                            0000009A
+MPASM 5.68                         TEST1.ASM   9-2-2021  10:05:04         PAGE 10
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 SPEN                              00000007
 SR0                               00000006
 SR1                               00000007
@@ -405,12 +513,6 @@ SSPCON                            00000014
 SSPCON2                           00000091
 SSPEN                             00000005
 SSPIE                             00000003
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:44:26         PAGE  8
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 SSPIF                             00000003
 SSPM0                             00000000
 SSPM1                             00000001
@@ -453,6 +555,12 @@ TMR1H                             0000000F
 TMR1IE                            00000000
 TMR1IF                            00000000
 TMR1L                             0000000E
+MPASM 5.68                         TEST1.ASM   9-2-2021  10:05:04         PAGE 11
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 TMR1ON                            00000000
 TMR2                              00000011
 TMR2IE                            00000001
@@ -464,12 +572,6 @@ TOUTPS2                           00000005
 TOUTPS3                           00000006
 TRISA                             00000085
 TRISA0                            00000000
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:44:26         PAGE  9
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 TRISA1                            00000001
 TRISA2                            00000002
 TRISA3                            00000003
@@ -512,6 +614,12 @@ TRISE3                            00000003
 TRMT                              00000001
 TUN0                              00000000
 TUN1                              00000001
+MPASM 5.68                         TEST1.ASM   9-2-2021  10:05:04         PAGE 12
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 TUN2                              00000002
 TUN3                              00000003
 TUN4                              00000004
@@ -523,20 +631,17 @@ TXEN                              00000005
 TXIE                              00000004
 TXIF                              00000004
 TXREG                             00000019
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:44:26         PAGE 10
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 TXSTA                             00000098
 UA                                00000001
 ULPWUE                            00000005
 ULPWUIE                           00000002
 ULPWUIF                           00000002
-VAR                               00000020
+VAL_HIGH                          0000007F
+VAL_LOW                           00000040
 VCFG0                             00000004
 VCFG1                             00000005
+VERIF_127                         00000002
+VERIF_64                          00000007
 VR0                               00000000
 VR1                               00000001
 VR2                               00000002
@@ -568,6 +673,12 @@ WRERR                             00000003
 WUE                               00000001
 Z                                 00000002
 _BOR21V                           00003EFF
+MPASM 5.68                         TEST1.ASM   9-2-2021  10:05:04         PAGE 13
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 _BOR40V                           00003FFF
 _BOR4V_BOR21V                     00003EFF
 _BOR4V_BOR40V                     00003FFF
@@ -582,12 +693,6 @@ _BOR_SBODEN                       00003DFF
 _CONFIG1                          00002007
 _CONFIG2                          00002008
 _CPD_OFF                          00003FFF
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:44:26         PAGE 11
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 _CPD_ON                           00003F7F
 _CP_OFF                           00003FFF
 _CP_ON                            00003FBF
@@ -627,6 +732,12 @@ _MCLRE_OFF                        00003FDF
 _MCLRE_ON                         00003FFF
 _PWRTE_OFF                        00003FFF
 _PWRTE_ON                         00003FEF
+MPASM 5.68                         TEST1.ASM   9-2-2021  10:05:04         PAGE 14
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 _WDTE_OFF                         00003FF7
 _WDTE_ON                          00003FFF
 _WDT_OFF                          00003FF7
@@ -639,13 +750,7 @@ _XT_OSC                           00003FF9
 __16F887                          00000001
 __DEBUG                           
 __MPLAB_DEBUGGER_SIMULATOR        1
-result                            0000000C
-
-MPASM 5.68                       TESTASM.ASM   4-29-2021  9:44:26         PAGE 12
-
-
-
-
+var1                              00000020
 
 Errors   :     0
 Warnings :     0 reported,     0 suppressed
