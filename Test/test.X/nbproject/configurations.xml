@@ -13,6 +13,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>test1.asm</itemPath>
+      <itemPath>blink.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -76,6 +77,8 @@
         <property key="extended-mode-mpasm" value="false"/>
         <property key="extended-mode-mplink" value="false"/>
       </mpasmsuite>
+      <item path="test1.asm" ex="true" overriding="false">
+      </item>
     </conf>
   </confs>
 </configurationDescriptor>

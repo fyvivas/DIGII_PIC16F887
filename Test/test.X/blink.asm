@@ -1,0 +1,54 @@
+#include "p16F887.inc"
+
+; CONFIG1
+; __config 0xEFF1
+ __CONFIG _CONFIG1, _FOSC_XT & _WDTE_OFF & _PWRTE_OFF & _MCLRE_ON & _CP_OFF & _CPD_OFF & _BOREN_ON & _IESO_ON & _FCMEN_ON & _LVP_OFF
+; CONFIG2
+; __config 0xFFFF
+ __CONFIG _CONFIG2, _BOR4V_BOR40V & _WRT_OFF
+
+    LIST p=16F887
+   
+N EQU 0x50
+cont1 EQU 0x20
+cont2 EQU 0x21
+ 
+    ORG	0x00
+    GOTO INICIO
+    
+INICIO
+    BCF STATUS,RP0   ;RP0 = 0
+    BCF STATUS,RP1  ;RP1 = 0
+    CLRF PORTA	;PORTA = 0
+    ;MOVLW B'0000000'  ;
+    ;MOVWF PORTA
+    BSF STATUS, RP0 ;RP0 = 1
+    CLRF TRISA
+    BSF STATUS,RP1
+    CLRF ANSEL
+    BCF STATUS,RP0  ;BANK O RP1=0 RP0=0
+    BCF STATUS,RP1
+    
+ENC_LED
+    BSF PORTA,0	;RA0 = 1
+    CALL RETARDO
+    BCF PORTA,0
+    CALL RETARDO
+    GOTO ENC_LED
+    
+RETARDO
+    MOVLW N
+    MOVWF cont1
+    
+REP_1
+    MOVLW N
+    MOVWF cont2
+    
+REP_2
+    DECFSZ cont2,1
+    GOTO REP_2
+    DECFSZ cont1,1
+    GOTO REP_1
+    RETURN
+
+    END
