@@ -78,6 +78,12 @@
         <property key="extended-mode-mplink" value="false"/>
       </mpasmsuite>
       <item path="test1.asm" ex="true" overriding="false">
+        <MPASMWIN-AS>
+        </MPASMWIN-AS>
+        <MPASMWIN-LD>
+        </MPASMWIN-LD>
+        <mpasmsuite>
+        </mpasmsuite>
       </item>
     </conf>
   </confs>

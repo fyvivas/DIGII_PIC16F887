@@ -1,0 +1,24 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 6 ]
+"51 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\BLINK\BLINK.X\blinkmain.c
+[v _main main `(v  1 e 1 0 ]
+"62 D:\mplab\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 D:\mplab\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 D:\mplab\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"3856 D:\mplab\include\pic16f887.h
+[v _RB7 RB7 `VEb  1 e 0 @55 ]
+"4070
+[v _TRISB7 TRISB7 `VEb  1 e 0 @1079 ]
+"51 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\BLINK\BLINK.X\blinkmain.c
+[v _main main `(v  1 e 1 0 ]
+{
+"60
+} 0

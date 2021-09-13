@@ -1,2 +1,4 @@
-Message[302] C:\USERS\ASUS\DOCUMENTS\GITHUB\DIGIIC_MICROS\TEST\TEST.X\BLINK.ASM 26 : Register in operand not in bank 0.  Ensure that bank bits are correct.
-Message[302] C:\USERS\ASUS\DOCUMENTS\GITHUB\DIGIIC_MICROS\TEST\TEST.X\BLINK.ASM 28 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\ASUS\DOCUMENTS\GITHUB\DIGIIC_MICROS\TEST\TEST.X\BLINK.ASM 29 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\ASUS\DOCUMENTS\GITHUB\DIGIIC_MICROS\TEST\TEST.X\BLINK.ASM 30 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\ASUS\DOCUMENTS\GITHUB\DIGIIC_MICROS\TEST\TEST.X\BLINK.ASM 32 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[207] C:\USERS\ASUS\DOCUMENTS\GITHUB\DIGIIC_MICROS\TEST\TEST.X\BLINK.ASM 75 : Found label after column 1. (SEC_LOOKUP)

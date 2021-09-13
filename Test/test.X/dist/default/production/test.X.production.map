@@ -1,11 +1,11 @@
 MPLINK 5.08, LINKER
-Linker Map File - Created Mon Sep 06 08:13:36 2021
+Linker Map File - Created Thu Sep 09 10:26:07 2021
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
                 ---------  ---------  ---------  ---------  ---------
-                   .org_0       code   0x000000    program   0x000030
-                   .cinit    romdata   0x000018    program   0x000004
+                   .org_0       code   0x000000    program   0x00005a
+                   .cinit    romdata   0x00002d    program   0x000004
 .config_2007_BUILD/DEFAULT/PRODUCTION/BLINK.O       code   0x002007    program   0x000002
 .config_2008_BUILD/DEFAULT/PRODUCTION/BLINK.O       code   0x002008    program   0x000002
 
@@ -14,20 +14,22 @@ Linker Map File - Created Mon Sep 06 08:13:36 2021
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x000019      
+                            0x000000    0x00002e      
                             0x002007    0x002008      
-            28 out of 8455 program addresses used, program memory utilization is 0%
+            49 out of 8455 program addresses used, program memory utilization is 0%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                  ENC_LED   0x00000a    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
+                  ENC_LED   0x00000f    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
                    INICIO   0x000001    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
-                    REP_1   0x000011    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
-                    REP_2   0x000013    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
-                  RETARDO   0x00000f    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
+                    REP_1   0x00001c    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
+                    REP_2   0x00001e    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
+                  RETARDO   0x00001a    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
+               SECUENCIA2   0x000014    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
+               SEC_LOOKUP   0x000023    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
 
 
 
@@ -35,9 +37,11 @@ Linker Map File - Created Mon Sep 06 08:13:36 2021
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
                    INICIO   0x000001    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
-                  ENC_LED   0x00000a    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
-                  RETARDO   0x00000f    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
-                    REP_1   0x000011    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
-                    REP_2   0x000013    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
+                  ENC_LED   0x00000f    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
+               SECUENCIA2   0x000014    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
+                  RETARDO   0x00001a    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
+                    REP_1   0x00001c    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
+                    REP_2   0x00001e    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
+               SEC_LOOKUP   0x000023    program     static C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Test\test.X\blink.asm
 
 
