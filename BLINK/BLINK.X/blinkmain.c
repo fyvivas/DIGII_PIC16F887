@@ -42,8 +42,8 @@ long 32 bits
 #define ON 1
 #define OFF 0
 
-#define CFG_LED_RED TRISB7
-#define LED_RED RB7
+#define CFG_LED_RED TRISB0
+#define LED_RED RB0
 
 
 void delay_ms(int val_delay);

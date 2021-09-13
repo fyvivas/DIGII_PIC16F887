@@ -1,9 +1,9 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"4070 D:\mplab\include\pic16f887.h
-[v _TRISB7 `Vb ~T0 @X0 0 e@1079 ]
-"3856
-[v _RB7 `Vb ~T0 @X0 0 e@55 ]
+"4056 D:\mplab\include\pic16f887.h
+[v _TRISB0 `Vb ~T0 @X0 0 e@1072 ]
+"3842
+[v _RB0 `Vb ~T0 @X0 0 e@48 ]
 [v F1637 `(v ~T0 @X0 1 tf1`ul ]
 "152 D:\mplab\include\pic.h
 [v __delay `JF1637 ~T0 @X0 0 e ]
@@ -1523,22 +1523,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;blinkmain.c: 51: void main(){
 [e :U _main ]
 [f ]
-[; ;blinkmain.c: 52: TRISB7 = 0;
+[; ;blinkmain.c: 52: TRISB0 = 0;
 "52
-[e = _TRISB7 -> -> 0 `i `b ]
+[e = _TRISB0 -> -> 0 `i `b ]
 [; ;blinkmain.c: 53: while(1){
 "53
 [e :U 140 ]
 {
-[; ;blinkmain.c: 54: RB7 = 1;
+[; ;blinkmain.c: 54: RB0 = 1;
 "54
-[e = _RB7 -> -> 1 `i `b ]
+[e = _RB0 -> -> 1 `i `b ]
 [; ;blinkmain.c: 55: _delay((unsigned long)((500)*(4000000/4000.0)));
 "55
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;blinkmain.c: 56: RB7 = 0;
+[; ;blinkmain.c: 56: RB0 = 0;
 "56
-[e = _RB7 -> -> 0 `i `b ]
+[e = _RB0 -> -> 0 `i `b ]
 [; ;blinkmain.c: 57: _delay((unsigned long)((500)*(4000000/4000.0)));
 "57
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]

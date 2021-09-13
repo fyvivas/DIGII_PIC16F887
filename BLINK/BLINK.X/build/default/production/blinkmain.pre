@@ -2109,11 +2109,11 @@ extern __bit __timeout;
 void delay_ms(int val_delay);
 
 void main(){
-TRISB7 = 0;
+TRISB0 = 0;
 while(1){
-RB7 = 1;
+RB0 = 1;
 _delay((unsigned long)((500)*(4000000/4000.0)));
-RB7 = 0;
+RB0 = 0;
 _delay((unsigned long)((500)*(4000000/4000.0)));
 }
 

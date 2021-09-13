@@ -13,10 +13,10 @@
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"3856 D:\mplab\include\pic16f887.h
-[v _RB7 RB7 `VEb  1 e 0 @55 ]
-"4070
-[v _TRISB7 TRISB7 `VEb  1 e 0 @1079 ]
+"3842 D:\mplab\include\pic16f887.h
+[v _RB0 RB0 `VEb  1 e 0 @48 ]
+"4056
+[v _TRISB0 TRISB0 `VEb  1 e 0 @1072 ]
 "51 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\BLINK\BLINK.X\blinkmain.c
 [v _main main `(v  1 e 1 0 ]
 {
