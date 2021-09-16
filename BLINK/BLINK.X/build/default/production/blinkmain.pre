@@ -2105,19 +2105,46 @@ extern __bit __timeout;
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
 
-# 49 "blinkmain.c"
+# 54 "blinkmain.c"
 void delay_ms(int val_delay);
 
 void main(){
-TRISB0 = 0;
+TRISB7 = 0;
+TRISD = 0x00;
+
+PORTD = 0b00000011;
+TRISB0 = 1;
+ANSELH = 0x00;
 while(1){
-RB0 = 1;
-_delay((unsigned long)((500)*(4000000/4000.0)));
-RB0 = 0;
+if(RB0 == 1){
+RB7 = 1;
+PORTD = 0b00000000;
+}
+else{
+RB7 = 0;
+PORTD = PORTD << 2;
+if(PORTD == 0x00){
+PORTD = 0b00000011;
+}
 _delay((unsigned long)((500)*(4000000/4000.0)));
 }
 
+# 90
 }
+
+}
+
+void secuencia_1(){
+
+while(1){
+_delay((unsigned long)((500)*(4000000/4000.0)));
+PORTD = PORTD << 2;
+if(PORTD == 0x00){
+PORTD = 0b00000011;
+}
+}
+}
+
 
 void delay_ms(int val_delay){
 for(int i=0;i<val_delay;i++){

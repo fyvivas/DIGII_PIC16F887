@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 6 ]
-"51 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\BLINK\BLINK.X\blinkmain.c
+"56 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\BLINK\BLINK.X\blinkmain.c
 [v _main main `(v  1 e 1 0 ]
 "62 D:\mplab\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
@@ -13,12 +13,22 @@
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"3842 D:\mplab\include\pic16f887.h
+"341 D:\mplab\include\pic16f887.h
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"1560
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"3373
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"3842
 [v _RB0 RB0 `VEb  1 e 0 @48 ]
+"3856
+[v _RB7 RB7 `VEb  1 e 0 @55 ]
 "4056
 [v _TRISB0 TRISB0 `VEb  1 e 0 @1072 ]
-"51 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\BLINK\BLINK.X\blinkmain.c
+"4070
+[v _TRISB7 TRISB7 `VEb  1 e 0 @1079 ]
+"56 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\BLINK\BLINK.X\blinkmain.c
 [v _main main `(v  1 e 1 0 ]
 {
-"60
+"92
 } 0

@@ -1,9 +1,19 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"4056 D:\mplab\include\pic16f887.h
+"4070 D:\mplab\include\pic16f887.h
+[v _TRISB7 `Vb ~T0 @X0 0 e@1079 ]
+"1560
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"341
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"4056
 [v _TRISB0 `Vb ~T0 @X0 0 e@1072 ]
+"3373
+[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
 "3842
 [v _RB0 `Vb ~T0 @X0 0 e@48 ]
+"3856
+[v _RB7 `Vb ~T0 @X0 0 e@55 ]
 [v F1637 `(v ~T0 @X0 1 tf1`ul ]
 "152 D:\mplab\include\pic.h
 [v __delay `JF1637 ~T0 @X0 0 e ]
@@ -1516,81 +1526,161 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x BOR4V=BOR40V ]
 "42
 [p x WRT=OFF ]
-[; ;blinkmain.c: 49: void delay_ms(int val_delay);
-"51 blinkmain.c
+[; ;blinkmain.c: 54: void delay_ms(int val_delay);
+"56 blinkmain.c
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;blinkmain.c: 51: void main(){
+[; ;blinkmain.c: 56: void main(){
 [e :U _main ]
 [f ]
-[; ;blinkmain.c: 52: TRISB0 = 0;
-"52
-[e = _TRISB0 -> -> 0 `i `b ]
-[; ;blinkmain.c: 53: while(1){
-"53
+[; ;blinkmain.c: 57: TRISB7 = 0;
+"57
+[e = _TRISB7 -> -> 0 `i `b ]
+[; ;blinkmain.c: 58: TRISD = 0x00;
+"58
+[e = _TRISD -> -> 0 `i `uc ]
+[; ;blinkmain.c: 60: PORTD = 0b00000011;
+"60
+[e = _PORTD -> -> 3 `i `uc ]
+[; ;blinkmain.c: 61: TRISB0 = 1;
+"61
+[e = _TRISB0 -> -> 1 `i `b ]
+[; ;blinkmain.c: 62: ANSELH = 0x00;
+"62
+[e = _ANSELH -> -> 0 `i `uc ]
+[; ;blinkmain.c: 63: while(1){
+"63
 [e :U 140 ]
 {
-[; ;blinkmain.c: 54: RB0 = 1;
-"54
-[e = _RB0 -> -> 1 `i `b ]
-[; ;blinkmain.c: 55: _delay((unsigned long)((500)*(4000000/4000.0)));
-"55
+[; ;blinkmain.c: 64: if(RB0 == 1){
+"64
+[e $ ! == -> _RB0 `i -> 1 `i 142  ]
+{
+[; ;blinkmain.c: 65: RB7 = 1;
+"65
+[e = _RB7 -> -> 1 `i `b ]
+[; ;blinkmain.c: 66: PORTD = 0b00000000;
+"66
+[e = _PORTD -> -> 0 `i `uc ]
+"67
+}
+[; ;blinkmain.c: 67: }
+[e $U 143  ]
+"68
+[e :U 142 ]
+[; ;blinkmain.c: 68: else{
+{
+[; ;blinkmain.c: 69: RB7 = 0;
+"69
+[e = _RB7 -> -> 0 `i `b ]
+[; ;blinkmain.c: 70: PORTD = PORTD << 2;
+"70
+[e = _PORTD -> << -> _PORTD `i -> 2 `i `uc ]
+[; ;blinkmain.c: 71: if(PORTD == 0x00){
+"71
+[e $ ! == -> _PORTD `i -> 0 `i 144  ]
+{
+[; ;blinkmain.c: 72: PORTD = 0b00000011;
+"72
+[e = _PORTD -> -> 3 `i `uc ]
+"73
+}
+[e :U 144 ]
+[; ;blinkmain.c: 73: }
+[; ;blinkmain.c: 74: _delay((unsigned long)((500)*(4000000/4000.0)));
+"74
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;blinkmain.c: 56: RB0 = 0;
-"56
-[e = _RB0 -> -> 0 `i `b ]
-[; ;blinkmain.c: 57: _delay((unsigned long)((500)*(4000000/4000.0)));
-"57
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"58
+"75
+}
+[e :U 143 ]
+"90
 }
 [e :U 139 ]
-"53
+"63
 [e $U 140  ]
 [e :U 141 ]
-[; ;blinkmain.c: 58: }
-[; ;blinkmain.c: 60: }
-"60
+[; ;blinkmain.c: 75: }
+[; ;blinkmain.c: 90: }
+[; ;blinkmain.c: 92: }
+"92
 [e :UE 138 ]
 }
-"62
+"94
+[v _secuencia_1 `(v ~T0 @X0 1 ef ]
+{
+[; ;blinkmain.c: 94: void secuencia_1(){
+[e :U _secuencia_1 ]
+[f ]
+[; ;blinkmain.c: 96: while(1){
+"96
+[e :U 147 ]
+{
+[; ;blinkmain.c: 97: _delay((unsigned long)((500)*(4000000/4000.0)));
+"97
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;blinkmain.c: 98: PORTD = PORTD << 2;
+"98
+[e = _PORTD -> << -> _PORTD `i -> 2 `i `uc ]
+[; ;blinkmain.c: 99: if(PORTD == 0x00){
+"99
+[e $ ! == -> _PORTD `i -> 0 `i 149  ]
+{
+[; ;blinkmain.c: 100: PORTD = 0b00000011;
+"100
+[e = _PORTD -> -> 3 `i `uc ]
+"101
+}
+[e :U 149 ]
+"102
+}
+[e :U 146 ]
+"96
+[e $U 147  ]
+[e :U 148 ]
+[; ;blinkmain.c: 101: }
+[; ;blinkmain.c: 102: }
+[; ;blinkmain.c: 103: }
+"103
+[e :UE 145 ]
+}
+"106
 [v _delay_ms `(v ~T0 @X0 1 ef1`i ]
 {
-[; ;blinkmain.c: 62: void delay_ms(int val_delay){
+[; ;blinkmain.c: 106: void delay_ms(int val_delay){
 [e :U _delay_ms ]
 [v _val_delay `i ~T0 @X0 1 r1 ]
 [f ]
-[; ;blinkmain.c: 63: for(int i=0;i<val_delay;i++){
-"63
+[; ;blinkmain.c: 107: for(int i=0;i<val_delay;i++){
+"107
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $U 146  ]
-[e :U 143 ]
+[e $U 154  ]
+[e :U 151 ]
 {
-[; ;blinkmain.c: 64: for(int j=0;j<45;j++);
-"64
+[; ;blinkmain.c: 108: for(int j=0;j<45;j++);
+"108
 {
 [v _j `i ~T0 @X0 1 a ]
 [e = _j -> 0 `i ]
-[e $ < _j -> 45 `i 147  ]
-[e $U 148  ]
-[e :U 147 ]
+[e $ < _j -> 45 `i 155  ]
+[e $U 156  ]
+[e :U 155 ]
 [e ++ _j -> 1 `i ]
-[e $ < _j -> 45 `i 147  ]
-[e :U 148 ]
+[e $ < _j -> 45 `i 155  ]
+[e :U 156 ]
 }
-"65
+"109
 }
-"63
+"107
 [e ++ _i -> 1 `i ]
-[e :U 146 ]
-[e $ < _i _val_delay 143  ]
-[e :U 144 ]
-"65
+[e :U 154 ]
+[e $ < _i _val_delay 151  ]
+[e :U 152 ]
+"109
 }
-[; ;blinkmain.c: 65: }
-[; ;blinkmain.c: 66: }
-"66
-[e :UE 142 ]
+[; ;blinkmain.c: 109: }
+[; ;blinkmain.c: 110: }
+"110
+[e :UE 150 ]
 }

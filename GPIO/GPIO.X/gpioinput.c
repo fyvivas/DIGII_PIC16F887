@@ -53,13 +53,13 @@ void main(void) {
     
     while(1){
         if(PORTAbits.RA0==1){//si la entrada en el pin RA0 es un alto
-            TRISBbits.TRISB3=~TRISBbits.TRISB3;//el pin RB3 cambia de estado
-            TRISBbits.TRISB4=~TRISBbits.TRISB4;//el pin RB4 cambia de estado
+            PORTBbits.RB3=~PORTBbits.RB3;//el pin RB3 cambia de estado
+            PORTBbits.RB4=~PORTBbits.RB4;//el pin RB4 cambia de estado
             __delay_ms(100);
         }
         else{
-            TRISBbits.TRISB3=~TRISBbits.TRISB3;//el pin RB3 cambia de estado
-            TRISBbits.TRISB4=~TRISBbits.TRISB4;//el pin RB4 cambia de estado
+            PORTBbits.RB3=~PORTBbits.RB3;//el pin RB3 cambia de estado
+            PORTBbits.RB4=~PORTBbits.RB4;//el pin RB4 cambia de estado
             __delay_ms(1000);
         }
     }

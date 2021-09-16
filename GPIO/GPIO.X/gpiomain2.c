@@ -60,10 +60,10 @@ void main(void) {
         PORTB=PORTB+1;//el puerto b como contador
         if(PORTB==16){//si el puerto b se hace 16
             PORTB=0;//el puerto b se reinicia
-            TRISAbits.TRISA0=~TRISAbits.TRISA0;//el pin RA0 cambia de estado
+            PORTAbits.RA0=~PORTAbits.RA0;//el pin RA0 cambia de estado
         }
         else{
-            TRISAbits.TRISA1=~TRISAbits.TRISA1;//el pin RA1 cambia de estado
+            PORTAbits.RA1=~PORTAbits.RA1;//el pin RA1 cambia de estado
         }
     }
     return;
