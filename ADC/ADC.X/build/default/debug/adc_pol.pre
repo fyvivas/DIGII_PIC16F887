@@ -1,5 +1,5 @@
 
-# 1 "blinkmain.c"
+# 1 "adc_pol.c"
 
 # 26 "D:\mplab\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -2105,49 +2105,27 @@ extern __bit __timeout;
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
 
-# 54 "blinkmain.c"
-void delay_ms(int val_delay);
-
-void main(){
-TRISB7 = 0;
+# 7 "adc_pol.c"
+void main(void) {
 TRISD = 0x00;
+TRISA0 = 1;
+ANSEL = 0x01;
 
-PORTD = 0b00000011;
-TRISB0 = 1;
-ANSELH = 0x00;
-while(1){
-if(RB0 == 1){
-RB7 = 1;
-PORTD = 0b00000000;
-}
-else{
-RB7 = 0;
-PORTD = PORTD << 2;
-if(PORTD == 0x00){
-PORTD = 0b00000011;
-}
+ADCON1bits.ADFM = 0;
+ADCON1bits.VCFG0 = 0;
+ADCON1bits.VCFG1 = 0;
+
+ADCON0bits.CHS = 0b0000;
+ADCON0bits.ADCS = 0b01;
+
+while (1) {
+ADCON0bits.ADON = 1;
+_delay((unsigned long)((30)*(4000000/4000000.0)));
+ADCON0bits.GO = 1;
+while (ADCON0bits.GO);
+ADCON0bits.ADON = 0;
+PORTD = ADRESH;
 _delay((unsigned long)((500)*(4000000/4000.0)));
 }
-
-# 90
 }
 
-}
-
-void secuencia_1(){
-
-while(1){
-_delay((unsigned long)((500)*(4000000/4000.0)));
-PORTD = PORTD << 2;
-if(PORTD == 0x00){
-PORTD = 0b00000011;
-}
-}
-}
-
-
-void delay_ms(int val_delay){
-for(int i=0;i<val_delay;i++){
-for(int j=0;j<45;j++);
-}
-}

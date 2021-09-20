@@ -48,6 +48,13 @@ long 32 bits
 #define CFG_BTN_P1 TRISB0
 #define BTN_P1 RB0
 
+#define CFG_S1 TRISB0
+#define S1 RB0
+#define CFG_S2 TRISB1
+#define S2 RB1
+#define CFG_S3 TRISB2
+#define S3 RB2
+
 #define CFG_LED_SEC TRISD
 #define LED_SEC PORTD
 
@@ -59,8 +66,28 @@ void main(){
     //CFG_LED_SEC = 0b11111111;
     LED_SEC = 0b00000011; // 0x01
     CFG_BTN_P1 = INPUT;
+    
+    CFG_S1 = INPUT;
+    CFG_S2 = INPUT;
+    CFG_S3 = INPUT;
+    
     ANSELH = 0x00;
     while(1){
+        if((S1 == 1) && (S2 == 1) && (S3 == 0)){
+            LED_RED = ON;
+        }
+        else if((S1 == 1) && (S2 == 1) && (S3 == 0)){
+            LED_RED = ON;
+        }
+        else if((S1 == 1) && (S2 == 1) && (S3 == 0)){
+            LED_RED = ON;
+        }
+        else{
+            LED_RED = OFF;
+        }
+        
+        
+        
         if(BTN_P1 == 1){
             LED_RED = ON;
             LED_SEC = 0b00000000; // 0x01

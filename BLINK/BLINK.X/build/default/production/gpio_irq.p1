@@ -10,8 +10,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRISB0 `Vb ~T0 @X0 0 e@1072 ]
 "3373
 [v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
-"3842
-[v _RB0 `Vb ~T0 @X0 0 e@48 ]
+"445
+[v _INTCON `Vuc ~T0 @X0 0 e@11 ]
+"1314
+[s S50 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S50 . PS PSA T0SE T0CS INTEDG nRBPU ]
+"1322
+[s S51 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S51 . PS0 PS1 PS2 ]
+"1313
+[u S49 `S50 1 `S51 1 ]
+[n S49 . . . ]
+"1328
+[v _OPTION_REGbits `VS49 ~T0 @X0 0 e@129 ]
+"451
+[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S16 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
+"461
+[s S17 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S17 . . TMR0IF . TMR0IE ]
+"450
+[u S15 `S16 1 `S17 1 ]
+[n S15 . . . ]
+"468
+[v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
 "3856
 [v _RB7 `Vb ~T0 @X0 0 e@55 ]
 [v F1637 `(v ~T0 @X0 1 tf1`ul ]
@@ -1526,161 +1548,108 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x BOR4V=BOR40V ]
 "42
 [p x WRT=OFF ]
-[; ;blinkmain.c: 54: void delay_ms(int val_delay);
-"56 blinkmain.c
+"55 gpio_irq.c
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;blinkmain.c: 56: void main(){
+[; ;gpio_irq.c: 55: void main(){
 [e :U _main ]
 [f ]
-[; ;blinkmain.c: 57: TRISB7 = 0;
-"57
+[; ;gpio_irq.c: 56: TRISB7 = 0;
+"56
 [e = _TRISB7 -> -> 0 `i `b ]
-[; ;blinkmain.c: 58: TRISD = 0x00;
-"58
+[; ;gpio_irq.c: 57: TRISD = 0x00;
+"57
 [e = _TRISD -> -> 0 `i `uc ]
-[; ;blinkmain.c: 60: PORTD = 0b00000011;
-"60
-[e = _PORTD -> -> 3 `i `uc ]
-[; ;blinkmain.c: 61: TRISB0 = 1;
-"61
+[; ;gpio_irq.c: 58: PORTD = 0b00000001;
+"58
+[e = _PORTD -> -> 1 `i `uc ]
+[; ;gpio_irq.c: 59: TRISB0 = 1;
+"59
 [e = _TRISB0 -> -> 1 `i `b ]
-[; ;blinkmain.c: 62: ANSELH = 0x00;
-"62
+[; ;gpio_irq.c: 61: ANSELH = 0x00;
+"61
 [e = _ANSELH -> -> 0 `i `uc ]
-[; ;blinkmain.c: 63: while(1){
+[; ;gpio_irq.c: 63: INTCON= 0b11010000;
 "63
+[e = _INTCON -> -> 208 `i `uc ]
+[; ;gpio_irq.c: 70: OPTION_REGbits.INTEDG=1;
+"70
+[e = . . _OPTION_REGbits 0 4 -> -> 1 `i `uc ]
+[; ;gpio_irq.c: 73: while(1){
+"73
 [e :U 140 ]
 {
-[; ;blinkmain.c: 64: if(RB0 == 1){
-"64
-[e $ ! == -> _RB0 `i -> 1 `i 142  ]
-{
-[; ;blinkmain.c: 65: RB7 = 1;
-"65
-[e = _RB7 -> -> 1 `i `b ]
-[; ;blinkmain.c: 66: PORTD = 0b00000000;
-"66
-[e = _PORTD -> -> 0 `i `uc ]
-"67
-}
-[; ;blinkmain.c: 67: }
-[e $U 143  ]
-"68
-[e :U 142 ]
-[; ;blinkmain.c: 68: else{
-{
-[; ;blinkmain.c: 69: RB7 = 0;
-"69
-[e = _RB7 -> -> 0 `i `b ]
-[; ;blinkmain.c: 70: PORTD = PORTD << 2;
-"70
-[e = _PORTD -> << -> _PORTD `i -> 2 `i `uc ]
-[; ;blinkmain.c: 71: if(PORTD == 0x00){
-"71
-[e $ ! == -> _PORTD `i -> 0 `i 144  ]
-{
-[; ;blinkmain.c: 72: PORTD = 0b00000011;
-"72
-[e = _PORTD -> -> 3 `i `uc ]
-"73
-}
-[e :U 144 ]
-[; ;blinkmain.c: 73: }
-[; ;blinkmain.c: 74: _delay((unsigned long)((500)*(4000000/4000.0)));
-"74
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "75
 }
-[e :U 143 ]
-"90
-}
 [e :U 139 ]
-"63
+"73
 [e $U 140  ]
 [e :U 141 ]
-[; ;blinkmain.c: 75: }
-[; ;blinkmain.c: 90: }
-[; ;blinkmain.c: 92: }
-"92
+[; ;gpio_irq.c: 75: }
+[; ;gpio_irq.c: 77: }
+"77
 [e :UE 138 ]
 }
-"94
-[v _secuencia_1 `(v ~T0 @X0 1 ef ]
+[v F1646 `(v ~T0 @X0 1 tf ]
+"79
+[v _int_ext `IF1646 ~T0 @X0 1 e ]
 {
-[; ;blinkmain.c: 94: void secuencia_1(){
-[e :U _secuencia_1 ]
+[; ;gpio_irq.c: 79: void interrupt int_ext(){
+[e :U _int_ext ]
 [f ]
-[; ;blinkmain.c: 96: while(1){
-"96
-[e :U 147 ]
+[; ;gpio_irq.c: 80: if(INTCONbits.INTF){
+"80
+[e $ ! != -> . . _INTCONbits 0 1 `i -> -> -> 0 `i `Vuc `i 143  ]
 {
-[; ;blinkmain.c: 97: _delay((unsigned long)((500)*(4000000/4000.0)));
-"97
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;blinkmain.c: 98: PORTD = PORTD << 2;
-"98
-[e = _PORTD -> << -> _PORTD `i -> 2 `i `uc ]
-[; ;blinkmain.c: 99: if(PORTD == 0x00){
-"99
-[e $ ! == -> _PORTD `i -> 0 `i 149  ]
-{
-[; ;blinkmain.c: 100: PORTD = 0b00000011;
-"100
-[e = _PORTD -> -> 3 `i `uc ]
-"101
-}
-[e :U 149 ]
-"102
-}
-[e :U 146 ]
-"96
-[e $U 147  ]
-[e :U 148 ]
-[; ;blinkmain.c: 101: }
-[; ;blinkmain.c: 102: }
-[; ;blinkmain.c: 103: }
-"103
-[e :UE 145 ]
-}
-"106
-[v _delay_ms `(v ~T0 @X0 1 ef1`i ]
-{
-[; ;blinkmain.c: 106: void delay_ms(int val_delay){
-[e :U _delay_ms ]
-[v _val_delay `i ~T0 @X0 1 r1 ]
-[f ]
-[; ;blinkmain.c: 107: for(int i=0;i<val_delay;i++){
-"107
+[; ;gpio_irq.c: 81: RB7 = 1;
+"81
+[e = _RB7 -> -> 1 `i `b ]
+[; ;gpio_irq.c: 82: for(int i=0;i<8;i++){
+"82
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $U 154  ]
-[e :U 151 ]
+[e $ < _i -> 8 `i 144  ]
+[e $U 145  ]
+[e :U 144 ]
 {
-[; ;blinkmain.c: 108: for(int j=0;j<45;j++);
-"108
+[; ;gpio_irq.c: 83: PORTD = PORTD << 1;
+"83
+[e = _PORTD -> << -> _PORTD `i -> 1 `i `uc ]
+[; ;gpio_irq.c: 84: if(PORTD == 0x00){
+"84
+[e $ ! == -> _PORTD `i -> 0 `i 147  ]
 {
-[v _j `i ~T0 @X0 1 a ]
-[e = _j -> 0 `i ]
-[e $ < _j -> 45 `i 155  ]
-[e $U 156  ]
-[e :U 155 ]
-[e ++ _j -> 1 `i ]
-[e $ < _j -> 45 `i 155  ]
-[e :U 156 ]
+[; ;gpio_irq.c: 85: PORTD = 0b00000001;
+"85
+[e = _PORTD -> -> 1 `i `uc ]
+"86
 }
-"109
+[e :U 147 ]
+[; ;gpio_irq.c: 86: }
+[; ;gpio_irq.c: 87: _delay((unsigned long)((100)*(4000000/4000.0)));
+"87
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"88
 }
-"107
+"82
 [e ++ _i -> 1 `i ]
-[e :U 154 ]
-[e $ < _i _val_delay 151  ]
-[e :U 152 ]
-"109
+[e $ < _i -> 8 `i 144  ]
+[e :U 145 ]
+"88
 }
-[; ;blinkmain.c: 109: }
-[; ;blinkmain.c: 110: }
-"110
-[e :UE 150 ]
+[; ;gpio_irq.c: 88: }
+[; ;gpio_irq.c: 89: INTCONbits.INTF=0;
+"89
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;gpio_irq.c: 91: RB7 = 0;
+"91
+[e = _RB7 -> -> 0 `i `b ]
+"92
+}
+[e :U 143 ]
+[; ;gpio_irq.c: 92: }
+[; ;gpio_irq.c: 93: }
+"93
+[e :UE 142 ]
 }
