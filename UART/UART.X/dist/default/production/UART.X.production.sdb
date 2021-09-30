@@ -3,28 +3,28 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 6 ]
+"6 D:\mplab\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"6 D:\mplab\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"32 D:\mplab\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
 "62 D:\mplab\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 D:\mplab\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
+"56 D:\mplab\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 D:\mplab\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"44 D:\mplab\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
 "6 D:\mplab\sources\pic\eeprom.c
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"29 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\UART\UART.X\uart_sec.c
+"12 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\UART\UART.X\uart_lm35.c
 [v _main main `(v  1 e 1 0 ]
-[s S124 . 1 `uc 1 RC0 1 0 :1:0 
-`uc 1 RC1 1 0 :1:1 
-`uc 1 RC2 1 0 :1:2 
-`uc 1 RC3 1 0 :1:3 
-`uc 1 RC4 1 0 :1:4 
-`uc 1 RC5 1 0 :1:5 
-`uc 1 RC6 1 0 :1:6 
-`uc 1 RC7 1 0 :1:7 
-]
-"297 D:\mplab\include\pic16f887.h
-[u S133 . 1 `S124 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES133  1 e 1 @7 ]
 [s S78 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
@@ -34,7 +34,7 @@
 `uc 1 RX9 1 0 :1:6 
 `uc 1 SPEN 1 0 :1:7 
 ]
-"1039
+"1039 D:\mplab\include\pic16f887.h
 [s S87 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
@@ -49,6 +49,31 @@
 [v _RCSTAbits RCSTAbits `VES97  1 e 1 @24 ]
 "1103
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"1202
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+[s S140 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+`uc 1 ADCS 1 0 :2:6 
+]
+"1239
+[s S145 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 ADCS0 1 0 :1:6 
+`uc 1 ADCS1 1 0 :1:7 
+]
+[s S154 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S157 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+]
+[u S160 . 1 `S140 1 . 1 0 `S145 1 . 1 0 `S154 1 . 1 0 `S157 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES160  1 e 1 @31 ]
 [s S20 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
@@ -70,6 +95,17 @@
 [v _TXSTAbits TXSTAbits `VES36  1 e 1 @152 ]
 "2584
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"2907
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+[s S125 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 VCFG0 1 0 :1:4 
+`uc 1 VCFG1 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"2927
+[u S131 . 1 `S125 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES131  1 e 1 @159 ]
 [s S57 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
@@ -82,12 +118,105 @@
 "3278
 [u S66 . 1 `S57 1 . 1 0 ]
 [v _BAUDCTLbits BAUDCTLbits `VES66  1 e 1 @391 ]
+"3312
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3874
 [v _RC6 RC6 `VEb  1 e 0 @62 ]
-"27 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\UART\UART.X\uart_sec.c
-[v _var var `uc  1 e 1 0 ]
-"29
+"4040
+[v _TRISA0 TRISA0 `VEb  1 e 0 @1064 ]
+"7 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\UART\UART.X\uart_lm35.c
+[v _buffer_TX buffer_TX `[18]uc  1 e 18 0 ]
+"8
+[v _value_adc value_adc `i  1 e 2 0 ]
+"9
+[v _temp temp `d  1 e 3 0 ]
+"10
+[v _lm35 lm35 `uc  1 e 1 0 ]
+"12
 [v _main main `(v  1 e 1 0 ]
 {
-"58
+"51
+[v main@i i `i  1 a 2 32 ]
+"60
+} 0
+"44 D:\mplab\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+{
+"47
+[v ___fttol@lval lval `ul  1 a 4 9 ]
+"46
+[v ___fttol@exp1 exp1 `uc  1 a 1 13 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 8 ]
+"44
+[v ___fttol@f1 f1 `f  1 p 3 0 ]
+"73
+} 0
+"62 D:\mplab\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+{
+"65
+[v ___ftmul@f3_as_product f3_as_product `um  1 a 3 5 ]
+"64
+[v ___ftmul@sign sign `uc  1 a 1 9 ]
+[v ___ftmul@cntr cntr `uc  1 a 1 8 ]
+[v ___ftmul@exp exp `uc  1 a 1 4 ]
+"62
+[v ___ftmul@f1 f1 `f  1 p 3 8 ]
+[v ___ftmul@f2 f2 `f  1 p 3 11 ]
+"157
+} 0
+"56 D:\mplab\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+{
+"60
+[v ___ftdiv@f3 f3 `f  1 a 3 21 ]
+"59
+[v ___ftdiv@sign sign `uc  1 a 1 25 ]
+[v ___ftdiv@exp exp `uc  1 a 1 24 ]
+[v ___ftdiv@cntr cntr `uc  1 a 1 20 ]
+"56
+[v ___ftdiv@f2 f2 `f  1 p 3 10 ]
+[v ___ftdiv@f1 f1 `f  1 p 3 13 ]
+"86
+} 0
+"32 D:\mplab\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+{
+"34
+[v ___awtoft@sign sign `uc  1 a 1 13 ]
+"32
+[v ___awtoft@c c `i  1 p 2 8 ]
+"42
+} 0
+"62 D:\mplab\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+{
+[v ___ftpack@arg arg `um  1 p 3 0 ]
+[v ___ftpack@exp exp `uc  1 p 1 3 ]
+[v ___ftpack@sign sign `uc  1 p 1 4 ]
+"86
+} 0
+"6 D:\mplab\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"11
+[v ___awmod@sign sign `uc  1 a 1 6 ]
+[v ___awmod@counter counter `uc  1 a 1 5 ]
+"6
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
+"35
+} 0
+"6 D:\mplab\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"11
+[v ___awdiv@quotient quotient `i  1 a 2 2 ]
+"12
+[v ___awdiv@sign sign `uc  1 a 1 1 ]
+[v ___awdiv@counter counter `uc  1 a 1 0 ]
+"6
+[v ___awdiv@divisor divisor `i  1 p 2 7 ]
+[v ___awdiv@dividend dividend `i  1 p 2 9 ]
+"42
 } 0

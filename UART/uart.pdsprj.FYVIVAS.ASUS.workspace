@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <WORKSPACE>
  <FRAME activewindow="0">
-  <PLACEMENT>2c0000000200000003000000ffffffffffffffffffffffffffffffff5105000000000000a1090000c6020000</PLACEMENT>
+  <PLACEMENT>2c00000002000000030000000083ffff0083ffffffffffffffffffffbc050000000000000c0a0000c6020000</PLACEMENT>
   <WINDOW type="default" module="ISIS"/>
  </FRAME>
  <MODULE name="VSMDEBUG">
@@ -183,10 +183,22 @@
    <POPUP w="695" x="1668" flags="00000001" y="166" h="453" pid="0" iid="18">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="695" x="1434" flags="00000001" y="129" h="453" pid="0" iid="6">
+   <POPUP w="695" x="2143" flags="00000001" y="212" h="453" pid="0" iid="6">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="450" x="1519" flags="00008023" y="289" h="250" pid="0" iid="5">
+   <POPUP w="450" x="1535" flags="00008023" y="321" h="250" pid="0" iid="5">
+    <PROPERTIES>
+     <ITEM name="AutoEcho">0</ITEM>
+     <ITEM name="HexMode">0</ITEM>
+    </PROPERTIES>
+   </POPUP>
+   <POPUP w="450" x="2187" flags="00000023" y="319" h="250" pid="0" iid="9">
+    <PROPERTIES>
+     <ITEM name="AutoEcho">0</ITEM>
+     <ITEM name="HexMode">0</ITEM>
+    </PROPERTIES>
+   </POPUP>
+   <POPUP w="450" x="2208" flags="00000023" y="397" h="250" pid="0" iid="12">
     <PROPERTIES>
      <ITEM name="AutoEcho">0</ITEM>
      <ITEM name="HexMode">0</ITEM>

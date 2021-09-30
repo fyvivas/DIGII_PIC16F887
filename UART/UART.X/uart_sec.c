@@ -19,12 +19,12 @@ intended publication of this material.
 */
 
 #include <xc.h>
-#include <pic16f887.h>  /*Header file PIC18f4550 definitions*/
+#include <pic16f887.h>  /*Header file PIC16f887 definitions*/
 #include "fuses.h"
 
 #define     BAUD        9600
 
-unsigned char var = '0'; //0x30 en hexadecimal, 48 en decimal
+unsigned char var = 0x01; //0x30 en hexadecimal, 48 en decimal
 
 void main(void) {
     //Configura UART a 9600 baudios
@@ -45,6 +45,7 @@ void main(void) {
         //  escribe el dato que se enviará a través de TX.
         TXREG = var;
         
+        /*
         PORTCbits.RC0 = !PORTCbits.RC0;
         if (++var > 122) { //  0,1,2,3,4.......122 (z))
             while (!TXSTAbits.TRMT) {
@@ -52,7 +53,7 @@ void main(void) {
             TXREG = 13;
             var = 48;
         }
-        
+        */
         __delay_ms(100);
     }
 }

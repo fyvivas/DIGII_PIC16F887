@@ -14,6 +14,8 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>uart_sec.c</itemPath>
+      <itemPath>uart_lm35.c</itemPath>
+      <itemPath>bluetooth.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -129,6 +131,24 @@
         <property key="stack-size-main" value="auto"/>
         <property key="stack-type" value="compiled"/>
       </XC8-config-global>
+      <item path="bluetooth.c" ex="true" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-config-global>
+        </XC8-config-global>
+      </item>
+      <item path="uart_lm35.c" ex="false" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-config-global>
+        </XC8-config-global>
+      </item>
+      <item path="uart_sec.c" ex="true" overriding="false">
+      </item>
     </conf>
   </confs>
 </configurationDescriptor>

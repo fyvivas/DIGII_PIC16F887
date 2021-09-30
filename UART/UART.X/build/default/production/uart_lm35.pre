@@ -1,5 +1,5 @@
 
-# 1 "uart_sec.c"
+# 1 "uart_lm35.c"
 
 # 26 "D:\mplab\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -2105,36 +2105,58 @@ extern __bit __timeout;
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
 
-# 27 "uart_sec.c"
-unsigned char var = '0';
+# 7 "uart_lm35.c"
+char buffer_TX[] = "Temp: xxx grados\r";
+int value_adc;
+double temp;
+char lm35;
 
 void main(void) {
 
-RC6 = 0;
 
+RC6 = 0;
 TXSTAbits.TX9 = 0;
 TXSTAbits.TXEN = 1;
 TXSTAbits.SYNC = 0;
 TXSTAbits.BRGH = 0;
 BAUDCTLbits.BRG16 = 0;
 RCSTAbits.SPEN = 1;
-
 SPBRG = (unsigned char) (((8000000 / 9600) / 64) - 1);
+
+
+TRISA0 = 1;
+ANSEL = 0x01;
+
+ADCON1bits.ADFM = 1;
+ADCON1bits.VCFG0 = 0;
+ADCON1bits.VCFG1 = 0;
+
+ADCON0bits.CHS = 0b0000;
+ADCON0bits.ADCS = 0b01;
+
+ADCON0bits.ADON = 1;
+_delay((unsigned long)((30)*(8000000/4000000.0)));
+
 while (1) {
 
+ADCON0bits.GO_DONE = 1;
+while (ADCON0bits.GO_DONE);
+value_adc = ADRESH;
+value_adc = (value_adc << 8) + ADRESL;
+temp = value_adc;
+temp = (temp * 500.0) / 1023.0;
+lm35 = (char) temp;
+buffer_TX[6] = (lm35 / 100) + '0';
+buffer_TX[7] = (lm35 % 100) / 10 + '0';
+buffer_TX[8] = (lm35 % 100) % 10 + '0';
+
+for (int i = 0; i < 17; i++) {
+
 while (!TXSTAbits.TRMT) {
 }
 
-TXREG = var;
-
-PORTCbits.RC0 = !PORTCbits.RC0;
-if (++var > 122) {
-while (!TXSTAbits.TRMT) {
+TXREG = buffer_TX[i];
 }
-TXREG = 13;
-var = 48;
-}
-
 _delay((unsigned long)((100)*(8000000/4000.0)));
 }
 }

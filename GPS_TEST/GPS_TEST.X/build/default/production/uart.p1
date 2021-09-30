@@ -1,29 +1,20 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[p mainexit ]
-"3874 D:\mplab\include\pic16f887.h
-[v _RC6 `Vb ~T0 @X0 0 e@62 ]
-"2505
-[s S99 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S99 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
-"2515
-[s S100 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
-[n S100 . TXD8 . nTX8 ]
-"2520
-[s S101 :6 `uc 1 :1 `uc 1 ]
-[n S101 . . TX8_9 ]
-"2504
-[u S98 `S99 1 `S100 1 `S101 1 ]
-[n S98 . . . . ]
-"2525
-[v _TXSTAbits `VS98 ~T0 @X0 0 e@152 ]
-"3267
-[s S131 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S131 . ABDEN WUE . BRG16 SCKP . RCIDL ABDOVF ]
-"3266
-[u S130 `S131 1 ]
-[n S130 . . ]
-"3278
-[v _BAUDCTLbits `VS130 ~T0 @X0 0 e@391 ]
+"4084 D:\mplab\include\pic16f887.h
+[v _TRISC6 `Vb ~T0 @X0 0 e@1086 ]
+"4086
+[v _TRISC7 `Vb ~T0 @X0 0 e@1087 ]
+"2584
+[v _SPBRG `Vuc ~T0 @X0 0 e@153 ]
+"2499
+[v _TXSTA `Vuc ~T0 @X0 0 e@152 ]
+"1009
+[v _RCSTA `Vuc ~T0 @X0 0 e@24 ]
+"4136
+[v _TXIF `Vb ~T0 @X0 0 e@100 ]
+"1103
+[v _TXREG `Vuc ~T0 @X0 0 e@25 ]
+"3890
+[v _RCIF `Vb ~T0 @X0 0 e@101 ]
 "1015
 [s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S37 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
@@ -41,25 +32,37 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S36 . . . . . ]
 "1039
 [v _RCSTAbits `VS36 ~T0 @X0 0 e@24 ]
-"2584
-[v _SPBRG `Vuc ~T0 @X0 0 e@153 ]
-"1103
-[v _TXREG `Vuc ~T0 @X0 0 e@25 ]
-"286
-[s S10 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S10 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
-"285
-[u S9 `S10 1 ]
-[n S9 . . ]
-"297
-[v _PORTCbits `VS9 ~T0 @X0 0 e@7 ]
-[v F1637 `(v ~T0 @X0 1 tf1`ul ]
-"152 D:\mplab\include\pic.h
-[v __delay `JF1637 ~T0 @X0 0 e ]
-[p i __delay ]
-[; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
-[; ;htc.h: 28: extern double __fpnormalize(double);
-[; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
+"3664
+[v _CREN `Vb ~T0 @X0 0 e@196 ]
+"28 D:\mplab\include\pic.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
+"1109 D:\mplab\include\pic16f887.h
+[v _RCREG `Vuc ~T0 @X0 0 e@26 ]
+"16 fuses.h
+[p x FOSC=XT ]
+"17
+[p x WDTE=OFF ]
+"18
+[p x PWRTE=OFF ]
+"19
+[p x MCLRE=ON ]
+"20
+[p x CP=OFF ]
+"21
+[p x CPD=OFF ]
+"22
+[p x BOREN=ON ]
+"23
+[p x IESO=ON ]
+"24
+[p x FCMEN=ON ]
+"25
+[p x LVP=ON ]
+"28
+[p x BOR4V=BOR40V ]
+"29
+[p x WRT=OFF ]
 [; ;pic16f887.h: 49: extern volatile unsigned char INDF @ 0x000;
 "51 D:\mplab\include\pic16f887.h
 [; ;pic16f887.h: 51: asm("INDF equ 00h");
@@ -1530,6 +1533,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic16f887.h: 4224: extern volatile __bit nTX8 @ (((unsigned) &TXSTA)*8) + 6;
 [; ;pic16f887.h: 4226: extern volatile __bit nW @ (((unsigned) &SSPSTAT)*8) + 2;
 [; ;pic16f887.h: 4228: extern volatile __bit nWRITE @ (((unsigned) &SSPSTAT)*8) + 2;
+[; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
+[; ;htc.h: 28: extern double __fpnormalize(double);
+[; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic.h: 28: extern void __nop(void);
 [; ;pic.h: 77: extern unsigned int flash_read(unsigned short addr);
 [; ;eeprom_routines.h: 114: extern void eeprom_write(unsigned char addr, unsigned char value);
@@ -1541,125 +1547,142 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 192: extern unsigned char __resetbits;
 [; ;pic.h: 193: extern __bit __powerdown;
 [; ;pic.h: 194: extern __bit __timeout;
-"29 fuses.h
-[p x FOSC=XT ]
-"30
-[p x WDTE=OFF ]
-"31
-[p x PWRTE=OFF ]
-"32
-[p x MCLRE=ON ]
-"33
-[p x CP=OFF ]
-"34
-[p x CPD=OFF ]
-"35
-[p x BOREN=ON ]
-"36
-[p x IESO=ON ]
-"37
-[p x FCMEN=ON ]
-"38
-[p x LVP=ON ]
-"41
-[p x BOR4V=BOR40V ]
-"42
-[p x WRT=OFF ]
-"27 uart_sec.c
-[v _var `uc ~T0 @X0 1 e ]
-[i _var
--> -> 48 `ui `uc
-]
-[; ;uart_sec.c: 27: unsigned char var = '0';
-"29
-[v _main `(v ~T0 @X0 1 ef ]
+[; ;uart.h: 17: void USART_Init(long);
+[; ;uart.h: 18: void USART_TxChar(char);
+[; ;uart.h: 19: void USART_SendString(const char *);
+[; ;uart.h: 20: char USART_RxChar();
+"5 uart.c
+[v _USART_Init `(v ~T0 @X0 1 ef1`l ]
+"6
 {
-[; ;uart_sec.c: 29: void main(void) {
-[e :U _main ]
+[; ;uart.c: 5: void USART_Init(long baud_rate)
+[; ;uart.c: 6: {
+[e :U _USART_Init ]
+"5
+[v _baud_rate `l ~T0 @X0 1 r1 ]
+"6
 [f ]
-[; ;uart_sec.c: 31: RC6 = 0;
-"31
-[e = _RC6 -> -> 0 `i `b ]
-[; ;uart_sec.c: 33: TXSTAbits.TX9 = 0;
-"33
-[e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
-[; ;uart_sec.c: 34: TXSTAbits.TXEN = 1;
-"34
-[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-[; ;uart_sec.c: 35: TXSTAbits.SYNC = 0;
-"35
-[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-[; ;uart_sec.c: 36: TXSTAbits.BRGH = 0;
-"36
-[e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
-[; ;uart_sec.c: 37: BAUDCTLbits.BRG16 = 0;
-"37
-[e = . . _BAUDCTLbits 0 3 -> -> 0 `i `uc ]
-[; ;uart_sec.c: 38: RCSTAbits.SPEN = 1;
-"38
-[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-[; ;uart_sec.c: 40: SPBRG = (unsigned char) (((8000000 / 9600) / 64) - 1);
-"40
-[e = _SPBRG -> - / / -> 8000000 `l -> -> 9600 `i `l -> -> 64 `i `l -> -> 1 `i `l `uc ]
-[; ;uart_sec.c: 41: while (1) {
-"41
-[e :U 140 ]
-{
-[; ;uart_sec.c: 43: while (!TXSTAbits.TRMT) {
-"43
-[e $U 142  ]
-[e :U 143 ]
-{
-"44
+"7
+[v _temp `f ~T0 @X0 1 a ]
+[; ;uart.c: 7: float temp;
+[; ;uart.c: 8: TRISC6=0;
+"8
+[e = _TRISC6 -> -> 0 `i `b ]
+[; ;uart.c: 9: TRISC7=1;
+"9
+[e = _TRISC7 -> -> 1 `i `b ]
+[; ;uart.c: 10: SPBRG=(unsigned char) (((8000000 / baud_rate) / 64) - 1);
+"10
+[e = _SPBRG -> - / / -> 8000000 `l _baud_rate -> -> 64 `i `l -> -> 1 `i `l `uc ]
+[; ;uart.c: 11: TXSTA=0x20;
+"11
+[e = _TXSTA -> -> 32 `i `uc ]
+[; ;uart.c: 12: RCSTA=0x90;
+"12
+[e = _RCSTA -> -> 144 `i `uc ]
+[; ;uart.c: 13: }
+"13
+[e :UE 138 ]
 }
-[e :U 142 ]
-"43
-[e $ ! != -> . . _TXSTAbits 0 1 `i -> -> -> 0 `i `Vuc `i 143  ]
-[e :U 144 ]
-[; ;uart_sec.c: 44: }
-[; ;uart_sec.c: 46: TXREG = var;
-"46
-[e = _TXREG _var ]
-[; ;uart_sec.c: 48: PORTCbits.RC0 = !PORTCbits.RC0;
-"48
-[e = . . _PORTCbits 0 0 -> -> ! != -> . . _PORTCbits 0 0 `i -> -> -> 0 `i `Vuc `i `i `uc ]
-[; ;uart_sec.c: 49: if (++var > 122) {
-"49
-[e $ ! > -> =+ _var -> -> 1 `i `uc `i -> 122 `i 145  ]
+"16
+[v _USART_TxChar `(v ~T0 @X0 1 ef1`uc ]
+"17
 {
-[; ;uart_sec.c: 50: while (!TXSTAbits.TRMT) {
-"50
-[e $U 146  ]
-[e :U 147 ]
-{
-"51
-}
-[e :U 146 ]
-"50
-[e $ ! != -> . . _TXSTAbits 0 1 `i -> -> -> 0 `i `Vuc `i 147  ]
-[e :U 148 ]
-[; ;uart_sec.c: 51: }
-[; ;uart_sec.c: 52: TXREG = 13;
-"52
-[e = _TXREG -> -> 13 `i `uc ]
-[; ;uart_sec.c: 53: var = 48;
-"53
-[e = _var -> -> 48 `i `uc ]
-"54
-}
-[e :U 145 ]
-[; ;uart_sec.c: 54: }
-[; ;uart_sec.c: 56: _delay((unsigned long)((100)*(8000000/4000.0)));
-"56
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"57
-}
-[e :U 139 ]
-"41
+[; ;uart.c: 16: void USART_TxChar(char out)
+[; ;uart.c: 17: {
+[e :U _USART_TxChar ]
+"16
+[v _out `uc ~T0 @X0 1 r1 ]
+"17
+[f ]
+[; ;uart.c: 18: while(TXIF==0);
+"18
 [e $U 140  ]
 [e :U 141 ]
-[; ;uart_sec.c: 57: }
-[; ;uart_sec.c: 58: }
-"58
-[e :UE 138 ]
+[e :U 140 ]
+[e $ == -> _TXIF `i -> 0 `i 141  ]
+[e :U 142 ]
+[; ;uart.c: 19: TXREG=out;
+"19
+[e = _TXREG _out ]
+[; ;uart.c: 21: }
+"21
+[e :UE 139 ]
+}
+"23
+[v _USART_RxChar `(uc ~T0 @X0 1 ef ]
+"24
+{
+[; ;uart.c: 23: char USART_RxChar()
+[; ;uart.c: 24: {
+[e :U _USART_RxChar ]
+[f ]
+[; ;uart.c: 27: while(RCIF==0);
+"27
+[e $U 144  ]
+[e :U 145 ]
+[e :U 144 ]
+[e $ == -> _RCIF `i -> 0 `i 145  ]
+[e :U 146 ]
+[; ;uart.c: 28: if(RCSTAbits.OERR)
+"28
+[e $ ! != -> . . _RCSTAbits 0 1 `i -> -> -> 0 `i `Vuc `i 147  ]
+[; ;uart.c: 29: {
+"29
+{
+[; ;uart.c: 30: CREN = 0;
+"30
+[e = _CREN -> -> 0 `i `b ]
+[; ;uart.c: 31: __nop();
+"31
+[e ( ___nop ..  ]
+[; ;uart.c: 32: CREN=1;
+"32
+[e = _CREN -> -> 1 `i `b ]
+"33
+}
+[e :U 147 ]
+[; ;uart.c: 33: }
+[; ;uart.c: 34: return(RCREG);
+"34
+[e ) _RCREG ]
+[e $UE 143  ]
+[; ;uart.c: 35: }
+"35
+[e :UE 143 ]
+}
+"37
+[v _USART_SendString `(v ~T0 @X0 1 ef1`*Cuc ]
+"38
+{
+[; ;uart.c: 37: void USART_SendString(const char *out)
+[; ;uart.c: 38: {
+[e :U _USART_SendString ]
+"37
+[v _out `*Cuc ~T0 @X0 1 r1 ]
+"38
+[f ]
+[; ;uart.c: 39: while(*out!='\0')
+"39
+[e $U 149  ]
+[e :U 150 ]
+[; ;uart.c: 40: {
+"40
+{
+[; ;uart.c: 41: USART_TxChar(*out);
+"41
+[e ( _USART_TxChar (1 *U _out ]
+[; ;uart.c: 42: out++;
+"42
+[e ++ _out * -> -> 1 `i `x -> -> # *U _out `i `x ]
+"43
+}
+[e :U 149 ]
+"39
+[e $ != -> *U _out `ui -> 0 `ui 150  ]
+[e :U 151 ]
+[; ;uart.c: 43: }
+[; ;uart.c: 44: }
+"44
+[e :UE 148 ]
 }
