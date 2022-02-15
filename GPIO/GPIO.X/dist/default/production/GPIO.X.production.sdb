@@ -3,59 +3,93 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 6 ]
+"44 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\GPIO\GPIO.X\blink.c
+[v _main main `(v  1 e 1 0 ]
+"32 D:\mplab\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
 "62 D:\mplab\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 D:\mplab\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
+"62 D:\mplab\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"44 D:\mplab\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
 "6 D:\mplab\sources\pic\eeprom.c
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"47 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\GPIO\GPIO.X\gpiomain2.c
-[v _main main `(v  1 e 1 0 ]
-"72
-[v _delay_ms delay_ms `(v  1 e 1 0 ]
-[s S42 . 1 `uc 1 RA0 1 0 :1:0 
-`uc 1 RA1 1 0 :1:1 
-`uc 1 RA2 1 0 :1:2 
-`uc 1 RA3 1 0 :1:3 
-`uc 1 RA4 1 0 :1:4 
-`uc 1 RA5 1 0 :1:5 
-`uc 1 RA6 1 0 :1:6 
-`uc 1 RA7 1 0 :1:7 
+[s S40 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
 ]
-"175 D:\mplab\include\pic16f887.h
-[u S51 . 1 `S42 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES51  1 e 1 @5 ]
-"219
-[v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S20 . 1 `uc 1 TRISA0 1 0 :1:0 
-`uc 1 TRISA1 1 0 :1:1 
-`uc 1 TRISA2 1 0 :1:2 
-`uc 1 TRISA3 1 0 :1:3 
-`uc 1 TRISA4 1 0 :1:4 
-`uc 1 TRISA5 1 0 :1:5 
-`uc 1 TRISA6 1 0 :1:6 
-`uc 1 TRISA7 1 0 :1:7 
+"236 D:\mplab\include\pic16f887.h
+[u S49 . 1 `S40 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES49  1 e 1 @6 ]
+[s S19 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
 ]
-"1394
-[u S29 . 1 `S20 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES29  1 e 1 @133 ]
-"1438
-[v _TRISB TRISB `VEuc  1 e 1 @134 ]
-"47 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\GPIO\GPIO.X\gpiomain2.c
+"1455
+[u S28 . 1 `S19 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES28  1 e 1 @134 ]
+"44 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\GPIO\GPIO.X\blink.c
 [v _main main `(v  1 e 1 0 ]
 {
-"48
-[v main@tiempo tiempo `i  1 a 2 5 ]
-"70
+"45
+[v main@tiempo tiempo `i  1 a 2 34 ]
+"57
 } 0
-"72
-[v _delay_ms delay_ms `(v  1 e 1 0 ]
+"44 D:\mplab\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
 {
+"47
+[v ___fttol@lval lval `ul  1 a 4 25 ]
+"46
+[v ___fttol@exp1 exp1 `uc  1 a 1 29 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 24 ]
+"44
+[v ___fttol@f1 f1 `f  1 p 3 16 ]
 "73
-[v delay_ms@i i `i  1 a 2 3 ]
-"72
-[v delay_ms@t t `i  1 p 2 0 ]
-"76
+} 0
+"62 D:\mplab\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+{
+"65
+[v ___ftmul@f3_as_product f3_as_product `um  1 a 3 11 ]
+"64
+[v ___ftmul@sign sign `uc  1 a 1 15 ]
+[v ___ftmul@cntr cntr `uc  1 a 1 14 ]
+[v ___ftmul@exp exp `uc  1 a 1 10 ]
+"62
+[v ___ftmul@f1 f1 `f  1 p 3 0 ]
+[v ___ftmul@f2 f2 `f  1 p 3 3 ]
+"157
+} 0
+"32 D:\mplab\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+{
+"34
+[v ___awtoft@sign sign `uc  1 a 1 13 ]
+"32
+[v ___awtoft@c c `i  1 p 2 8 ]
+"42
+} 0
+"62 D:\mplab\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+{
+[v ___ftpack@arg arg `um  1 p 3 0 ]
+[v ___ftpack@exp exp `uc  1 p 1 3 ]
+[v ___ftpack@sign sign `uc  1 p 1 4 ]
+"86
 } 0

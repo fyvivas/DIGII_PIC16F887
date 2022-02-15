@@ -1,0 +1,265 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 6 ]
+"6 D:\mplab\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"6 D:\mplab\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"32 D:\mplab\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+"62 D:\mplab\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 D:\mplab\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"56 D:\mplab\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 D:\mplab\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"44 D:\mplab\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"6 D:\mplab\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"4 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Recursos\Ultrasonic_HCSR04\Ultrasonic_HCSR04.X\HCSR04_lib.c
+[v _hcsr04_init hcsr04_init `(v  1 e 1 0 ]
+"13
+[v _hcsr04_read hcsr04_read `(i  1 e 2 0 ]
+"27 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Recursos\Ultrasonic_HCSR04\Ultrasonic_HCSR04.X\ultrasonic_main.c
+[v _Lcd_SetBit Lcd_SetBit `(v  1 e 1 0 ]
+"50
+[v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+"59
+[v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
+"65
+[v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
+"86
+[v _Lcd_Start Lcd_Start `(v  1 e 1 0 ]
+"104
+[v _Lcd_Print_Char Lcd_Print_Char `(v  1 e 1 0 ]
+"120
+[v _Lcd_Print_String Lcd_Print_String `(v  1 e 1 0 ]
+"133
+[v _main main `(i  1 e 2 0 ]
+"639 D:\mplab\include\pic16f887.h
+[v _TMR1L TMR1L `VEuc  1 e 1 @14 ]
+"645
+[v _TMR1H TMR1H `VEuc  1 e 1 @15 ]
+"651
+[v _T1CON T1CON `VEuc  1 e 1 @16 ]
+"1560
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"3844
+[v _RB1 RB1 `VEb  1 e 0 @49 ]
+"3846
+[v _RB2 RB2 `VEb  1 e 0 @50 ]
+"3898
+[v _RD2 RD2 `VEb  1 e 0 @66 ]
+"3900
+[v _RD3 RD3 `VEb  1 e 0 @67 ]
+"3902
+[v _RD4 RD4 `VEb  1 e 0 @68 ]
+"3904
+[v _RD5 RD5 `VEb  1 e 0 @69 ]
+"3906
+[v _RD6 RD6 `VEb  1 e 0 @70 ]
+"3908
+[v _RD7 RD7 `VEb  1 e 0 @71 ]
+"4024
+[v _TMR1ON TMR1ON `VEb  1 e 0 @128 ]
+"4056
+[v _TRISB0 TRISB0 `VEb  1 e 0 @1072 ]
+"4058
+[v _TRISB1 TRISB1 `VEb  1 e 0 @1073 ]
+"4060
+[v _TRISB2 TRISB2 `VEb  1 e 0 @1074 ]
+"4062
+[v _TRISB3 TRISB3 `VEb  1 e 0 @1075 ]
+"128 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Recursos\Ultrasonic_HCSR04\Ultrasonic_HCSR04.X\ultrasonic_main.c
+[v _time_taken time_taken `i  1 e 2 0 ]
+"129
+[v _distance distance `i  1 e 2 0 ]
+"130
+[v _t1 t1 `uc  1 e 1 0 ]
+[v _t2 t2 `uc  1 e 1 0 ]
+[v _t3 t3 `uc  1 e 1 0 ]
+[v _t4 t4 `uc  1 e 1 0 ]
+[v _t5 t5 `uc  1 e 1 0 ]
+"131
+[v _d1 d1 `uc  1 e 1 0 ]
+[v _d2 d2 `uc  1 e 1 0 ]
+[v _d3 d3 `uc  1 e 1 0 ]
+"133
+[v _main main `(i  1 e 2 0 ]
+{
+"201
+} 0
+"13 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Recursos\Ultrasonic_HCSR04\Ultrasonic_HCSR04.X\HCSR04_lib.c
+[v _hcsr04_read hcsr04_read `(i  1 e 2 0 ]
+{
+"15
+[v hcsr04_read@time_taken time_taken `i  1 a 2 3 ]
+"31
+} 0
+"4
+[v _hcsr04_init hcsr04_init `(v  1 e 1 0 ]
+{
+"11
+} 0
+"44 D:\mplab\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+{
+"47
+[v ___fttol@lval lval `ul  1 a 4 41 ]
+"46
+[v ___fttol@exp1 exp1 `uc  1 a 1 45 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 40 ]
+"44
+[v ___fttol@f1 f1 `f  1 p 3 32 ]
+"73
+} 0
+"62 D:\mplab\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+{
+"65
+[v ___ftmul@f3_as_product f3_as_product `um  1 a 3 11 ]
+"64
+[v ___ftmul@sign sign `uc  1 a 1 15 ]
+[v ___ftmul@cntr cntr `uc  1 a 1 14 ]
+[v ___ftmul@exp exp `uc  1 a 1 10 ]
+"62
+[v ___ftmul@f1 f1 `f  1 p 3 0 ]
+[v ___ftmul@f2 f2 `f  1 p 3 3 ]
+"157
+} 0
+"56 D:\mplab\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+{
+"60
+[v ___ftdiv@f3 f3 `f  1 a 3 27 ]
+"59
+[v ___ftdiv@sign sign `uc  1 a 1 31 ]
+[v ___ftdiv@exp exp `uc  1 a 1 30 ]
+[v ___ftdiv@cntr cntr `uc  1 a 1 26 ]
+"56
+[v ___ftdiv@f2 f2 `f  1 p 3 16 ]
+[v ___ftdiv@f1 f1 `f  1 p 3 19 ]
+"86
+} 0
+"32 D:\mplab\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+{
+"34
+[v ___awtoft@sign sign `uc  1 a 1 13 ]
+"32
+[v ___awtoft@c c `i  1 p 2 8 ]
+"42
+} 0
+"62 D:\mplab\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+{
+[v ___ftpack@arg arg `um  1 p 3 0 ]
+[v ___ftpack@exp exp `uc  1 p 1 3 ]
+[v ___ftpack@sign sign `uc  1 p 1 4 ]
+"86
+} 0
+"6 D:\mplab\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"11
+[v ___awmod@sign sign `uc  1 a 1 1 ]
+[v ___awmod@counter counter `uc  1 a 1 0 ]
+"6
+[v ___awmod@divisor divisor `i  1 p 2 9 ]
+[v ___awmod@dividend dividend `i  1 p 2 11 ]
+"35
+} 0
+"6 D:\mplab\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"11
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"12
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"6
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"42
+} 0
+"86 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\Recursos\Ultrasonic_HCSR04\Ultrasonic_HCSR04.X\ultrasonic_main.c
+[v _Lcd_Start Lcd_Start `(v  1 e 1 0 ]
+{
+"89
+[v Lcd_Start@i i `i  1 a 2 6 ]
+"102
+} 0
+"65
+[v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
+{
+[v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
+"67
+[v Lcd_Set_Cursor@temp temp `uc  1 a 1 10 ]
+[v Lcd_Set_Cursor@y y `uc  1 a 1 9 ]
+[v Lcd_Set_Cursor@z z `uc  1 a 1 8 ]
+"65
+[v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
+[v Lcd_Set_Cursor@b b `uc  1 p 1 4 ]
+"68
+[v Lcd_Set_Cursor@a a `uc  1 a 1 7 ]
+"84
+} 0
+"120
+[v _Lcd_Print_String Lcd_Print_String `(v  1 e 1 0 ]
+{
+[v Lcd_Print_String@a a `*.24uc  1 a 1 wreg ]
+"122
+[v Lcd_Print_String@i i `i  1 a 2 9 ]
+"120
+[v Lcd_Print_String@a a `*.24uc  1 a 1 wreg ]
+"123
+[v Lcd_Print_String@a a `*.24uc  1 a 1 11 ]
+"125
+} 0
+"104
+[v _Lcd_Print_Char Lcd_Print_Char `(v  1 e 1 0 ]
+{
+[v Lcd_Print_Char@data data `uc  1 a 1 wreg ]
+"116
+[v Lcd_Print_Char@i_66 i `i  1 a 2 7 ]
+"112
+[v Lcd_Print_Char@i i `i  1 a 2 5 ]
+"106
+[v Lcd_Print_Char@Upper_Nibble Upper_Nibble `uc  1 a 1 3 ]
+[v Lcd_Print_Char@Lower_Nibble Lower_Nibble `uc  1 a 1 2 ]
+"104
+[v Lcd_Print_Char@data data `uc  1 a 1 wreg ]
+"107
+[v Lcd_Print_Char@data data `uc  1 a 1 4 ]
+"118
+} 0
+"59
+[v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
+{
+"63
+} 0
+"50
+[v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+{
+[v Lcd_Cmd@a a `uc  1 a 1 wreg ]
+[v Lcd_Cmd@a a `uc  1 a 1 wreg ]
+"52
+[v Lcd_Cmd@a a `uc  1 a 1 3 ]
+"57
+} 0
+"27
+[v _Lcd_SetBit Lcd_SetBit `(v  1 e 1 0 ]
+{
+[v Lcd_SetBit@data_bit data_bit `uc  1 a 1 wreg ]
+[v Lcd_SetBit@data_bit data_bit `uc  1 a 1 wreg ]
+"29
+[v Lcd_SetBit@data_bit data_bit `uc  1 a 1 0 ]
+"48
+} 0

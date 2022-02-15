@@ -43,7 +43,7 @@ intended publication of this material.
 
 void main(void) {
     int tiempo=500;//se crea una variable de 16 bits para controlar 
-                   //los itervalos de intermitencia del led
+                  //los itervalos de intermitencia del led
     TRISBbits.TRISB0=0;//RB3 como salida digital
     
     while(1){

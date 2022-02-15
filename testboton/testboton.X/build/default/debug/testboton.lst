@@ -1,0 +1,259 @@
+
+
+Microchip MPLAB XC8 Assembler V2.36 build 20220127204148 
+                                                                                                           Mon Feb 14 13:49:50 2022
+
+
+     1                           	processor	16F887
+     2                           	pagewidth 132
+     3                           	psect	udata_shr,global,class=COMMON,space=1,delta=1,noexec
+     4                           	psect	udata,global,class=RAM,space=1,delta=1,noexec
+     5                           	psect	udata_bank0,global,class=BANK0,space=1,delta=1,noexec
+     6                           	psect	udata_bank1,global,class=BANK1,space=1,delta=1,noexec
+     7                           	psect	udata_bank2,global,class=BANK2,space=1,delta=1,noexec
+     8                           	psect	udata_bank3,global,class=BANK3,space=1,delta=1,noexec
+     9                           	psect	code,global,class=CODE,delta=2
+    10                           	psect	data,global,class=STRCODE,delta=2,noexec
+    11                           	psect	edata,global,class=EEDATA,space=3,delta=2,noexec
+    12                           	psect	Por_Vec,global,class=CODE,delta=2
+    13                           	psect	Isr_Data,global,class=COMMON,space=1,delta=1,noexec
+    14                           	psect	Isr_Vec,global,class=CODE,delta=2
+    15                           	psect	MainData,global,class=RAM,space=1,delta=1,noexec
+    16                           	psect	MainCode,global,class=CODE,delta=2
+    17                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    18  018D                     
+    19                           	psect	edata
+    20  0000                     stk_offset	set	0
+    21  0000                     auto_size	set	0
+    22                           
+    23                           ; stack_auto defines a symbol /name/_offset which equates to the
+    24                           ; stack offset of the auto object in question
+    25  0000                     
+    26                           ; stack_param defines a symbol /name/_offset which equates to the
+    27                           ; stack offset of the parameter object in question
+    28  0000                     
+    29                           ; alloc_stack adjusts the SP to allocate space for auto objects
+    30                           ; it also links in to the btemp symbol so that can be used
+    31  0000                     
+    32                           ; restore_stack adjusts the SP to remove all auto and parameter
+    33                           ; objects from the stack prior to returning from a function
+    34  0000                     	; Flash Program Memory Self Write Enable bits (Write protection off)
+    35                           
+    36                           ;#include "xc.inc"
+    37                           ; CONFIG1
+    38                           ; CONFIG2
+    39                           ;
+    40                           ; Define macros to help with
+    41                           ; bank selection
+    42                           ;
+    43                           ;
+    44                           ; Skip macros
+    45                           ;
+    46  0000                     
+    47                           	psect	Por_Vec
+    48  0000                     resetVec:	
+    49                           ;
+    50                           ; Power-On-Reset entry point
+    51                           ;
+    52                           
+    53  0000  120A  118A         	pagesel	Start
+    54  0002  2810               	goto	Start
+    55                           
+    56                           	psect	Isr_Data
+    57  0070                     WREG_save:	
+    58                           ;
+    59                           ; Data space use by interrupt handler to save context
+    60                           ;
+    61                           ;
+    62                           
+    63  0070                     	ds	1
+    64  0071                     STATUS_save:
+    65  0071                     	ds	1
+    66  0072                     PCLATH_save:
+    67  0072                     	ds	1
+    68                           
+    69                           	psect	Isr_Vec
+    70  0004                     IsrVec:	
+    71                           ;
+    72                           ; Interrupt vector and handler
+    73                           ;
+    74                           
+    75  0004  00F0               	movwf	WREG_save
+    76  0005  0E03               	swapf	3,w
+    77  0006  00F1               	movwf	STATUS_save
+    78  0007  080A               	movf	10,w
+    79  0008  00F2               	movwf	PCLATH_save
+    80  0009                     IsrHandler:	
+    81                           ;
+    82                           
+    83  0009                     IsrExit:	
+    84                           ;
+    85                           
+    86  0009  0872               	movf	PCLATH_save,w
+    87  000A  008A               	movwf	10
+    88  000B  0E71               	swapf	STATUS_save,w
+    89  000C  0083               	movwf	3
+    90  000D  0EF0               	swapf	WREG_save,f
+    91  000E  0E70               	swapf	WREG_save,w
+    92  000F  0009               	retfie	; Return from interrupt
+    93  0010                     Start:	
+    94                           ;
+    95                           ; Initialize the PIC hardware
+    96                           ;
+    97                           
+    98  0010  018B               	clrf	11	; Disable all interrupt sources
+    99  0011  1303 1683          	banksel	128
+   100  0013  018C               	clrf	140
+   101  0014  018D               	clrf	141
+   102  0015  3060               	movlw	96
+   103  0016  008F               	movwf	143	; Set internal oscillator at 4MHz
+   104  0017  3081               	movlw	129	; Pull-ups off, INT edge high to low, WDT prescale 1:1
+   105  0018  0081               	movwf	129	; TMR0 clock edge low to high, TMR0 clock = FCY, TMR0 prescale 1:4
+   106                           
+   107                           ; TIMER0 will assert the overflow flag every 256*4 (1024)
+   108                           ; instruction cycles, with a 4MHz oscilator this ia 1.024 milliseconds.
+   109  0019  30FF               	movlw	255	;
+   110  001A  0085               	movwf	133
+   111  001B  30FF               	movlw	255	;
+   112  001C  0086               	movwf	134
+   113  001D  30FF               	movlw	255	;
+   114  001E  0087               	movwf	135
+   115                           
+   116                           ; Set all ADC inputs for digital I/O
+   117  001F  1703 1683          	banksel	384
+   118  0021  3000               	movlw	0
+   119  0022  0088               	movwf	392
+   120  0023  3000               	movlw	0
+   121  0024  0089               	movwf	393
+   122  0025  1703 1283          	banksel	256
+   123  0027  0187               	clrf	263	; turn off comparator
+   124  0028  0188               	clrf	264	; turn off comparator
+   125  0029  1303 1683          	banksel	128
+   126  002B  3000               	movlw	0
+   127  002C  009F               	movwf	159
+   128  002D  0197               	clrf	151	; turn off voltage reference
+   129  002E  1303 1283          	banksel	0
+   130  0030  3080               	movlw	128
+   131  0031  009F               	movwf	31
+   132  0032  120A  118A         	pagesel	main
+   133  0034  2835               	goto	main
+   134                           
+   135                           	psect	MainData
+   136  0020                     count:	
+   137                           ;
+   138                           ; Main application data
+   139                           ;
+   140                           
+   141  0020                     	ds	1	;reserve 1 byte for TOMER0 rollover count
+   142  0020                     	; Registro F
+   143  0040                     
+   144                           	psect	MainCode
+   145  0035                     main:	
+   146                           ;
+   147                           ; Main application code
+   148                           ;
+   149                           ;
+   150                           ; Function to Wait for TIMER0 to rollover 250 times
+   151                           ;
+   152                           
+   153  0035  0000               	nop
+   154  0036  0000               	nop
+   155  0037  2838               	goto	INIT
+   156  0038                     INIT:
+   157                           
+   158                           ;BANK 0
+   159  0038  1283               	bcf	3,5
+   160  0039  1303               	bcf	3,6
+   161  003A  0186               	clrf	6	;PORTB = 0X00
+   162  003B  1683               	bsf	3,5	; (0x080)
+   163  003C  30F8               	movlw	248	;Set RB<7:3> as inputs and RB<2:0> as outputs
+   164  003D  0086               	movwf	134
+   165  003E  1703               	bsf	3,6
+   166  003F  302A               	movlw	42	;ANSELH = 0X2A
+   167  0040  0089               	movwf	393
+   168                           
+   169                           ;BANK 0
+   170  0041  1283               	bcf	3,5
+   171  0042  1303               	bcf	3,6
+   172  0043  2846               	goto	LED_VERDE
+   173  0044  2849               	goto	LED_ROJO
+   174  0045  284C               	goto	LED_AMARILLO
+   175  0046                     LED_VERDE:
+   176  0046  1506               	bsf	6,2
+   177  0047  1006               	bcf	6,0
+   178  0048  1086               	bcf	6,1
+   179  0049                     LED_ROJO:
+   180  0049  1406               	bsf	6,0
+   181  004A  1106               	bcf	6,2
+   182  004B  1086               	bcf	6,1
+   183  004C                     LED_AMARILLO:
+   184  004C  1486               	bsf	6,1
+   185  004D  1106               	bcf	6,2
+   186  004E  1006               	bcf	6,0
+   187  004F  3003               	movlw	3
+   188  0050  3E04               	addlw	4
+   189  0051  00A0               	movwf	32
+   190  0052  0000               	nop
+   191  0053  30B5               	movlw	181
+   192  0054  3AAF               	xorlw	175
+   193  0055  0000               	nop
+   194  0056  30B5               	movlw	181
+   195  0057  3AB5               	xorlw	181
+   196  0058  0000               	nop
+   197  0059  285A               	goto	result
+   198  005A                     result:
+   199  005A  00A0               	movwf	32
+   200                           
+   201                           	psect	config
+   202                           
+   203                           ;Config register CONFIG1 @ 0x2007
+   204                           ;	Oscillator Selection bits
+   205                           ;	FOSC = INTRC_NOCLKOUT, INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on R
+      +                          A7/OSC1/CLKIN
+   206                           ;	Watchdog Timer Enable bit
+   207                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
+   208                           ;	Power-up Timer Enable bit
+   209                           ;	PWRTE = OFF, PWRT disabled
+   210                           ;	RE3/MCLR pin function select bit
+   211                           ;	MCLRE = ON, RE3/MCLR pin function is MCLR
+   212                           ;	Code Protection bit
+   213                           ;	CP = OFF, Program memory code protection is disabled
+   214                           ;	Data Code Protection bit
+   215                           ;	CPD = OFF, Data memory code protection is disabled
+   216                           ;	Brown Out Reset Selection bits
+   217                           ;	BOREN = OFF, BOR disabled
+   218                           ;	Internal External Switchover bit
+   219                           ;	IESO = OFF, Internal/External Switchover mode is disabled
+   220                           ;	Fail-Safe Clock Monitor Enabled bit
+   221                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
+   222                           ;	Low Voltage Programming Enable bit
+   223                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
+   224                           ;	In-Circuit Debugger Mode bit
+   225                           ;	DEBUG = 0x1, unprogrammed default
+   226  2007                     	org	8199
+   227  2007  20F4               	dw	8436
+   228                           
+   229                           ;Config register CONFIG2 @ 0x2008
+   230                           ;	Brown-out Reset Selection bit
+   231                           ;	BOR4V = BOR21V, Brown-out Reset set to 2.1V
+   232                           ;	Flash Program Memory Self Write Enable bits
+   233                           ;	WRT = OFF, Write protection off
+   234  2008                     	org	8200
+   235  2008  3EFF               	dw	16127
+
+
+Microchip Technology PIC Macro Assembler V2.36 build 20220127204148 
+Symbol Table                                                                                               Mon Feb 14 13:49:50 2022
+
+                 LED_AMARILLO 004C                            var 0020                           PIE1 008C  
+                         PIE2 008D                           INIT 0038                           main 0035  
+                        ANSEL 0188                          PORTB 0006                          TRISA 0085  
+                        TRISB 0086                          TRISC 0087                          VRCON 0097  
+                        Start 0010                          count 0020                         ADCON0 001F  
+                       ADCON1 009F                         ANSELH 0189                         PCLATH 000A  
+                       INTCON 000B                         OSCCON 008F                         STATUS 0003  
+                       IsrVec 0004                         result 005A                        CM1CON0 0107  
+                      CM2CON0 0108                        IsrExit 0009                       LED_ROJO 0049  
+                   OPTION_REG 0081                       resetVec 0000                     IsrHandler 0009  
+                  PCLATH_save 0072            STATUS_RP0_POSITION 0005            STATUS_RP1_POSITION 0006  
+                    LED_VERDE 0046                      WREG_save 0070                    STATUS_save 0071  
