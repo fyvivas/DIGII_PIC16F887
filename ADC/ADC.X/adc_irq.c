@@ -26,7 +26,7 @@ void main(void) {
         ADCON0bits.ADON = 1; //  Habilita el Módulo AD.
         __delay_us(30);
         ADCON0bits.GO_DONE = 1; //  Inicia la COnversió AD.
-        while (ADCON0bits.GO_DONE); //  Espera a que termine la conversión AD.
+        //while (ADCON0bits.GO_DONE); //  Espera a que termine la conversión AD.
     }
 }
 

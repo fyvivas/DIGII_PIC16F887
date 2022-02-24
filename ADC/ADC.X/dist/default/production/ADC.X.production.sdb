@@ -3,16 +3,34 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 6 ]
-"7 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\ADC\ADC.X\adc_pol.c
+"11 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\ADC\ADC.X\adc_lm35.c
 [v _main main `(v  1 e 1 0 ]
+"6 D:\mplab\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"6 D:\mplab\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
 "62 D:\mplab\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 D:\mplab\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
+"56 D:\mplab\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 D:\mplab\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"44 D:\mplab\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"28 D:\mplab\sources\common\lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
 "6 D:\mplab\sources\pic\eeprom.c
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
+"6 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\ADC\ADC.X\adc_lm35.c
+[v _value_adc value_adc `ui  1 e 2 0 ]
+"8
+[v _temp temp `d  1 e 3 0 ]
+"9
+[v _lm35 lm35 `uc  1 e 1 0 ]
 "341 D:\mplab\include\pic16f887.h
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "1202
@@ -42,6 +60,8 @@
 [v _ADCON0bits ADCON0bits `VES57  1 e 1 @31 ]
 "1560
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"2907
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
 [s S22 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
@@ -55,8 +75,86 @@
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "4040
 [v _TRISA0 TRISA0 `VEb  1 e 0 @1064 ]
-"7 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\ADC\ADC.X\adc_pol.c
+"11 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\ADC\ADC.X\adc_lm35.c
 [v _main main `(v  1 e 1 0 ]
 {
-"28
+"40
+} 0
+"28 D:\mplab\sources\common\lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+{
+[v ___lwtoft@c c `ui  1 p 2 8 ]
+"31
+} 0
+"44 D:\mplab\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+{
+"47
+[v ___fttol@lval lval `ul  1 a 4 9 ]
+"46
+[v ___fttol@exp1 exp1 `uc  1 a 1 13 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 8 ]
+"44
+[v ___fttol@f1 f1 `f  1 p 3 0 ]
+"73
+} 0
+"62 D:\mplab\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+{
+"65
+[v ___ftmul@f3_as_product f3_as_product `um  1 a 3 5 ]
+"64
+[v ___ftmul@sign sign `uc  1 a 1 9 ]
+[v ___ftmul@cntr cntr `uc  1 a 1 8 ]
+[v ___ftmul@exp exp `uc  1 a 1 4 ]
+"62
+[v ___ftmul@f1 f1 `f  1 p 3 8 ]
+[v ___ftmul@f2 f2 `f  1 p 3 11 ]
+"157
+} 0
+"56 D:\mplab\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+{
+"60
+[v ___ftdiv@f3 f3 `f  1 a 3 21 ]
+"59
+[v ___ftdiv@sign sign `uc  1 a 1 25 ]
+[v ___ftdiv@exp exp `uc  1 a 1 24 ]
+[v ___ftdiv@cntr cntr `uc  1 a 1 20 ]
+"56
+[v ___ftdiv@f2 f2 `f  1 p 3 10 ]
+[v ___ftdiv@f1 f1 `f  1 p 3 13 ]
+"86
+} 0
+"62 D:\mplab\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+{
+[v ___ftpack@arg arg `um  1 p 3 0 ]
+[v ___ftpack@exp exp `uc  1 p 1 3 ]
+[v ___ftpack@sign sign `uc  1 p 1 4 ]
+"86
+} 0
+"6 D:\mplab\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"11
+[v ___awmod@sign sign `uc  1 a 1 6 ]
+[v ___awmod@counter counter `uc  1 a 1 5 ]
+"6
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
+"35
+} 0
+"6 D:\mplab\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"11
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"12
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"6
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"42
 } 0

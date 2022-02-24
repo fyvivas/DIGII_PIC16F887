@@ -1,5 +1,5 @@
 
-# 1 "adc_pol.c"
+# 1 "adc_lm35.c"
 
 # 26 "D:\mplab\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -2105,27 +2105,39 @@ extern __bit __timeout;
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
 
-# 7 "adc_pol.c"
+# 6 "adc_lm35.c"
+unsigned int value_adc = 0;
+unsigned char counter_digito = 0;
+double temp = 0.0;
+unsigned char lm35 = 0;
+
 void main(void) {
 TRISD = 0x00;
 TRISA0 = 1;
 ANSEL = 0x01;
 
-ADCON1bits.ADFM = 0;
+ADCON1bits.ADFM = 1;
 ADCON1bits.VCFG0 = 0;
 ADCON1bits.VCFG1 = 0;
 
 ADCON0bits.CHS = 0b0000;
 ADCON0bits.ADCS = 0b01;
 
-while (1) {
 ADCON0bits.ADON = 1;
 _delay((unsigned long)((30)*(4000000/4000000.0)));
-ADCON0bits.GO = 1;
-while (ADCON0bits.GO);
-ADCON0bits.ADON = 0;
-PORTD = ADRESH;
-_delay((unsigned long)((500)*(4000000/4000.0)));
-}
-}
 
+while (1) {
+
+ADCON0bits.GO_DONE = 1;
+while (ADCON0bits.GO_DONE);
+value_adc = ADRESH;
+value_adc = (value_adc << 8) + ADRESL;
+temp = value_adc;
+temp = (temp * 500.0) / 1023.0;
+lm35 = (char) temp;
+PORTD = (1 << 4) + (lm35 % 10);
+_delay((unsigned long)((50)*(4000000/4000.0)));
+PORTD = (1 << 5) + (lm35 / 10);
+_delay((unsigned long)((50)*(4000000/4000.0)));
+}
+}

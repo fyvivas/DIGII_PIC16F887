@@ -45,7 +45,7 @@ void main(void) {
         //  escribe el dato que se enviará a través de TX.
         TXREG = var;
         
-        /*
+        
         PORTCbits.RC0 = !PORTCbits.RC0;
         if (++var > 122) { //  0,1,2,3,4.......122 (z))
             while (!TXSTAbits.TRMT) {
@@ -53,7 +53,7 @@ void main(void) {
             TXREG = 13;
             var = 48;
         }
-        */
+        
         __delay_ms(100);
     }
 }

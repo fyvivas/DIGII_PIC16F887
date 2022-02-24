@@ -1,55 +1,46 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"4056 D:\mplab\include\pic16f887.h
-[v _TRISB0 `Vb ~T0 @X0 0 e@1072 ]
-"219
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"3373
-[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
-"451
-[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S16 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
-"461
-[s S17 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S17 . . TMR0IF . TMR0IE ]
-"450
-[u S15 `S16 1 `S17 1 ]
-[n S15 . . . ]
-"468
-[v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
-"1314
-[s S50 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S50 . PS PSA T0SE T0CS INTEDG nRBPU ]
-"1322
-[s S51 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S51 . PS0 PS1 PS2 ]
-"1313
-[u S49 `S50 1 `S51 1 ]
-[n S49 . . . ]
-"1328
-[v _OPTION_REGbits `VS49 ~T0 @X0 0 e@129 ]
-"55
-[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
-"1560
+"1560 D:\mplab\include\pic16f887.h
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
-"341
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
-"4048
-[v _TRISA4 `Vb ~T0 @X0 0 e@1068 ]
+"4040
+[v _TRISA0 `Vb ~T0 @X0 0 e@1064 ]
 "3312
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
+"2919
+[s S116 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S116 . . VCFG0 VCFG1 . ADFM ]
+"2918
+[u S115 `S116 1 ]
+[n S115 . . ]
+"2927
+[v _ADCON1bits `VS115 ~T0 @X0 0 e@159 ]
+"1214
+[s S45 :1 `uc 1 :1 `uc 1 :4 `uc 1 :2 `uc 1 ]
+[n S45 . ADON GO_nDONE CHS ADCS ]
+"1220
+[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S46 . . GO CHS0 CHS1 CHS2 CHS3 ADCS0 ADCS1 ]
+"1230
+[s S47 :1 `uc 1 :1 `uc 1 ]
+[n S47 . . nDONE ]
+"1234
+[s S48 :1 `uc 1 :1 `uc 1 ]
+[n S48 . . GO_DONE ]
+"1213
+[u S44 `S45 1 `S46 1 `S47 1 `S48 1 ]
+[n S44 . . . . . ]
+"1239
+[v _ADCON0bits `VS44 ~T0 @X0 0 e@31 ]
 [v F1637 `(v ~T0 @X0 1 tf1`ul ]
 "152 D:\mplab\include\pic.h
 [v __delay `JF1637 ~T0 @X0 0 e ]
 [p i __delay ]
-"164 D:\mplab\include\pic16f887.h
-[s S6 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S6 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"163
-[u S5 `S6 1 ]
-[n S5 . . ]
-"175
-[v _PORTAbits `VS5 ~T0 @X0 0 e@5 ]
+"1202 D:\mplab\include\pic16f887.h
+[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
+"2907
+[v _ADRESL `Vuc ~T0 @X0 0 e@158 ]
+"341
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -1534,7 +1525,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 192: extern unsigned char __resetbits;
 [; ;pic.h: 193: extern __bit __powerdown;
 [; ;pic.h: 194: extern __bit __timeout;
-"29 fuses.h
+"29 config.h
 [p x FOSC=XT ]
 "30
 [p x WDTE=OFF ]
@@ -1558,173 +1549,115 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x BOR4V=BOR40V ]
 "42
 [p x WRT=OFF ]
-"27 temporizador.c
-[v _count `uc ~T0 @X0 1 e ]
-[i _count
+"6 adc_lm35.c
+[v _value_adc `ui ~T0 @X0 1 e ]
+[i _value_adc
+-> -> 0 `i `ui
+]
+[; ;adc_lm35.c: 6: unsigned int value_adc = 0;
+"7
+[v _counter_digito `uc ~T0 @X0 1 e ]
+[i _counter_digito
 -> -> 0 `i `uc
 ]
-[; ;temporizador.c: 27: unsigned char count = 0;
-"28
-[v _count_ms `uc ~T0 @X0 1 e ]
-[i _count_ms
+[; ;adc_lm35.c: 7: unsigned char counter_digito = 0;
+"8
+[v _temp `d ~T0 @X0 1 e ]
+[i _temp
+.0.0
+]
+[; ;adc_lm35.c: 8: double temp = 0.0;
+"9
+[v _lm35 `uc ~T0 @X0 1 e ]
+[i _lm35
 -> -> 0 `i `uc
 ]
-[; ;temporizador.c: 28: unsigned char count_ms = 0;
-"30
-[v _main `(i ~T0 @X0 1 ef ]
+[; ;adc_lm35.c: 9: unsigned char lm35 = 0;
+"11
+[v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;temporizador.c: 30: int main(void) {
+[; ;adc_lm35.c: 11: void main(void) {
 [e :U _main ]
 [f ]
-[; ;temporizador.c: 32: TRISB0 = 0;
-"32
-[e = _TRISB0 -> -> 0 `i `b ]
-[; ;temporizador.c: 33: PORTB = 0;
-"33
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;temporizador.c: 34: ANSELH = 0x00;
-"34
-[e = _ANSELH -> -> 0 `i `uc ]
-[; ;temporizador.c: 36: INTCONbits.GIE = 0;
-"36
-[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
-[; ;temporizador.c: 37: OPTION_REGbits.T0CS = 0;
-"37
-[e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
-[; ;temporizador.c: 38: OPTION_REGbits.PSA = 0;
-"38
-[e = . . _OPTION_REGbits 0 1 -> -> 0 `i `uc ]
-[; ;temporizador.c: 39: OPTION_REGbits.PS = 0b111;
-"39
-[e = . . _OPTION_REGbits 0 0 -> -> 7 `i `uc ]
-[; ;temporizador.c: 40: TMR0 = 60;
-"40
-[e = _TMR0 -> -> 60 `i `uc ]
-[; ;temporizador.c: 42: TRISD = 0x00;
-"42
+[; ;adc_lm35.c: 12: TRISD = 0x00;
+"12
 [e = _TRISD -> -> 0 `i `uc ]
-[; ;temporizador.c: 43: PORTD = 0x00;
-"43
-[e = _PORTD -> -> 0 `i `uc ]
-[; ;temporizador.c: 45: TRISA4 = 1;
-"45
-[e = _TRISA4 -> -> 1 `i `b ]
-[; ;temporizador.c: 46: ANSEL = 0x00;
-"46
-[e = _ANSEL -> -> 0 `i `uc ]
-[; ;temporizador.c: 48: INTCONbits.T0IF = 0;
-"48
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;temporizador.c: 49: INTCONbits.T0IE = 1;
-"49
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-[; ;temporizador.c: 50: INTCONbits.PEIE = 1;
-"50
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;temporizador.c: 51: INTCONbits.GIE = 1;
-"51
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;temporizador.c: 53: while (1) {
-"53
+[; ;adc_lm35.c: 13: TRISA0 = 1;
+"13
+[e = _TRISA0 -> -> 1 `i `b ]
+[; ;adc_lm35.c: 14: ANSEL = 0x01;
+"14
+[e = _ANSEL -> -> 1 `i `uc ]
+[; ;adc_lm35.c: 16: ADCON1bits.ADFM = 1;
+"16
+[e = . . _ADCON1bits 0 4 -> -> 1 `i `uc ]
+[; ;adc_lm35.c: 17: ADCON1bits.VCFG0 = 0;
+"17
+[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
+[; ;adc_lm35.c: 18: ADCON1bits.VCFG1 = 0;
+"18
+[e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
+[; ;adc_lm35.c: 20: ADCON0bits.CHS = 0b0000;
+"20
+[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
+[; ;adc_lm35.c: 21: ADCON0bits.ADCS = 0b01;
+"21
+[e = . . _ADCON0bits 0 3 -> -> 1 `i `uc ]
+[; ;adc_lm35.c: 23: ADCON0bits.ADON = 1;
+"23
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+[; ;adc_lm35.c: 24: _delay((unsigned long)((30)*(4000000/4000000.0)));
+"24
+[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+[; ;adc_lm35.c: 26: while (1) {
+"26
 [e :U 140 ]
 {
-[; ;temporizador.c: 55: PORTD = (1 << 5) + (count % 10);
-"55
-[e = _PORTD -> + << -> 1 `i -> 5 `i % -> _count `i -> 10 `i `uc ]
-[; ;temporizador.c: 56: _delay((unsigned long)((20)*(4000000/4000.0)));
-"56
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;temporizador.c: 57: PORTD = (1 << 4) + (count / 10);
-"57
-[e = _PORTD -> + << -> 1 `i -> 4 `i / -> _count `i -> 10 `i `uc ]
-[; ;temporizador.c: 58: _delay((unsigned long)((20)*(4000000/4000.0)));
-"58
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;temporizador.c: 61: if (!PORTAbits.RA4) {
-"61
-[e $ ! ! != -> . . _PORTAbits 0 4 `i -> -> -> 0 `i `Vuc `i 142  ]
-{
-[; ;temporizador.c: 62: _delay((unsigned long)((50)*(4000000/4000.0)));
-"62
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;temporizador.c: 63: count = 0;
-"63
-[e = _count -> -> 0 `i `uc ]
-[; ;temporizador.c: 64: TMR0 = 60;
-"64
-[e = _TMR0 -> -> 60 `i `uc ]
-[; ;temporizador.c: 65: INTCONbits.T0IF = 0;
-"65
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"66
-}
+[; ;adc_lm35.c: 28: ADCON0bits.GO_DONE = 1;
+"28
+[e = . . _ADCON0bits 3 1 -> -> 1 `i `uc ]
+[; ;adc_lm35.c: 29: while (ADCON0bits.GO_DONE);
+"29
+[e $U 142  ]
+[e :U 143 ]
 [e :U 142 ]
-"67
+[e $ != -> . . _ADCON0bits 3 1 `i -> -> -> 0 `i `Vuc `i 143  ]
+[e :U 144 ]
+[; ;adc_lm35.c: 30: value_adc = ADRESH;
+"30
+[e = _value_adc -> _ADRESH `ui ]
+[; ;adc_lm35.c: 31: value_adc = (value_adc << 8) + ADRESL;
+"31
+[e = _value_adc + << _value_adc -> 8 `i -> _ADRESL `ui ]
+[; ;adc_lm35.c: 32: temp = value_adc;
+"32
+[e = _temp -> _value_adc `d ]
+[; ;adc_lm35.c: 33: temp = (temp * 500.0) / 1023.0;
+"33
+[e = _temp / * _temp .500.0 .1023.0 ]
+[; ;adc_lm35.c: 34: lm35 = (char) temp;
+"34
+[e = _lm35 -> _temp `uc ]
+[; ;adc_lm35.c: 35: PORTD = (1 << 4) + (lm35 % 10);
+"35
+[e = _PORTD -> + << -> 1 `i -> 4 `i % -> _lm35 `i -> 10 `i `uc ]
+[; ;adc_lm35.c: 36: _delay((unsigned long)((50)*(4000000/4000.0)));
+"36
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;adc_lm35.c: 37: PORTD = (1 << 5) + (lm35 / 10);
+"37
+[e = _PORTD -> + << -> 1 `i -> 5 `i / -> _lm35 `i -> 10 `i `uc ]
+[; ;adc_lm35.c: 38: _delay((unsigned long)((50)*(4000000/4000.0)));
+"38
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"39
 }
 [e :U 139 ]
-"53
+"26
 [e $U 140  ]
 [e :U 141 ]
-[; ;temporizador.c: 66: }
-[; ;temporizador.c: 67: }
-[; ;temporizador.c: 68: return 1;
-"68
-[e ) -> 1 `i ]
-[e $UE 138  ]
-[; ;temporizador.c: 69: }
-"69
+[; ;adc_lm35.c: 39: }
+[; ;adc_lm35.c: 40: }
+"40
 [e :UE 138 ]
-}
-[v F1653 `(v ~T0 @X0 1 tf ]
-"71
-[v _ISR_TIMER_0 `IF1653 ~T0 @X0 1 e ]
-{
-[; ;temporizador.c: 71: void interrupt ISR_TIMER_0(void) {
-[e :U _ISR_TIMER_0 ]
-[f ]
-[; ;temporizador.c: 72: if (INTCONbits.T0IE && INTCONbits.T0IF) {
-"72
-[e $ ! && != -> . . _INTCONbits 0 5 `i -> -> -> 0 `i `Vuc `i != -> . . _INTCONbits 0 2 `i -> -> -> 0 `i `Vuc `i 144  ]
-{
-[; ;temporizador.c: 73: PORTB = ~PORTB;
-"73
-[e = _PORTB -> ~ -> _PORTB `i `uc ]
-[; ;temporizador.c: 74: count_ms++;
-"74
-[e ++ _count_ms -> -> 1 `i `uc ]
-[; ;temporizador.c: 75: if(count_ms == 20){
-"75
-[e $ ! == -> _count_ms `i -> 20 `i 145  ]
-{
-[; ;temporizador.c: 76: if (++count == 100) {
-"76
-[e $ ! == -> =+ _count -> -> 1 `i `uc `i -> 100 `i 146  ]
-{
-[; ;temporizador.c: 77: count = 0;
-"77
-[e = _count -> -> 0 `i `uc ]
-"78
-}
-[e :U 146 ]
-[; ;temporizador.c: 78: }
-[; ;temporizador.c: 79: count_ms = 0;
-"79
-[e = _count_ms -> -> 0 `i `uc ]
-"80
-}
-[e :U 145 ]
-[; ;temporizador.c: 80: }
-[; ;temporizador.c: 81: TMR0 = 60;
-"81
-[e = _TMR0 -> -> 60 `i `uc ]
-[; ;temporizador.c: 82: INTCONbits.T0IF = 0;
-"82
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"83
-}
-[e :U 144 ]
-[; ;temporizador.c: 83: }
-[; ;temporizador.c: 84: }
-"84
-[e :UE 143 ]
 }

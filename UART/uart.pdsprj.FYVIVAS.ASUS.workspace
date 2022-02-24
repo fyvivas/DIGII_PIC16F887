@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <WORKSPACE>
  <FRAME activewindow="0">
-  <PLACEMENT>2c00000002000000030000000083ffff0083ffffffffffffffffffffbc050000000000000c0a0000c6020000</PLACEMENT>
+  <PLACEMENT>2c0000000200000003000000ffffffffffffffffffffffffffffffffbc050000000000000c0a0000c6020000</PLACEMENT>
   <WINDOW type="default" module="ISIS"/>
  </FRAME>
  <MODULE name="VSMDEBUG">
@@ -183,25 +183,88 @@
    <POPUP w="695" x="1668" flags="00000001" y="166" h="453" pid="0" iid="18">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="695" x="2143" flags="00000001" y="212" h="453" pid="0" iid="6">
+   <POPUP w="695" x="2031" flags="00000001" y="212" h="453" pid="0" iid="6">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="450" x="1535" flags="00008023" y="321" h="250" pid="0" iid="5">
+   <POPUP w="627" x="1535" flags="00000023" y="321" h="250" pid="0" iid="5">
     <PROPERTIES>
      <ITEM name="AutoEcho">0</ITEM>
      <ITEM name="HexMode">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="450" x="2187" flags="00000023" y="319" h="250" pid="0" iid="9">
+   <POPUP w="450" x="1729" flags="00008023" y="369" h="250" pid="0" iid="9">
     <PROPERTIES>
-     <ITEM name="AutoEcho">0</ITEM>
+     <ITEM name="AutoEcho">1</ITEM>
      <ITEM name="HexMode">0</ITEM>
     </PROPERTIES>
    </POPUP>
    <POPUP w="450" x="2208" flags="00000023" y="397" h="250" pid="0" iid="12">
     <PROPERTIES>
-     <ITEM name="AutoEcho">0</ITEM>
+     <ITEM name="AutoEcho">1</ITEM>
      <ITEM name="HexMode">0</ITEM>
+    </PROPERTIES>
+   </POPUP>
+   <POPUP w="226" x="1434" flags="00000008" y="129" h="215" pid="3" iid="14">
+    <PROPERTIES/>
+   </POPUP>
+   <POPUP w="8" x="1454" flags="0000000a" y="149" h="1" pid="10" iid="14">
+    <PROPERTIES>
+     <ITEM name="DataType">2</ITEM>
+     <ITEM name="DispChars">Yes</ITEM>
+     <ITEM name="DispFormat">2</ITEM>
+     <ITEM name="ShowChanges">Yes</ITEM>
+     <ITEM name="ShowToolTips">Yes</ITEM>
+     <ITEM name="TopLineAddress">00000000</ITEM>
+    </PROPERTIES>
+   </POPUP>
+   <POPUP w="8" x="1474" flags="0000000a" y="169" h="32" pid="6" iid="14">
+    <PROPERTIES>
+     <ITEM name="DataType">2</ITEM>
+     <ITEM name="DispChars">Yes</ITEM>
+     <ITEM name="DispFormat">2</ITEM>
+     <ITEM name="ShowChanges">Yes</ITEM>
+     <ITEM name="ShowToolTips">Yes</ITEM>
+     <ITEM name="TopLineAddress">00000000</ITEM>
+    </PROPERTIES>
+   </POPUP>
+   <POPUP w="16" x="1494" flags="0000000a" y="189" h="32" pid="7" iid="14">
+    <PROPERTIES>
+     <ITEM name="DataType">2</ITEM>
+     <ITEM name="DispChars">Yes</ITEM>
+     <ITEM name="DispFormat">2</ITEM>
+     <ITEM name="ShowChanges">Yes</ITEM>
+     <ITEM name="ShowToolTips">Yes</ITEM>
+     <ITEM name="TopLineAddress">00000000</ITEM>
+    </PROPERTIES>
+   </POPUP>
+   <POPUP w="16" x="1514" flags="80000000" y="209" h="32" pid="14" iid="14">
+    <PROPERTIES>
+     <ITEM name="DataType">2</ITEM>
+     <ITEM name="DispChars">Yes</ITEM>
+     <ITEM name="DispFormat">2</ITEM>
+     <ITEM name="ShowChanges">Yes</ITEM>
+     <ITEM name="ShowToolTips">Yes</ITEM>
+     <ITEM name="TopLineAddress">00000000</ITEM>
+    </PROPERTIES>
+   </POPUP>
+   <POPUP w="16" x="1534" flags="0000000a" y="229" h="32" pid="4" iid="14">
+    <PROPERTIES>
+     <ITEM name="DataType">2</ITEM>
+     <ITEM name="DispChars">Yes</ITEM>
+     <ITEM name="DispFormat">2</ITEM>
+     <ITEM name="ShowChanges">Yes</ITEM>
+     <ITEM name="ShowToolTips">Yes</ITEM>
+     <ITEM name="TopLineAddress">00000100</ITEM>
+    </PROPERTIES>
+   </POPUP>
+   <POPUP w="16" x="1554" flags="0000000a" y="249" h="8" pid="13" iid="14">
+    <PROPERTIES>
+     <ITEM name="DataType">2</ITEM>
+     <ITEM name="DispChars">Yes</ITEM>
+     <ITEM name="DispFormat">2</ITEM>
+     <ITEM name="ShowChanges">Yes</ITEM>
+     <ITEM name="ShowToolTips">Yes</ITEM>
+     <ITEM name="TopLineAddress">00000020</ITEM>
     </PROPERTIES>
    </POPUP>
   </PWI>
