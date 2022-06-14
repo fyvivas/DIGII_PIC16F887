@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=D:\mplab\dat\en_msgs.txt -cs \
   -h+dist/default/production\ADC.X.production.sym \
   --cmf=dist/default/production\ADC.X.production.cmf -z -Q16F887 \
-  -oC:\Users\ASUS\AppData\Local\Temp\sdhs.2 \
+  -oC:\Users\ASUS\AppData\Local\Temp\s3k4.2 \
   -Mdist/default/production/ADC.X.production.map -E1 -ver=XC8 \
   -ASTACK=0110h-016fh -pstack=STACK -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh \
   -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -pfunctab=CODE -ACONFIG=02007h-02008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\ASUS\AppData\Local\Temp\sdhs.obj \
+  -DENTRY=2 -k C:\Users\ASUS\AppData\Local\Temp\s3k4.obj \
   dist/default/production\ADC.X.production.obj 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ASUS\AppData\Local\Temp\sdhs.obj
+C:\Users\ASUS\AppData\Local\Temp\s3k4.obj
                 end_init                              0        0        3        0       0
                 config                             2007     2007        2     400E       0
 dist/default/production\ADC.X.production.obj
@@ -163,18 +163,19 @@ _ADCON1bits              (abs)        009F
 _ADRESH                  (abs)        001E
 _ADRESL                  (abs)        009E
 _ANSEL                   (abs)        0188
+_OSCCON                  (abs)        008F
 _PORTD                   (abs)        0008
 _TRISA0                  (abs)        0428
 _TRISD                   (abs)        0088
 __CFG_BOR4V$BOR40V       (abs)        0000
-__CFG_BOREN$ON           (abs)        0000
+__CFG_BOREN$OFF          (abs)        0000
 __CFG_CP$OFF             (abs)        0000
 __CFG_CPD$OFF            (abs)        0000
-__CFG_FCMEN$ON           (abs)        0000
-__CFG_FOSC$XT            (abs)        0000
-__CFG_IESO$ON            (abs)        0000
-__CFG_LVP$ON             (abs)        0000
-__CFG_MCLRE$ON           (abs)        0000
+__CFG_FCMEN$OFF          (abs)        0000
+__CFG_FOSC$INTRC_CLKOUT  (abs)        0000
+__CFG_IESO$OFF           (abs)        0000
+__CFG_LVP$OFF            (abs)        0000
+__CFG_MCLRE$OFF          (abs)        0000
 __CFG_PWRTE$OFF          (abs)        0000
 __CFG_WDTE$OFF           (abs)        0000
 __CFG_WRT$OFF            (abs)        0000
@@ -342,7 +343,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 11 in file "adc_lm35.c"
+		line 10 in file "adc_lm35.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type

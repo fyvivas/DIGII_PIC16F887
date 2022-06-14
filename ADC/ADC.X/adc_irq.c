@@ -1,10 +1,11 @@
 #include    <xc.h>
 #include    <pic16f887.h>
-
 #include    "config.h"
 
 
 void main(void) {
+    //OSCCON = 0b01110001;
+    OSCCON = 0x71;
     TRISD = 0x00;// salida puerto D
     TRISA0 = 1;
     ANSEL = 0x00; //  Configura el Puerto como Entrada Analógica.
@@ -36,8 +37,6 @@ void interrupt adc_irq(void){
         PORTD = ADRESH;
         PIR1bits.ADIF=0;//El bit 6 del registro PIR a 0 para que vuelvan a ocurrir mas interrupciones del ADC
     }
-} 
-    
 }
 
 

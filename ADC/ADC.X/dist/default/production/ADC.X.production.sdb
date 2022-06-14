@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 6 ]
-"11 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\ADC\ADC.X\adc_lm35.c
+"10 C:\Users\ASUS\Documents\GitHub\DIGII_PIC16F887\ADC\ADC.X\adc_lm35.c
 [v _main main `(v  1 e 1 0 ]
 "6 D:\mplab\sources\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -25,23 +25,23 @@
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"6 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\ADC\ADC.X\adc_lm35.c
+"5 C:\Users\ASUS\Documents\GitHub\DIGII_PIC16F887\ADC\ADC.X\adc_lm35.c
 [v _value_adc value_adc `ui  1 e 2 0 ]
-"8
+"7
 [v _temp temp `d  1 e 3 0 ]
-"9
+"8
 [v _lm35 lm35 `uc  1 e 1 0 ]
 "341 D:\mplab\include\pic16f887.h
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "1202
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
-[s S37 . 1 `uc 1 ADON 1 0 :1:0 
+[s S38 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1239
-[s S42 . 1 `uc 1 . 1 0 :1:0 
+[s S43 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -50,35 +50,37 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S51 . 1 `uc 1 . 1 0 :1:0 
+[s S52 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S54 . 1 `uc 1 . 1 0 :1:0 
+[s S55 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S57 . 1 `S37 1 . 1 0 `S42 1 . 1 0 `S51 1 . 1 0 `S54 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES57  1 e 1 @31 ]
+[u S58 . 1 `S38 1 . 1 0 `S43 1 . 1 0 `S52 1 . 1 0 `S55 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES58  1 e 1 @31 ]
 "1560
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"1815
+[v _OSCCON OSCCON `VEuc  1 e 1 @143 ]
 "2907
 [v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
-[s S22 . 1 `uc 1 . 1 0 :4:0 
+[s S23 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2927
-[u S28 . 1 `S22 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES28  1 e 1 @159 ]
+[u S29 . 1 `S23 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES29  1 e 1 @159 ]
 "3312
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "4040
 [v _TRISA0 TRISA0 `VEb  1 e 0 @1064 ]
-"11 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\ADC\ADC.X\adc_lm35.c
+"10 C:\Users\ASUS\Documents\GitHub\DIGII_PIC16F887\ADC\ADC.X\adc_lm35.c
 [v _main main `(v  1 e 1 0 ]
 {
-"40
+"41
 } 0
 "28 D:\mplab\sources\common\lwtoft.c
 [v ___lwtoft __lwtoft `(f  1 e 3 0 ]

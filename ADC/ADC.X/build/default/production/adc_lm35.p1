@@ -1,6 +1,8 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"1560 D:\mplab\include\pic16f887.h
+"1815 D:\mplab\include\pic16f887.h
+[v _OSCCON `Vuc ~T0 @X0 0 e@143 ]
+"1560
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
 "4040
 [v _TRISA0 `Vb ~T0 @X0 0 e@1064 ]
@@ -1526,138 +1528,141 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 193: extern __bit __powerdown;
 [; ;pic.h: 194: extern __bit __timeout;
 "29 config.h
-[p x FOSC=XT ]
+[p x FOSC=INTRC_CLKOUT ]
 "30
 [p x WDTE=OFF ]
 "31
 [p x PWRTE=OFF ]
 "32
-[p x MCLRE=ON ]
+[p x MCLRE=OFF ]
 "33
 [p x CP=OFF ]
 "34
 [p x CPD=OFF ]
 "35
-[p x BOREN=ON ]
+[p x BOREN=OFF ]
 "36
-[p x IESO=ON ]
+[p x IESO=OFF ]
 "37
-[p x FCMEN=ON ]
+[p x FCMEN=OFF ]
 "38
-[p x LVP=ON ]
+[p x LVP=OFF ]
 "41
 [p x BOR4V=BOR40V ]
 "42
 [p x WRT=OFF ]
-"6 adc_lm35.c
+"5 adc_lm35.c
 [v _value_adc `ui ~T0 @X0 1 e ]
 [i _value_adc
 -> -> 0 `i `ui
 ]
-[; ;adc_lm35.c: 6: unsigned int value_adc = 0;
-"7
+[; ;adc_lm35.c: 5: unsigned int value_adc = 0;
+"6
 [v _counter_digito `uc ~T0 @X0 1 e ]
 [i _counter_digito
 -> -> 0 `i `uc
 ]
-[; ;adc_lm35.c: 7: unsigned char counter_digito = 0;
-"8
+[; ;adc_lm35.c: 6: unsigned char counter_digito = 0;
+"7
 [v _temp `d ~T0 @X0 1 e ]
 [i _temp
 .0.0
 ]
-[; ;adc_lm35.c: 8: double temp = 0.0;
-"9
+[; ;adc_lm35.c: 7: double temp = 0.0;
+"8
 [v _lm35 `uc ~T0 @X0 1 e ]
 [i _lm35
 -> -> 0 `i `uc
 ]
-[; ;adc_lm35.c: 9: unsigned char lm35 = 0;
-"11
+[; ;adc_lm35.c: 8: unsigned char lm35 = 0;
+"10
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;adc_lm35.c: 11: void main(void) {
+[; ;adc_lm35.c: 10: void main(void) {
 [e :U _main ]
 [f ]
-[; ;adc_lm35.c: 12: TRISD = 0x00;
+[; ;adc_lm35.c: 12: OSCCON = 0x71;
 "12
-[e = _TRISD -> -> 0 `i `uc ]
-[; ;adc_lm35.c: 13: TRISA0 = 1;
+[e = _OSCCON -> -> 113 `i `uc ]
+[; ;adc_lm35.c: 13: TRISD = 0x00;
 "13
-[e = _TRISA0 -> -> 1 `i `b ]
-[; ;adc_lm35.c: 14: ANSEL = 0x01;
+[e = _TRISD -> -> 0 `i `uc ]
+[; ;adc_lm35.c: 14: TRISA0 = 1;
 "14
+[e = _TRISA0 -> -> 1 `i `b ]
+[; ;adc_lm35.c: 15: ANSEL = 0x01;
+"15
 [e = _ANSEL -> -> 1 `i `uc ]
-[; ;adc_lm35.c: 16: ADCON1bits.ADFM = 1;
-"16
-[e = . . _ADCON1bits 0 4 -> -> 1 `i `uc ]
-[; ;adc_lm35.c: 17: ADCON1bits.VCFG0 = 0;
+[; ;adc_lm35.c: 17: ADCON1bits.ADFM = 1;
 "17
-[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
-[; ;adc_lm35.c: 18: ADCON1bits.VCFG1 = 0;
+[e = . . _ADCON1bits 0 4 -> -> 1 `i `uc ]
+[; ;adc_lm35.c: 18: ADCON1bits.VCFG0 = 0;
 "18
+[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
+[; ;adc_lm35.c: 19: ADCON1bits.VCFG1 = 0;
+"19
 [e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
-[; ;adc_lm35.c: 20: ADCON0bits.CHS = 0b0000;
-"20
-[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
-[; ;adc_lm35.c: 21: ADCON0bits.ADCS = 0b01;
+[; ;adc_lm35.c: 21: ADCON0bits.CHS = 0b0000;
 "21
+[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
+[; ;adc_lm35.c: 22: ADCON0bits.ADCS = 0b01;
+"22
 [e = . . _ADCON0bits 0 3 -> -> 1 `i `uc ]
-[; ;adc_lm35.c: 23: ADCON0bits.ADON = 1;
-"23
-[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-[; ;adc_lm35.c: 24: _delay((unsigned long)((30)*(4000000/4000000.0)));
+[; ;adc_lm35.c: 24: ADCON0bits.ADON = 1;
 "24
-[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-[; ;adc_lm35.c: 26: while (1) {
-"26
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+[; ;adc_lm35.c: 25: _delay((unsigned long)((30)*(8000000/4000000.0)));
+"25
+[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;adc_lm35.c: 27: while (1) {
+"27
 [e :U 140 ]
 {
-[; ;adc_lm35.c: 28: ADCON0bits.GO_DONE = 1;
-"28
-[e = . . _ADCON0bits 3 1 -> -> 1 `i `uc ]
-[; ;adc_lm35.c: 29: while (ADCON0bits.GO_DONE);
+[; ;adc_lm35.c: 29: ADCON0bits.GO_DONE = 1;
 "29
+[e = . . _ADCON0bits 3 1 -> -> 1 `i `uc ]
+[; ;adc_lm35.c: 30: while (ADCON0bits.GO_DONE);
+"30
 [e $U 142  ]
 [e :U 143 ]
 [e :U 142 ]
 [e $ != -> . . _ADCON0bits 3 1 `i -> -> -> 0 `i `Vuc `i 143  ]
 [e :U 144 ]
-[; ;adc_lm35.c: 30: value_adc = ADRESH;
-"30
-[e = _value_adc -> _ADRESH `ui ]
-[; ;adc_lm35.c: 31: value_adc = (value_adc << 8) + ADRESL;
+[; ;adc_lm35.c: 31: value_adc = ADRESH;
 "31
-[e = _value_adc + << _value_adc -> 8 `i -> _ADRESL `ui ]
-[; ;adc_lm35.c: 32: temp = value_adc;
+[e = _value_adc -> _ADRESH `ui ]
+[; ;adc_lm35.c: 32: value_adc = (value_adc << 8) + ADRESL;
 "32
-[e = _temp -> _value_adc `d ]
-[; ;adc_lm35.c: 33: temp = (temp * 500.0) / 1023.0;
+[e = _value_adc + << _value_adc -> 8 `i -> _ADRESL `ui ]
+[; ;adc_lm35.c: 33: temp = value_adc;
 "33
-[e = _temp / * _temp .500.0 .1023.0 ]
-[; ;adc_lm35.c: 34: lm35 = (char) temp;
+[e = _temp -> _value_adc `d ]
+[; ;adc_lm35.c: 34: temp = (temp * 500.0) / 1023.0;
 "34
-[e = _lm35 -> _temp `uc ]
-[; ;adc_lm35.c: 35: PORTD = (1 << 4) + (lm35 % 10);
+[e = _temp / * _temp .500.0 .1023.0 ]
+[; ;adc_lm35.c: 35: lm35 = (char) temp;
 "35
-[e = _PORTD -> + << -> 1 `i -> 4 `i % -> _lm35 `i -> 10 `i `uc ]
-[; ;adc_lm35.c: 36: _delay((unsigned long)((50)*(4000000/4000.0)));
+[e = _lm35 -> _temp `uc ]
+[; ;adc_lm35.c: 36: PORTD = (1 << 4) + (lm35 % 10);
 "36
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;adc_lm35.c: 37: PORTD = (1 << 5) + (lm35 / 10);
+[e = _PORTD -> + << -> 1 `i -> 4 `i % -> _lm35 `i -> 10 `i `uc ]
+[; ;adc_lm35.c: 37: _delay((unsigned long)((50)*(8000000/4000.0)));
 "37
-[e = _PORTD -> + << -> 1 `i -> 5 `i / -> _lm35 `i -> 10 `i `uc ]
-[; ;adc_lm35.c: 38: _delay((unsigned long)((50)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;adc_lm35.c: 38: PORTD = (1 << 5) + (lm35 / 10);
 "38
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[e = _PORTD -> + << -> 1 `i -> 5 `i / -> _lm35 `i -> 10 `i `uc ]
+[; ;adc_lm35.c: 39: _delay((unsigned long)((50)*(8000000/4000.0)));
 "39
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"40
 }
 [e :U 139 ]
-"26
+"27
 [e $U 140  ]
 [e :U 141 ]
-[; ;adc_lm35.c: 39: }
 [; ;adc_lm35.c: 40: }
-"40
+[; ;adc_lm35.c: 41: }
+"41
 [e :UE 138 ]
 }

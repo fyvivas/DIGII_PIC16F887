@@ -2090,28 +2090,30 @@ extern __bit __timeout;
 
 
 # 29 "config.h"
-#pragma config FOSC = XT
+#pragma config FOSC = INTRC_CLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
-#pragma config MCLRE = ON
+#pragma config MCLRE = OFF
 #pragma config CP = OFF
 #pragma config CPD = OFF
-#pragma config BOREN = ON
-#pragma config IESO = ON
-#pragma config FCMEN = ON
-#pragma config LVP = ON
+#pragma config BOREN = OFF
+#pragma config IESO = OFF
+#pragma config FCMEN = OFF
+#pragma config LVP = OFF
 
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
 
-# 6 "adc_lm35.c"
+# 5 "adc_lm35.c"
 unsigned int value_adc = 0;
 unsigned char counter_digito = 0;
 double temp = 0.0;
 unsigned char lm35 = 0;
 
 void main(void) {
+
+OSCCON = 0x71;
 TRISD = 0x00;
 TRISA0 = 1;
 ANSEL = 0x01;
@@ -2124,7 +2126,7 @@ ADCON0bits.CHS = 0b0000;
 ADCON0bits.ADCS = 0b01;
 
 ADCON0bits.ADON = 1;
-_delay((unsigned long)((30)*(4000000/4000000.0)));
+_delay((unsigned long)((30)*(8000000/4000000.0)));
 
 while (1) {
 
@@ -2136,8 +2138,8 @@ temp = value_adc;
 temp = (temp * 500.0) / 1023.0;
 lm35 = (char) temp;
 PORTD = (1 << 4) + (lm35 % 10);
-_delay((unsigned long)((50)*(4000000/4000.0)));
+_delay((unsigned long)((50)*(8000000/4000.0)));
 PORTD = (1 << 5) + (lm35 / 10);
-_delay((unsigned long)((50)*(4000000/4000.0)));
+_delay((unsigned long)((50)*(8000000/4000.0)));
 }
 }

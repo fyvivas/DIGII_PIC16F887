@@ -1,10 +1,11 @@
 #include    <xc.h>
 #include    <pic16f887.h>
-
 #include    "config.h"
 
 
 void main(void) {
+    //OSCCON = 0b01110001;
+    OSCCON = 0x71;
     TRISD = 0x00;// salida puerto D
     TRISA0 = 1;
     ANSEL = 0x01; //  Configura el Puerto como Entrada Analógica.
