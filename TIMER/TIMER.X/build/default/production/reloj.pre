@@ -2130,13 +2130,13 @@ ANSEL = 0x00;
 
 while (1) {
 if (!PORTAbits.RA0) {
-_delay((unsigned long)((50)*(4000000/4000.0)));
+_delay((unsigned long)((50)*(8000000/4000.0)));
 flag_run = !flag_run;
 while (!PORTAbits.RA0);
-_delay((unsigned long)((50)*(4000000/4000.0)));
+_delay((unsigned long)((50)*(8000000/4000.0)));
 }
 if (!PORTAbits.RA1) {
-_delay((unsigned long)((50)*(4000000/4000.0)));
+_delay((unsigned long)((50)*(8000000/4000.0)));
 counter_segundos = 0;
 flag_run = 0;
 }

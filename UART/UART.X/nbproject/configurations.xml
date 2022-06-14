@@ -141,7 +141,7 @@
         <property key="stack-size-main" value="auto"/>
         <property key="stack-type" value="compiled"/>
       </XC8-config-global>
-      <item path="bluetooth.c" ex="false" overriding="false">
+      <item path="bluetooth.c" ex="true" overriding="false">
         <HI-TECH-COMP>
         </HI-TECH-COMP>
         <HI-TECH-LINK>
@@ -151,7 +151,7 @@
         <XC8-config-global>
         </XC8-config-global>
       </item>
-      <item path="uart_lm35.c" ex="true" overriding="false">
+      <item path="uart_lm35.c" ex="false" overriding="false">
         <HI-TECH-COMP>
         </HI-TECH-COMP>
         <HI-TECH-LINK>

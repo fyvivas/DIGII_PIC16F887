@@ -24,7 +24,7 @@ intended publication of this material.
 
 #define     BAUD        9600
 
-unsigned char var = 0x01; //0x30 en hexadecimal, 48 en decimal
+unsigned char var = 0x31; //0x30 en hexadecimal, 48 en decimal
 
 void main(void) {
     //Configura UART a 9600 baudios
@@ -46,13 +46,13 @@ void main(void) {
         TXREG = var;
         
         
-        PORTCbits.RC0 = !PORTCbits.RC0;
-        if (++var > 122) { //  0,1,2,3,4.......122 (z))
+        //PORTCbits.RC0 = !PORTCbits.RC0;
+        //if (++var > 122) { //  0,1,2,3,4.......122 (z))
             while (!TXSTAbits.TRMT) {
             }
             TXREG = 13;
-            var = 48;
-        }
+        //    var = 48;
+        //}
         
         __delay_ms(100);
     }

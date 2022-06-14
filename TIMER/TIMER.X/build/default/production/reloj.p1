@@ -1655,9 +1655,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "48
 [e $ ! ! != -> . . _PORTAbits 0 0 `i -> -> -> 0 `i `Vuc `i 142  ]
 {
-[; ;reloj.c: 49: _delay((unsigned long)((50)*(4000000/4000.0)));
+[; ;reloj.c: 49: _delay((unsigned long)((50)*(8000000/4000.0)));
 "49
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 [; ;reloj.c: 50: flag_run = !flag_run;
 "50
 [e = _flag_run -> -> ! != -> _flag_run `i -> -> -> 0 `i `uc `i `i `uc ]
@@ -1668,9 +1668,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 143 ]
 [e $ ! != -> . . _PORTAbits 0 0 `i -> -> -> 0 `i `Vuc `i 144  ]
 [e :U 145 ]
-[; ;reloj.c: 52: _delay((unsigned long)((50)*(4000000/4000.0)));
+[; ;reloj.c: 52: _delay((unsigned long)((50)*(8000000/4000.0)));
 "52
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "53
 }
 [e :U 142 ]
@@ -1679,9 +1679,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "54
 [e $ ! ! != -> . . _PORTAbits 0 1 `i -> -> -> 0 `i `Vuc `i 146  ]
 {
-[; ;reloj.c: 55: _delay((unsigned long)((50)*(4000000/4000.0)));
+[; ;reloj.c: 55: _delay((unsigned long)((50)*(8000000/4000.0)));
 "55
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 [; ;reloj.c: 56: counter_segundos = 0;
 "56
 [e = _counter_segundos -> -> 0 `i `ui ]

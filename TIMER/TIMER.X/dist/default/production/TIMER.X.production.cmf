@@ -11,20 +11,20 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
+$C:\Users\ASUS\AppData\Local\Temp\s8l0.obj
+reset_vec CODE 0 0 0 3 2
+end_init CODE 0 12 12 3 2
+config CONFIG 0 2007 2007 2 2
 $dist/default/production\TIMER.X.production.obj
 cinit CODE 0 15 15 B 2
 text1 CODE 0 20 20 F7 2
-text2 CODE 0 1A8 1A8 32 2
-text3 CODE 0 16C 16C 3C 2
-maintext CODE 0 117 117 55 2
+text2 CODE 0 1A5 1A5 32 2
+text3 CODE 0 169 169 3C 2
+maintext CODE 0 117 117 52 2
 cstackCOMMON COMMON 1 70 70 E 1
 cstackBANK0 BANK0 1 20 20 B 1
 intentry CODE 0 4 4 E 2
 bssBANK0 BANK0 1 2B 2B 5 1
-$C:\Users\ASUS\AppData\Local\Temp\sbmk.obj
-reset_vec CODE 0 0 0 3 2
-end_init CODE 0 12 12 3 2
-config CONFIG 0 2007 2007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -40,22 +40,22 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 1DA-1FFF 2
+CONST 1D7-1FFF 2
 ENTRY 3-3 2
-ENTRY 1DA-1FFF 2
+ENTRY 1D7-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 1DA-1FFF 2
+CODE 1D7-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
 SFR3 180-18F 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 1DA-1FFF 2
+STRCODE 1D7-1FFF 2
 STRING 3-3 2
-STRING 1DA-1FFF 2
+STRING 1D7-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -70,46 +70,46 @@ STRING 1DA-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\TIMER.X.production.obj
-15 cinit CODE >244:C:\Users\ASUS\AppData\Local\Temp\sbmk.
-15 cinit CODE >247:C:\Users\ASUS\AppData\Local\Temp\sbmk.
-15 cinit CODE >267:C:\Users\ASUS\AppData\Local\Temp\sbmk.
-16 cinit CODE >268:C:\Users\ASUS\AppData\Local\Temp\sbmk.
-17 cinit CODE >269:C:\Users\ASUS\AppData\Local\Temp\sbmk.
-18 cinit CODE >270:C:\Users\ASUS\AppData\Local\Temp\sbmk.
-19 cinit CODE >271:C:\Users\ASUS\AppData\Local\Temp\sbmk.
-1A cinit CODE >272:C:\Users\ASUS\AppData\Local\Temp\sbmk.
-1B cinit CODE >273:C:\Users\ASUS\AppData\Local\Temp\sbmk.
-1C cinit CODE >279:C:\Users\ASUS\AppData\Local\Temp\sbmk.
-1C cinit CODE >281:C:\Users\ASUS\AppData\Local\Temp\sbmk.
-1D cinit CODE >282:C:\Users\ASUS\AppData\Local\Temp\sbmk.
+15 cinit CODE >244:C:\Users\ASUS\AppData\Local\Temp\s8l0.
+15 cinit CODE >247:C:\Users\ASUS\AppData\Local\Temp\s8l0.
+15 cinit CODE >267:C:\Users\ASUS\AppData\Local\Temp\s8l0.
+16 cinit CODE >268:C:\Users\ASUS\AppData\Local\Temp\s8l0.
+17 cinit CODE >269:C:\Users\ASUS\AppData\Local\Temp\s8l0.
+18 cinit CODE >270:C:\Users\ASUS\AppData\Local\Temp\s8l0.
+19 cinit CODE >271:C:\Users\ASUS\AppData\Local\Temp\s8l0.
+1A cinit CODE >272:C:\Users\ASUS\AppData\Local\Temp\s8l0.
+1B cinit CODE >273:C:\Users\ASUS\AppData\Local\Temp\s8l0.
+1C cinit CODE >279:C:\Users\ASUS\AppData\Local\Temp\s8l0.
+1C cinit CODE >281:C:\Users\ASUS\AppData\Local\Temp\s8l0.
+1D cinit CODE >282:C:\Users\ASUS\AppData\Local\Temp\s8l0.
 4 intentry CODE >63:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
-16C text3 CODE >6:D:\mplab\sources\common\lwdiv.c
-16C text3 CODE >14:D:\mplab\sources\common\lwdiv.c
-16E text3 CODE >15:D:\mplab\sources\common\lwdiv.c
-172 text3 CODE >16:D:\mplab\sources\common\lwdiv.c
-174 text3 CODE >17:D:\mplab\sources\common\lwdiv.c
-176 text3 CODE >18:D:\mplab\sources\common\lwdiv.c
-17D text3 CODE >19:D:\mplab\sources\common\lwdiv.c
-181 text3 CODE >17:D:\mplab\sources\common\lwdiv.c
-182 text3 CODE >22:D:\mplab\sources\common\lwdiv.c
-189 text3 CODE >23:D:\mplab\sources\common\lwdiv.c
-191 text3 CODE >24:D:\mplab\sources\common\lwdiv.c
-197 text3 CODE >25:D:\mplab\sources\common\lwdiv.c
-198 text3 CODE >27:D:\mplab\sources\common\lwdiv.c
-19F text3 CODE >28:D:\mplab\sources\common\lwdiv.c
-1A3 text3 CODE >30:D:\mplab\sources\common\lwdiv.c
-1A8 text2 CODE >6:D:\mplab\sources\common\lwmod.c
-1A8 text2 CODE >13:D:\mplab\sources\common\lwmod.c
-1AC text2 CODE >14:D:\mplab\sources\common\lwmod.c
-1AE text2 CODE >15:D:\mplab\sources\common\lwmod.c
-1B0 text2 CODE >16:D:\mplab\sources\common\lwmod.c
-1B7 text2 CODE >17:D:\mplab\sources\common\lwmod.c
-1BB text2 CODE >15:D:\mplab\sources\common\lwmod.c
-1BC text2 CODE >20:D:\mplab\sources\common\lwmod.c
-1C4 text2 CODE >21:D:\mplab\sources\common\lwmod.c
-1CA text2 CODE >22:D:\mplab\sources\common\lwmod.c
-1D1 text2 CODE >23:D:\mplab\sources\common\lwmod.c
-1D5 text2 CODE >25:D:\mplab\sources\common\lwmod.c
+169 text3 CODE >6:D:\mplab\sources\common\lwdiv.c
+169 text3 CODE >14:D:\mplab\sources\common\lwdiv.c
+16B text3 CODE >15:D:\mplab\sources\common\lwdiv.c
+16F text3 CODE >16:D:\mplab\sources\common\lwdiv.c
+171 text3 CODE >17:D:\mplab\sources\common\lwdiv.c
+173 text3 CODE >18:D:\mplab\sources\common\lwdiv.c
+17A text3 CODE >19:D:\mplab\sources\common\lwdiv.c
+17E text3 CODE >17:D:\mplab\sources\common\lwdiv.c
+17F text3 CODE >22:D:\mplab\sources\common\lwdiv.c
+186 text3 CODE >23:D:\mplab\sources\common\lwdiv.c
+18E text3 CODE >24:D:\mplab\sources\common\lwdiv.c
+194 text3 CODE >25:D:\mplab\sources\common\lwdiv.c
+195 text3 CODE >27:D:\mplab\sources\common\lwdiv.c
+19C text3 CODE >28:D:\mplab\sources\common\lwdiv.c
+1A0 text3 CODE >30:D:\mplab\sources\common\lwdiv.c
+1A5 text2 CODE >6:D:\mplab\sources\common\lwmod.c
+1A5 text2 CODE >13:D:\mplab\sources\common\lwmod.c
+1A9 text2 CODE >14:D:\mplab\sources\common\lwmod.c
+1AB text2 CODE >15:D:\mplab\sources\common\lwmod.c
+1AD text2 CODE >16:D:\mplab\sources\common\lwmod.c
+1B4 text2 CODE >17:D:\mplab\sources\common\lwmod.c
+1B8 text2 CODE >15:D:\mplab\sources\common\lwmod.c
+1B9 text2 CODE >20:D:\mplab\sources\common\lwmod.c
+1C1 text2 CODE >21:D:\mplab\sources\common\lwmod.c
+1C7 text2 CODE >22:D:\mplab\sources\common\lwmod.c
+1CE text2 CODE >23:D:\mplab\sources\common\lwmod.c
+1D2 text2 CODE >25:D:\mplab\sources\common\lwmod.c
 20 text1 CODE >63:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
 20 text1 CODE >64:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
 28 text1 CODE >65:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
@@ -151,14 +151,14 @@ FC text1 CODE >75:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\rel
 12D maintext CODE >45:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
 130 maintext CODE >48:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
 134 maintext CODE >49:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
-13F maintext CODE >50:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
-14A maintext CODE >51:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
-14C maintext CODE >52:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
-157 maintext CODE >54:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
-15B maintext CODE >55:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
-166 maintext CODE >56:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
-16A maintext CODE >57:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
-16B maintext CODE >47:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
+13E maintext CODE >50:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
+149 maintext CODE >51:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
+14B maintext CODE >52:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
+155 maintext CODE >54:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
+159 maintext CODE >55:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
+163 maintext CODE >56:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
+167 maintext CODE >57:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
+168 maintext CODE >47:C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -182,35 +182,35 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\TIMER.X.production.obj
 _T1CONbits 10 0 ABS 0 - dist/default/production\TIMER.X.production.obj
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\ASUS\AppData\Local\Temp\sbmk.obj
+___sp 0 0 STACK 2 stack C:\Users\ASUS\AppData\Local\Temp\s8l0.obj
 _main 22E 0 CODE 0 maintext dist/default/production\TIMER.X.production.obj
 btemp 7E 0 ABS 0 - dist/default/production\TIMER.X.production.obj
-start 24 0 CODE 0 init C:\Users\ASUS\AppData\Local\Temp\sbmk.obj
+start 24 0 CODE 0 init C:\Users\ASUS\AppData\Local\Temp\s8l0.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\TIMER.X.production.obj
 __size_of___lwdiv 0 0 ABS 0 - dist/default/production\TIMER.X.production.obj
 __size_of___lwmod 0 0 ABS 0 - dist/default/production\TIMER.X.production.obj
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 CODE 0 functab C:\Users\ASUS\AppData\Local\Temp\sbmk.obj
-intlevel1 0 0 CODE 0 functab C:\Users\ASUS\AppData\Local\Temp\sbmk.obj
-intlevel2 0 0 CODE 0 functab C:\Users\ASUS\AppData\Local\Temp\sbmk.obj
-intlevel3 0 0 CODE 0 functab C:\Users\ASUS\AppData\Local\Temp\sbmk.obj
-intlevel4 0 0 CODE 0 functab C:\Users\ASUS\AppData\Local\Temp\sbmk.obj
-intlevel5 0 0 CODE 0 functab C:\Users\ASUS\AppData\Local\Temp\sbmk.obj
+intlevel0 0 0 CODE 0 functab C:\Users\ASUS\AppData\Local\Temp\s8l0.obj
+intlevel1 0 0 CODE 0 functab C:\Users\ASUS\AppData\Local\Temp\s8l0.obj
+intlevel2 0 0 CODE 0 functab C:\Users\ASUS\AppData\Local\Temp\s8l0.obj
+intlevel3 0 0 CODE 0 functab C:\Users\ASUS\AppData\Local\Temp\s8l0.obj
+intlevel4 0 0 CODE 0 functab C:\Users\ASUS\AppData\Local\Temp\s8l0.obj
+intlevel5 0 0 CODE 0 functab C:\Users\ASUS\AppData\Local\Temp\s8l0.obj
 wtemp0 7E 0 ABS 0 - dist/default/production\TIMER.X.production.obj
 __Hfunctab 0 0 CODE 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 __end_of_ISR_TIMER_1 22E 0 CODE 0 text1 dist/default/production\TIMER.X.production.obj
 __Lmaintext 0 0 ABS 0 maintext -
 ___lwmod@divisor 78 0 COMMON 1 cstackCOMMON dist/default/production\TIMER.X.production.obj
-__end_of___lwdiv 350 0 CODE 0 text3 dist/default/production\TIMER.X.production.obj
-__end_of___lwmod 3B4 0 CODE 0 text2 dist/default/production\TIMER.X.production.obj
+__end_of___lwdiv 34A 0 CODE 0 text3 dist/default/production\TIMER.X.production.obj
+__end_of___lwmod 3AE 0 CODE 0 text2 dist/default/production\TIMER.X.production.obj
 ___lwdiv@quotient 75 0 COMMON 1 cstackCOMMON dist/default/production\TIMER.X.production.obj
 ___lwmod@dividend 7A 0 COMMON 1 cstackCOMMON dist/default/production\TIMER.X.production.obj
 start_initialization 2A 0 CODE 0 cinit dist/default/production\TIMER.X.production.obj
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\TIMER.X.production.obj
 _TRISA0 428 0 ABS 0 - dist/default/production\TIMER.X.production.obj
 _TRISA1 429 0 ABS 0 - dist/default/production\TIMER.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\ASUS\AppData\Local\Temp\sbmk.obj
+___int_sp 0 0 STACK 2 stack C:\Users\ASUS\AppData\Local\Temp\s8l0.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -258,12 +258,12 @@ __CFG_BOR4V$BOR40V 0 0 ABS 0 - dist/default/production\TIMER.X.production.obj
 saved_w 7E 0 ABS 0 - dist/default/production\TIMER.X.production.obj
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\TIMER.X.production.obj
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\ASUS\AppData\Local\Temp\sbmk.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\ASUS\AppData\Local\Temp\s8l0.obj
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production\TIMER.X.production.obj
 _PIE1bits 8C 0 ABS 0 - dist/default/production\TIMER.X.production.obj
-___lwdiv 2D8 0 CODE 0 text3 dist/default/production\TIMER.X.production.obj
-___lwmod 350 0 CODE 0 text2 dist/default/production\TIMER.X.production.obj
+___lwdiv 2D2 0 CODE 0 text3 dist/default/production\TIMER.X.production.obj
+___lwmod 34A 0 CODE 0 text2 dist/default/production\TIMER.X.production.obj
 __pmaintext 22E 0 CODE 0 maintext dist/default/production\TIMER.X.production.obj
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 400E 0 CONFIG 0 config -
@@ -271,8 +271,8 @@ __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\TIMER.X.production.obj
 __CFG_IESO$ON 0 0 ABS 0 - dist/default/production\TIMER.X.production.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\TIMER.X.production.obj
 ___lwdiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\TIMER.X.production.obj
-stackhi 0 0 ABS 0 - C:\Users\ASUS\AppData\Local\Temp\sbmk.obj
-stacklo 0 0 ABS 0 - C:\Users\ASUS\AppData\Local\Temp\sbmk.obj
+stackhi 0 0 ABS 0 - C:\Users\ASUS\AppData\Local\Temp\s8l0.obj
+stacklo 0 0 ABS 0 - C:\Users\ASUS\AppData\Local\Temp\s8l0.obj
 _flag_run 2F 0 BANK0 1 bssBANK0 dist/default/production\TIMER.X.production.obj
 _counter_digito 2E 0 BANK0 1 bssBANK0 dist/default/production\TIMER.X.production.obj
 __Lspace_0 0 0 ABS 0 - -
@@ -293,8 +293,8 @@ ___lwdiv@dividend 72 0 COMMON 1 cstackCOMMON dist/default/production\TIMER.X.pro
 __Hreset_vec 6 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 __ptext1 40 0 CODE 0 text1 dist/default/production\TIMER.X.production.obj
-__ptext2 350 0 CODE 0 text2 dist/default/production\TIMER.X.production.obj
-__ptext3 2D8 0 CODE 0 text3 dist/default/production\TIMER.X.production.obj
+__ptext2 34A 0 CODE 0 text2 dist/default/production\TIMER.X.production.obj
+__ptext3 2D2 0 CODE 0 text3 dist/default/production\TIMER.X.production.obj
 _ISR_TIMER_1 40 0 CODE 0 text1 dist/default/production\TIMER.X.production.obj
 _ISR_TIMER_1$593 25 0 BANK0 1 cstackBANK0 dist/default/production\TIMER.X.production.obj
 _ISR_TIMER_1$594 27 0 BANK0 1 cstackBANK0 dist/default/production\TIMER.X.production.obj
@@ -307,7 +307,7 @@ __Lfunctab 0 0 CODE 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\TIMER.X.production.obj
 __Hend_init 2A 0 CODE 0 end_init -
-__end_of_main 2D8 0 CODE 0 maintext dist/default/production\TIMER.X.production.obj
+__end_of_main 2D2 0 CODE 0 maintext dist/default/production\TIMER.X.production.obj
 _ANSEL 188 0 ABS 0 - dist/default/production\TIMER.X.production.obj
 _PORTD 8 0 ABS 0 - dist/default/production\TIMER.X.production.obj
 _TMR1H F 0 ABS 0 - dist/default/production\TIMER.X.production.obj
@@ -350,6 +350,6 @@ __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\TIMER.X.production.obj
 %SEGMENTS
 cstackCOMMON 1 70 70 E 1
 cstackBANK0 1 20 20 10 1
-intentry 0 4 8 1D6 2
+intentry 0 4 8 1D3 2
 reset_vec 0 0 0 3 2
 config 0 2007 400E 2 2

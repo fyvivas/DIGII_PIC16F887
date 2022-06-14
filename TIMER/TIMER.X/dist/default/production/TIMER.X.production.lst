@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.41 build -162212810 
-                                                                                               Thu Feb 24 11:32:43 2022
+                                                                                               Thu Feb 24 17:29:49 2022
 
 Microchip Technology Omniscient Code Generator v1.41 (Free mode) build 201701250102
      1                           	processor	16F887
@@ -354,653 +354,650 @@ Microchip Technology Omniscient Code Generator v1.41 (Free mode) build 201701250
    340  0130  1283               	bcf	3,5	;RP0=0, select bank0
    341  0131  1303               	bcf	3,6	;RP1=0, select bank0
    342  0132  1805               	btfsc	5,0	;volatile
-   343  0133  2957               	goto	l725
+   343  0133  2955               	goto	l725
    344                           
-   345                           ;reloj.c: 49: _delay((unsigned long)((50)*(4000000/4000.0)));
-   346  0134  3041               	movlw	65
+   345                           ;reloj.c: 49: _delay((unsigned long)((50)*(8000000/4000.0)));
+   346  0134  3082               	movlw	130
    347  0135  1283               	bcf	3,5	;RP0=0, select bank0
    348  0136  1303               	bcf	3,6	;RP1=0, select bank0
    349  0137  00AA               	movwf	??_main+1
-   350  0138  30ED               	movlw	237
+   350  0138  30DD               	movlw	221
    351  0139  00A9               	movwf	??_main
    352  013A                     u557:	
    353  013A  0BA9               	decfsz	??_main,f
    354  013B  293A               	goto	u557
    355  013C  0BAA               	decfsz	??_main+1,f
    356  013D  293A               	goto	u557
-   357  013E  293F               	nop2
-   358                           
-   359                           ;reloj.c: 50: flag_run = !flag_run;
-   360  013F  1283               	bcf	3,5	;RP0=0, select bank0
-   361  0140  1303               	bcf	3,6	;RP1=0, select bank0
-   362  0141  082F               	movf	_flag_run,w
-   363  0142  1D03               	btfss	3,2
-   364  0143  2946               	goto	u420
-   365  0144  3001               	movlw	1
-   366  0145  2947               	goto	u430
-   367  0146                     u420:	
-   368  0146  3000               	movlw	0
-   369  0147                     u430:	
-   370  0147  00A9               	movwf	??_main
-   371  0148  0829               	movf	??_main,w
-   372  0149  00AF               	movwf	_flag_run
-   373  014A                     l39:	
-   374                           ;reloj.c: 51: while (!PORTAbits.RA0);
-   375                           
-   376  014A  1C05               	btfss	5,0	;volatile
-   377  014B  294A               	goto	l39
-   378                           
-   379                           ;reloj.c: 52: _delay((unsigned long)((50)*(4000000/4000.0)));
-   380  014C  3041               	movlw	65
-   381  014D  1283               	bcf	3,5	;RP0=0, select bank0
-   382  014E  1303               	bcf	3,6	;RP1=0, select bank0
-   383  014F  00AA               	movwf	??_main+1
-   384  0150  30ED               	movlw	237
-   385  0151  00A9               	movwf	??_main
-   386  0152                     u567:	
-   387  0152  0BA9               	decfsz	??_main,f
-   388  0153  2952               	goto	u567
-   389  0154  0BAA               	decfsz	??_main+1,f
-   390  0155  2952               	goto	u567
-   391  0156  2957               	nop2
-   392  0157                     l725:	
-   393                           
-   394                           ;reloj.c: 53: }
-   395                           ;reloj.c: 54: if (!PORTAbits.RA1) {
-   396  0157  1283               	bcf	3,5	;RP0=0, select bank0
-   397  0158  1303               	bcf	3,6	;RP1=0, select bank0
-   398  0159  1885               	btfsc	5,1	;volatile
-   399  015A  2930               	goto	l717
-   400                           
-   401                           ;reloj.c: 55: _delay((unsigned long)((50)*(4000000/4000.0)));
-   402  015B  3041               	movlw	65
-   403  015C  1283               	bcf	3,5	;RP0=0, select bank0
-   404  015D  1303               	bcf	3,6	;RP1=0, select bank0
-   405  015E  00AA               	movwf	??_main+1
-   406  015F  30ED               	movlw	237
-   407  0160  00A9               	movwf	??_main
-   408  0161                     u577:	
-   409  0161  0BA9               	decfsz	??_main,f
-   410  0162  2961               	goto	u577
-   411  0163  0BAA               	decfsz	??_main+1,f
-   412  0164  2961               	goto	u577
-   413  0165  2966               	nop2
-   414                           
-   415                           ;reloj.c: 56: counter_segundos = 0;
-   416  0166  1283               	bcf	3,5	;RP0=0, select bank0
-   417  0167  1303               	bcf	3,6	;RP1=0, select bank0
-   418  0168  01AB               	clrf	_counter_segundos
-   419  0169  01AC               	clrf	_counter_segundos+1
-   420                           
-   421                           ;reloj.c: 57: flag_run = 0;
-   422  016A  01AF               	clrf	_flag_run
-   423  016B  2930               	goto	l717
-   424  016C                     __end_of_main:	
-   425                           ;reloj.c: 58: }
-   426                           ;reloj.c: 59: }
-   427                           ;reloj.c: 60: return 1;
-   428                           ;	Return value of _main is never used
-   429                           
-   430                           
-   431                           	psect	text1
-   432  0020                     __ptext1:	
-   433 ;; *************** function _ISR_TIMER_1 *****************
-   434 ;; Defined at:
-   435 ;;		line 63 in file "reloj.c"
-   436 ;; Parameters:    Size  Location     Type
-   437 ;;		None
-   438 ;; Auto vars:     Size  Location     Type
-   439 ;;		None
-   440 ;; Return value:  Size  Location     Type
-   441 ;;                  1    wreg      void 
-   442 ;; Registers used:
-   443 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
-   444 ;; Tracked objects:
-   445 ;;		On entry : 0/0
-   446 ;;		On exit  : 0/0
-   447 ;;		Unchanged: 0/0
-   448 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   449 ;;      Params:         0       0       0       0       0
-   450 ;;      Locals:         0       4       0       0       0
-   451 ;;      Temps:          0       5       0       0       0
-   452 ;;      Totals:         0       9       0       0       0
-   453 ;;Total ram usage:        9 bytes
-   454 ;; Hardware stack levels used:    1
-   455 ;; Hardware stack levels required when called:    1
-   456 ;; This function calls:
-   457 ;;		___lwdiv
-   458 ;;		___lwmod
-   459 ;; This function is called by:
-   460 ;;		Interrupt level 1
-   461 ;; This function uses a non-reentrant model
-   462 ;;
-   463                           
+   357                           
+   358                           ;reloj.c: 50: flag_run = !flag_run;
+   359  013E  1283               	bcf	3,5	;RP0=0, select bank0
+   360  013F  1303               	bcf	3,6	;RP1=0, select bank0
+   361  0140  082F               	movf	_flag_run,w
+   362  0141  1D03               	btfss	3,2
+   363  0142  2945               	goto	u420
+   364  0143  3001               	movlw	1
+   365  0144  2946               	goto	u430
+   366  0145                     u420:	
+   367  0145  3000               	movlw	0
+   368  0146                     u430:	
+   369  0146  00A9               	movwf	??_main
+   370  0147  0829               	movf	??_main,w
+   371  0148  00AF               	movwf	_flag_run
+   372  0149                     l39:	
+   373                           ;reloj.c: 51: while (!PORTAbits.RA0);
+   374                           
+   375  0149  1C05               	btfss	5,0	;volatile
+   376  014A  2949               	goto	l39
+   377                           
+   378                           ;reloj.c: 52: _delay((unsigned long)((50)*(8000000/4000.0)));
+   379  014B  3082               	movlw	130
+   380  014C  1283               	bcf	3,5	;RP0=0, select bank0
+   381  014D  1303               	bcf	3,6	;RP1=0, select bank0
+   382  014E  00AA               	movwf	??_main+1
+   383  014F  30DD               	movlw	221
+   384  0150  00A9               	movwf	??_main
+   385  0151                     u567:	
+   386  0151  0BA9               	decfsz	??_main,f
+   387  0152  2951               	goto	u567
+   388  0153  0BAA               	decfsz	??_main+1,f
+   389  0154  2951               	goto	u567
+   390  0155                     l725:	
+   391                           
+   392                           ;reloj.c: 53: }
+   393                           ;reloj.c: 54: if (!PORTAbits.RA1) {
+   394  0155  1283               	bcf	3,5	;RP0=0, select bank0
+   395  0156  1303               	bcf	3,6	;RP1=0, select bank0
+   396  0157  1885               	btfsc	5,1	;volatile
+   397  0158  2930               	goto	l717
+   398                           
+   399                           ;reloj.c: 55: _delay((unsigned long)((50)*(8000000/4000.0)));
+   400  0159  3082               	movlw	130
+   401  015A  1283               	bcf	3,5	;RP0=0, select bank0
+   402  015B  1303               	bcf	3,6	;RP1=0, select bank0
+   403  015C  00AA               	movwf	??_main+1
+   404  015D  30DD               	movlw	221
+   405  015E  00A9               	movwf	??_main
+   406  015F                     u577:	
+   407  015F  0BA9               	decfsz	??_main,f
+   408  0160  295F               	goto	u577
+   409  0161  0BAA               	decfsz	??_main+1,f
+   410  0162  295F               	goto	u577
+   411                           
+   412                           ;reloj.c: 56: counter_segundos = 0;
+   413  0163  1283               	bcf	3,5	;RP0=0, select bank0
+   414  0164  1303               	bcf	3,6	;RP1=0, select bank0
+   415  0165  01AB               	clrf	_counter_segundos
+   416  0166  01AC               	clrf	_counter_segundos+1
+   417                           
+   418                           ;reloj.c: 57: flag_run = 0;
+   419  0167  01AF               	clrf	_flag_run
+   420  0168  2930               	goto	l717
+   421  0169                     __end_of_main:	
+   422                           ;reloj.c: 58: }
+   423                           ;reloj.c: 59: }
+   424                           ;reloj.c: 60: return 1;
+   425                           ;	Return value of _main is never used
+   426                           
+   427                           
+   428                           	psect	text1
+   429  0020                     __ptext1:	
+   430 ;; *************** function _ISR_TIMER_1 *****************
+   431 ;; Defined at:
+   432 ;;		line 63 in file "reloj.c"
+   433 ;; Parameters:    Size  Location     Type
+   434 ;;		None
+   435 ;; Auto vars:     Size  Location     Type
+   436 ;;		None
+   437 ;; Return value:  Size  Location     Type
+   438 ;;                  1    wreg      void 
+   439 ;; Registers used:
+   440 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   441 ;; Tracked objects:
+   442 ;;		On entry : 0/0
+   443 ;;		On exit  : 0/0
+   444 ;;		Unchanged: 0/0
+   445 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   446 ;;      Params:         0       0       0       0       0
+   447 ;;      Locals:         0       4       0       0       0
+   448 ;;      Temps:          0       5       0       0       0
+   449 ;;      Totals:         0       9       0       0       0
+   450 ;;Total ram usage:        9 bytes
+   451 ;; Hardware stack levels used:    1
+   452 ;; Hardware stack levels required when called:    1
+   453 ;; This function calls:
+   454 ;;		___lwdiv
+   455 ;;		___lwmod
+   456 ;; This function is called by:
+   457 ;;		Interrupt level 1
+   458 ;; This function uses a non-reentrant model
+   459 ;;
+   460                           
+   461                           
+   462                           ;psect for function _ISR_TIMER_1
+   463  0020                     _ISR_TIMER_1:	
    464                           
-   465                           ;psect for function _ISR_TIMER_1
-   466  0020                     _ISR_TIMER_1:	
-   467                           
-   468                           ;reloj.c: 64: if (PIE1bits.TMR1IE && PIR1bits.TMR1IF) {
-   469  0020  1683               	bsf	3,5	;RP0=1, select bank1
-   470  0021  1303               	bcf	3,6	;RP1=0, select bank1
-   471  0022  1C0C               	btfss	12,0	;volatile
-   472  0023  290B               	goto	i1l57
-   473  0024  1283               	bcf	3,5	;RP0=0, select bank0
-   474  0025  1303               	bcf	3,6	;RP1=0, select bank0
-   475  0026  1C0C               	btfss	12,0	;volatile
-   476  0027  290B               	goto	i1l57
-   477                           
-   478                           ;reloj.c: 65: TMR1H = 0xD8;
-   479  0028  30D8               	movlw	216
-   480  0029  008F               	movwf	15	;volatile
-   481                           
-   482                           ;reloj.c: 66: TMR1L = 0xEF;
-   483  002A  30EF               	movlw	239
-   484  002B  008E               	movwf	14	;volatile
-   485                           
-   486                           ;reloj.c: 68: if (++counter_20ms == 100 && flag_run) {
-   487  002C  3001               	movlw	1
-   488  002D  00A0               	movwf	??_ISR_TIMER_1
-   489  002E  0820               	movf	??_ISR_TIMER_1,w
-   490  002F  07AD               	addwf	_counter_20ms,f
-   491  0030  3064               	movlw	100
-   492  0031  062D               	xorwf	_counter_20ms,w
-   493  0032  1D03               	btfss	3,2
-   494  0033  28FC               	goto	i1l767
-   495  0034  082F               	movf	_flag_run,w
-   496  0035  1903               	btfsc	3,2
-   497  0036  28FC               	goto	i1l767
+   465                           ;reloj.c: 64: if (PIE1bits.TMR1IE && PIR1bits.TMR1IF) {
+   466  0020  1683               	bsf	3,5	;RP0=1, select bank1
+   467  0021  1303               	bcf	3,6	;RP1=0, select bank1
+   468  0022  1C0C               	btfss	12,0	;volatile
+   469  0023  290B               	goto	i1l57
+   470  0024  1283               	bcf	3,5	;RP0=0, select bank0
+   471  0025  1303               	bcf	3,6	;RP1=0, select bank0
+   472  0026  1C0C               	btfss	12,0	;volatile
+   473  0027  290B               	goto	i1l57
+   474                           
+   475                           ;reloj.c: 65: TMR1H = 0xD8;
+   476  0028  30D8               	movlw	216
+   477  0029  008F               	movwf	15	;volatile
+   478                           
+   479                           ;reloj.c: 66: TMR1L = 0xEF;
+   480  002A  30EF               	movlw	239
+   481  002B  008E               	movwf	14	;volatile
+   482                           
+   483                           ;reloj.c: 68: if (++counter_20ms == 100 && flag_run) {
+   484  002C  3001               	movlw	1
+   485  002D  00A0               	movwf	??_ISR_TIMER_1
+   486  002E  0820               	movf	??_ISR_TIMER_1,w
+   487  002F  07AD               	addwf	_counter_20ms,f
+   488  0030  3064               	movlw	100
+   489  0031  062D               	xorwf	_counter_20ms,w
+   490  0032  1D03               	btfss	3,2
+   491  0033  28FC               	goto	i1l767
+   492  0034  082F               	movf	_flag_run,w
+   493  0035  1903               	btfsc	3,2
+   494  0036  28FC               	goto	i1l767
+   495                           
+   496                           ;reloj.c: 69: counter_20ms = 0;
+   497  0037  01AD               	clrf	_counter_20ms
    498                           
-   499                           ;reloj.c: 69: counter_20ms = 0;
-   500  0037  01AD               	clrf	_counter_20ms
-   501                           
-   502                           ;reloj.c: 70: if (++counter_segundos == 3600) {
-   503  0038  3001               	movlw	1
-   504  0039  07AB               	addwf	_counter_segundos,f
-   505  003A  1803               	skipnc
-   506  003B  0AAC               	incf	_counter_segundos+1,f
-   507  003C  3000               	movlw	0
-   508  003D  07AC               	addwf	_counter_segundos+1,f
-   509  003E  3010               	movlw	16
-   510  003F  062B               	xorwf	_counter_segundos,w
-   511  0040  300E               	movlw	14
-   512  0041  1903               	skipnz
-   513  0042  062C               	xorwf	_counter_segundos+1,w
-   514  0043  1D03               	btfss	3,2
-   515  0044  28FC               	goto	i1l767
-   516                           
-   517                           ;reloj.c: 71: counter_segundos = 0;
-   518  0045  01AB               	clrf	_counter_segundos
-   519  0046  01AC               	clrf	_counter_segundos+1
-   520                           
-   521                           ;reloj.c: 72: }
-   522                           ;reloj.c: 73: }
-   523                           ;reloj.c: 75: switch (counter_digito) {
-   524  0047  28FC               	goto	i1l767
-   525  0048                     i1l749:	
-   526                           ;reloj.c: 76: case 0:
-   527                           
-   528                           
-   529                           ;reloj.c: 77: PORTD = (counter_digito << 4) + (counter_segundos / 60) / 10;
-   530  0048  303C               	movlw	60
-   531  0049  00F0               	movwf	___lwdiv@divisor
-   532  004A  3000               	movlw	0
-   533  004B  00F1               	movwf	___lwdiv@divisor+1
-   534  004C  082C               	movf	_counter_segundos+1,w
-   535  004D  00F3               	movwf	___lwdiv@dividend+1
-   536  004E  082B               	movf	_counter_segundos,w
-   537  004F  00F2               	movwf	___lwdiv@dividend
-   538  0050  120A  118A  216C  120A  118A  	fcall	___lwdiv
-   539  0055  0871               	movf	?___lwdiv+1,w
-   540  0056  1283               	bcf	3,5	;RP0=0, select bank0
-   541  0057  1303               	bcf	3,6	;RP1=0, select bank0
-   542  0058  00A6               	movwf	_ISR_TIMER_1$593+1
-   543  0059  0870               	movf	?___lwdiv,w
-   544  005A  00A5               	movwf	_ISR_TIMER_1$593
-   545                           
-   546                           ;reloj.c: 77: PORTD = (counter_digito << 4) + (counter_segundos / 60) / 10;
-   547  005B  082E               	movf	_counter_digito,w
-   548  005C  00A0               	movwf	??_ISR_TIMER_1
-   549  005D  3004               	movlw	4
-   550  005E                     u51_25:	
-   551  005E  1003               	clrc
-   552  005F  0DA0               	rlf	??_ISR_TIMER_1,f
-   553  0060  3EFF               	addlw	-1
-   554  0061  1D03               	skipz
-   555  0062  285E               	goto	u51_25
-   556  0063  300A               	movlw	10
-   557  0064  00F0               	movwf	___lwdiv@divisor
-   558  0065  3000               	movlw	0
-   559  0066  00F1               	movwf	___lwdiv@divisor+1
-   560  0067  0826               	movf	_ISR_TIMER_1$593+1,w
-   561  0068  00F3               	movwf	___lwdiv@dividend+1
-   562  0069  0825               	movf	_ISR_TIMER_1$593,w
-   563  006A  00F2               	movwf	___lwdiv@dividend
-   564  006B  120A  118A  216C  120A  118A  	fcall	___lwdiv
-   565  0070  0870               	movf	?___lwdiv,w
-   566  0071  1283               	bcf	3,5	;RP0=0, select bank0
-   567  0072  1303               	bcf	3,6	;RP1=0, select bank0
-   568  0073  0720               	addwf	??_ISR_TIMER_1,w
-   569  0074  0088               	movwf	8	;volatile
-   570                           
-   571                           ;reloj.c: 78: counter_digito = 1;
-   572  0075  01AE               	clrf	_counter_digito
-   573  0076  0AAE               	incf	_counter_digito,f
-   574                           
-   575                           ;reloj.c: 79: break;
-   576  0077  290A               	goto	i1l53
-   577  0078                     i1l753:	
-   578                           ;reloj.c: 80: case 1:
-   579                           
-   580                           
-   581                           ;reloj.c: 81: PORTD = (counter_digito << 4) + (counter_segundos / 60) % 10;
-   582  0078  082E               	movf	_counter_digito,w
-   583  0079  00A0               	movwf	??_ISR_TIMER_1
-   584  007A  3004               	movlw	4
-   585  007B                     u52_25:	
-   586  007B  1003               	clrc
-   587  007C  0DA0               	rlf	??_ISR_TIMER_1,f
-   588  007D  3EFF               	addlw	-1
-   589  007E  1D03               	skipz
-   590  007F  287B               	goto	u52_25
-   591  0080  300A               	movlw	10
-   592  0081  00F8               	movwf	___lwmod@divisor
-   593  0082  3000               	movlw	0
-   594  0083  00F9               	movwf	___lwmod@divisor+1
-   595  0084  303C               	movlw	60
-   596  0085  00F0               	movwf	___lwdiv@divisor
-   597  0086  3000               	movlw	0
-   598  0087  00F1               	movwf	___lwdiv@divisor+1
-   599  0088  082C               	movf	_counter_segundos+1,w
-   600  0089  00F3               	movwf	___lwdiv@dividend+1
-   601  008A  082B               	movf	_counter_segundos,w
-   602  008B  00F2               	movwf	___lwdiv@dividend
-   603  008C  120A  118A  216C  120A  118A  	fcall	___lwdiv
-   604  0091  0871               	movf	?___lwdiv+1,w
-   605  0092  00FB               	movwf	___lwmod@dividend+1
-   606  0093  0870               	movf	?___lwdiv,w
-   607  0094  00FA               	movwf	___lwmod@dividend
-   608  0095  120A  118A  21A8  120A  118A  	fcall	___lwmod
-   609  009A  0878               	movf	?___lwmod,w
-   610  009B  1283               	bcf	3,5	;RP0=0, select bank0
-   611  009C  1303               	bcf	3,6	;RP1=0, select bank0
-   612  009D  0720               	addwf	??_ISR_TIMER_1,w
-   613  009E  0088               	movwf	8	;volatile
-   614                           
-   615                           ;reloj.c: 82: counter_digito = 2;
-   616  009F  3002               	movlw	2
-   617  00A0  28C9               	goto	L1
-   618  00A1                     i1l757:	
-   619                           ;reloj.c: 84: case 2:
+   499                           ;reloj.c: 70: if (++counter_segundos == 3600) {
+   500  0038  3001               	movlw	1
+   501  0039  07AB               	addwf	_counter_segundos,f
+   502  003A  1803               	skipnc
+   503  003B  0AAC               	incf	_counter_segundos+1,f
+   504  003C  3000               	movlw	0
+   505  003D  07AC               	addwf	_counter_segundos+1,f
+   506  003E  3010               	movlw	16
+   507  003F  062B               	xorwf	_counter_segundos,w
+   508  0040  300E               	movlw	14
+   509  0041  1903               	skipnz
+   510  0042  062C               	xorwf	_counter_segundos+1,w
+   511  0043  1D03               	btfss	3,2
+   512  0044  28FC               	goto	i1l767
+   513                           
+   514                           ;reloj.c: 71: counter_segundos = 0;
+   515  0045  01AB               	clrf	_counter_segundos
+   516  0046  01AC               	clrf	_counter_segundos+1
+   517                           
+   518                           ;reloj.c: 72: }
+   519                           ;reloj.c: 73: }
+   520                           ;reloj.c: 75: switch (counter_digito) {
+   521  0047  28FC               	goto	i1l767
+   522  0048                     i1l749:	
+   523                           ;reloj.c: 76: case 0:
+   524                           
+   525                           
+   526                           ;reloj.c: 77: PORTD = (counter_digito << 4) + (counter_segundos / 60) / 10;
+   527  0048  303C               	movlw	60
+   528  0049  00F0               	movwf	___lwdiv@divisor
+   529  004A  3000               	movlw	0
+   530  004B  00F1               	movwf	___lwdiv@divisor+1
+   531  004C  082C               	movf	_counter_segundos+1,w
+   532  004D  00F3               	movwf	___lwdiv@dividend+1
+   533  004E  082B               	movf	_counter_segundos,w
+   534  004F  00F2               	movwf	___lwdiv@dividend
+   535  0050  120A  118A  2169  120A  118A  	fcall	___lwdiv
+   536  0055  0871               	movf	?___lwdiv+1,w
+   537  0056  1283               	bcf	3,5	;RP0=0, select bank0
+   538  0057  1303               	bcf	3,6	;RP1=0, select bank0
+   539  0058  00A6               	movwf	_ISR_TIMER_1$593+1
+   540  0059  0870               	movf	?___lwdiv,w
+   541  005A  00A5               	movwf	_ISR_TIMER_1$593
+   542                           
+   543                           ;reloj.c: 77: PORTD = (counter_digito << 4) + (counter_segundos / 60) / 10;
+   544  005B  082E               	movf	_counter_digito,w
+   545  005C  00A0               	movwf	??_ISR_TIMER_1
+   546  005D  3004               	movlw	4
+   547  005E                     u51_25:	
+   548  005E  1003               	clrc
+   549  005F  0DA0               	rlf	??_ISR_TIMER_1,f
+   550  0060  3EFF               	addlw	-1
+   551  0061  1D03               	skipz
+   552  0062  285E               	goto	u51_25
+   553  0063  300A               	movlw	10
+   554  0064  00F0               	movwf	___lwdiv@divisor
+   555  0065  3000               	movlw	0
+   556  0066  00F1               	movwf	___lwdiv@divisor+1
+   557  0067  0826               	movf	_ISR_TIMER_1$593+1,w
+   558  0068  00F3               	movwf	___lwdiv@dividend+1
+   559  0069  0825               	movf	_ISR_TIMER_1$593,w
+   560  006A  00F2               	movwf	___lwdiv@dividend
+   561  006B  120A  118A  2169  120A  118A  	fcall	___lwdiv
+   562  0070  0870               	movf	?___lwdiv,w
+   563  0071  1283               	bcf	3,5	;RP0=0, select bank0
+   564  0072  1303               	bcf	3,6	;RP1=0, select bank0
+   565  0073  0720               	addwf	??_ISR_TIMER_1,w
+   566  0074  0088               	movwf	8	;volatile
+   567                           
+   568                           ;reloj.c: 78: counter_digito = 1;
+   569  0075  01AE               	clrf	_counter_digito
+   570  0076  0AAE               	incf	_counter_digito,f
+   571                           
+   572                           ;reloj.c: 79: break;
+   573  0077  290A               	goto	i1l53
+   574  0078                     i1l753:	
+   575                           ;reloj.c: 80: case 1:
+   576                           
+   577                           
+   578                           ;reloj.c: 81: PORTD = (counter_digito << 4) + (counter_segundos / 60) % 10;
+   579  0078  082E               	movf	_counter_digito,w
+   580  0079  00A0               	movwf	??_ISR_TIMER_1
+   581  007A  3004               	movlw	4
+   582  007B                     u52_25:	
+   583  007B  1003               	clrc
+   584  007C  0DA0               	rlf	??_ISR_TIMER_1,f
+   585  007D  3EFF               	addlw	-1
+   586  007E  1D03               	skipz
+   587  007F  287B               	goto	u52_25
+   588  0080  300A               	movlw	10
+   589  0081  00F8               	movwf	___lwmod@divisor
+   590  0082  3000               	movlw	0
+   591  0083  00F9               	movwf	___lwmod@divisor+1
+   592  0084  303C               	movlw	60
+   593  0085  00F0               	movwf	___lwdiv@divisor
+   594  0086  3000               	movlw	0
+   595  0087  00F1               	movwf	___lwdiv@divisor+1
+   596  0088  082C               	movf	_counter_segundos+1,w
+   597  0089  00F3               	movwf	___lwdiv@dividend+1
+   598  008A  082B               	movf	_counter_segundos,w
+   599  008B  00F2               	movwf	___lwdiv@dividend
+   600  008C  120A  118A  2169  120A  118A  	fcall	___lwdiv
+   601  0091  0871               	movf	?___lwdiv+1,w
+   602  0092  00FB               	movwf	___lwmod@dividend+1
+   603  0093  0870               	movf	?___lwdiv,w
+   604  0094  00FA               	movwf	___lwmod@dividend
+   605  0095  120A  118A  21A5  120A  118A  	fcall	___lwmod
+   606  009A  0878               	movf	?___lwmod,w
+   607  009B  1283               	bcf	3,5	;RP0=0, select bank0
+   608  009C  1303               	bcf	3,6	;RP1=0, select bank0
+   609  009D  0720               	addwf	??_ISR_TIMER_1,w
+   610  009E  0088               	movwf	8	;volatile
+   611                           
+   612                           ;reloj.c: 82: counter_digito = 2;
+   613  009F  3002               	movlw	2
+   614  00A0  28C9               	goto	L1
+   615  00A1                     i1l757:	
+   616                           ;reloj.c: 84: case 2:
+   617                           
+   618                           ;reloj.c: 83: break;
+   619                           
    620                           
-   621                           ;reloj.c: 83: break;
-   622                           
-   623                           
-   624                           ;reloj.c: 85: PORTD = (counter_digito << 4) + (counter_segundos % 60) / 10;
-   625  00A1  082E               	movf	_counter_digito,w
-   626  00A2  00A0               	movwf	??_ISR_TIMER_1
-   627  00A3  3004               	movlw	4
-   628  00A4                     u53_25:	
-   629  00A4  1003               	clrc
-   630  00A5  0DA0               	rlf	??_ISR_TIMER_1,f
-   631  00A6  3EFF               	addlw	-1
-   632  00A7  1D03               	skipz
-   633  00A8  28A4               	goto	u53_25
-   634  00A9  300A               	movlw	10
-   635  00AA  00F0               	movwf	___lwdiv@divisor
-   636  00AB  3000               	movlw	0
-   637  00AC  00F1               	movwf	___lwdiv@divisor+1
-   638  00AD  082C               	movf	_counter_segundos+1,w
-   639  00AE  00FB               	movwf	___lwmod@dividend+1
-   640  00AF  082B               	movf	_counter_segundos,w
-   641  00B0  00FA               	movwf	___lwmod@dividend
-   642  00B1  303C               	movlw	60
-   643  00B2  00F8               	movwf	___lwmod@divisor
-   644  00B3  3000               	movlw	0
-   645  00B4  00F9               	movwf	___lwmod@divisor+1
-   646  00B5  120A  118A  21A8  120A  118A  	fcall	___lwmod
-   647  00BA  0879               	movf	?___lwmod+1,w
-   648  00BB  00F3               	movwf	___lwdiv@dividend+1
-   649  00BC  0878               	movf	?___lwmod,w
-   650  00BD  00F2               	movwf	___lwdiv@dividend
-   651  00BE  120A  118A  216C  120A  118A  	fcall	___lwdiv
-   652  00C3  0870               	movf	?___lwdiv,w
-   653  00C4  1283               	bcf	3,5	;RP0=0, select bank0
-   654  00C5  1303               	bcf	3,6	;RP1=0, select bank0
-   655  00C6  0720               	addwf	??_ISR_TIMER_1,w
-   656  00C7  0088               	movwf	8	;volatile
-   657                           
-   658                           ;reloj.c: 86: counter_digito = 3;
-   659  00C8  3003               	movlw	3
-   660  00C9                     L1:	
-   661  00C9  00A0               	movwf	??_ISR_TIMER_1
-   662  00CA  0820               	movf	??_ISR_TIMER_1,w
-   663  00CB  00AE               	movwf	_counter_digito
-   664                           
-   665                           ;reloj.c: 87: break;
-   666  00CC  290A               	goto	i1l53
-   667  00CD                     i1l761:	
-   668                           ;reloj.c: 88: case 3:
-   669                           
-   670                           
-   671                           ;reloj.c: 89: PORTD = (counter_digito << 4) + (counter_segundos % 60) % 10;
-   672  00CD  082C               	movf	_counter_segundos+1,w
-   673  00CE  00FB               	movwf	___lwmod@dividend+1
-   674  00CF  082B               	movf	_counter_segundos,w
-   675  00D0  00FA               	movwf	___lwmod@dividend
-   676  00D1  303C               	movlw	60
-   677  00D2  00F8               	movwf	___lwmod@divisor
-   678  00D3  3000               	movlw	0
-   679  00D4  00F9               	movwf	___lwmod@divisor+1
-   680  00D5  120A  118A  21A8  120A  118A  	fcall	___lwmod
-   681  00DA  0879               	movf	?___lwmod+1,w
-   682  00DB  1283               	bcf	3,5	;RP0=0, select bank0
-   683  00DC  1303               	bcf	3,6	;RP1=0, select bank0
-   684  00DD  00A8               	movwf	_ISR_TIMER_1$594+1
-   685  00DE  0878               	movf	?___lwmod,w
-   686  00DF  00A7               	movwf	_ISR_TIMER_1$594
-   687                           
-   688                           ;reloj.c: 89: PORTD = (counter_digito << 4) + (counter_segundos % 60) % 10;
-   689  00E0  082E               	movf	_counter_digito,w
-   690  00E1  00A0               	movwf	??_ISR_TIMER_1
-   691  00E2  3004               	movlw	4
-   692  00E3                     u54_25:	
-   693  00E3  1003               	clrc
-   694  00E4  0DA0               	rlf	??_ISR_TIMER_1,f
-   695  00E5  3EFF               	addlw	-1
-   696  00E6  1D03               	skipz
-   697  00E7  28E3               	goto	u54_25
-   698  00E8  300A               	movlw	10
-   699  00E9  00F8               	movwf	___lwmod@divisor
-   700  00EA  3000               	movlw	0
-   701  00EB  00F9               	movwf	___lwmod@divisor+1
-   702  00EC  0828               	movf	_ISR_TIMER_1$594+1,w
-   703  00ED  00FB               	movwf	___lwmod@dividend+1
-   704  00EE  0827               	movf	_ISR_TIMER_1$594,w
-   705  00EF  00FA               	movwf	___lwmod@dividend
-   706  00F0  120A  118A  21A8  120A  118A  	fcall	___lwmod
-   707  00F5  0878               	movf	?___lwmod,w
-   708  00F6  1283               	bcf	3,5	;RP0=0, select bank0
-   709  00F7  1303               	bcf	3,6	;RP1=0, select bank0
-   710  00F8  0720               	addwf	??_ISR_TIMER_1,w
-   711  00F9  0088               	movwf	8	;volatile
+   621                           ;reloj.c: 85: PORTD = (counter_digito << 4) + (counter_segundos % 60) / 10;
+   622  00A1  082E               	movf	_counter_digito,w
+   623  00A2  00A0               	movwf	??_ISR_TIMER_1
+   624  00A3  3004               	movlw	4
+   625  00A4                     u53_25:	
+   626  00A4  1003               	clrc
+   627  00A5  0DA0               	rlf	??_ISR_TIMER_1,f
+   628  00A6  3EFF               	addlw	-1
+   629  00A7  1D03               	skipz
+   630  00A8  28A4               	goto	u53_25
+   631  00A9  300A               	movlw	10
+   632  00AA  00F0               	movwf	___lwdiv@divisor
+   633  00AB  3000               	movlw	0
+   634  00AC  00F1               	movwf	___lwdiv@divisor+1
+   635  00AD  082C               	movf	_counter_segundos+1,w
+   636  00AE  00FB               	movwf	___lwmod@dividend+1
+   637  00AF  082B               	movf	_counter_segundos,w
+   638  00B0  00FA               	movwf	___lwmod@dividend
+   639  00B1  303C               	movlw	60
+   640  00B2  00F8               	movwf	___lwmod@divisor
+   641  00B3  3000               	movlw	0
+   642  00B4  00F9               	movwf	___lwmod@divisor+1
+   643  00B5  120A  118A  21A5  120A  118A  	fcall	___lwmod
+   644  00BA  0879               	movf	?___lwmod+1,w
+   645  00BB  00F3               	movwf	___lwdiv@dividend+1
+   646  00BC  0878               	movf	?___lwmod,w
+   647  00BD  00F2               	movwf	___lwdiv@dividend
+   648  00BE  120A  118A  2169  120A  118A  	fcall	___lwdiv
+   649  00C3  0870               	movf	?___lwdiv,w
+   650  00C4  1283               	bcf	3,5	;RP0=0, select bank0
+   651  00C5  1303               	bcf	3,6	;RP1=0, select bank0
+   652  00C6  0720               	addwf	??_ISR_TIMER_1,w
+   653  00C7  0088               	movwf	8	;volatile
+   654                           
+   655                           ;reloj.c: 86: counter_digito = 3;
+   656  00C8  3003               	movlw	3
+   657  00C9                     L1:	
+   658  00C9  00A0               	movwf	??_ISR_TIMER_1
+   659  00CA  0820               	movf	??_ISR_TIMER_1,w
+   660  00CB  00AE               	movwf	_counter_digito
+   661                           
+   662                           ;reloj.c: 87: break;
+   663  00CC  290A               	goto	i1l53
+   664  00CD                     i1l761:	
+   665                           ;reloj.c: 88: case 3:
+   666                           
+   667                           
+   668                           ;reloj.c: 89: PORTD = (counter_digito << 4) + (counter_segundos % 60) % 10;
+   669  00CD  082C               	movf	_counter_segundos+1,w
+   670  00CE  00FB               	movwf	___lwmod@dividend+1
+   671  00CF  082B               	movf	_counter_segundos,w
+   672  00D0  00FA               	movwf	___lwmod@dividend
+   673  00D1  303C               	movlw	60
+   674  00D2  00F8               	movwf	___lwmod@divisor
+   675  00D3  3000               	movlw	0
+   676  00D4  00F9               	movwf	___lwmod@divisor+1
+   677  00D5  120A  118A  21A5  120A  118A  	fcall	___lwmod
+   678  00DA  0879               	movf	?___lwmod+1,w
+   679  00DB  1283               	bcf	3,5	;RP0=0, select bank0
+   680  00DC  1303               	bcf	3,6	;RP1=0, select bank0
+   681  00DD  00A8               	movwf	_ISR_TIMER_1$594+1
+   682  00DE  0878               	movf	?___lwmod,w
+   683  00DF  00A7               	movwf	_ISR_TIMER_1$594
+   684                           
+   685                           ;reloj.c: 89: PORTD = (counter_digito << 4) + (counter_segundos % 60) % 10;
+   686  00E0  082E               	movf	_counter_digito,w
+   687  00E1  00A0               	movwf	??_ISR_TIMER_1
+   688  00E2  3004               	movlw	4
+   689  00E3                     u54_25:	
+   690  00E3  1003               	clrc
+   691  00E4  0DA0               	rlf	??_ISR_TIMER_1,f
+   692  00E5  3EFF               	addlw	-1
+   693  00E6  1D03               	skipz
+   694  00E7  28E3               	goto	u54_25
+   695  00E8  300A               	movlw	10
+   696  00E9  00F8               	movwf	___lwmod@divisor
+   697  00EA  3000               	movlw	0
+   698  00EB  00F9               	movwf	___lwmod@divisor+1
+   699  00EC  0828               	movf	_ISR_TIMER_1$594+1,w
+   700  00ED  00FB               	movwf	___lwmod@dividend+1
+   701  00EE  0827               	movf	_ISR_TIMER_1$594,w
+   702  00EF  00FA               	movwf	___lwmod@dividend
+   703  00F0  120A  118A  21A5  120A  118A  	fcall	___lwmod
+   704  00F5  0878               	movf	?___lwmod,w
+   705  00F6  1283               	bcf	3,5	;RP0=0, select bank0
+   706  00F7  1303               	bcf	3,6	;RP1=0, select bank0
+   707  00F8  0720               	addwf	??_ISR_TIMER_1,w
+   708  00F9  0088               	movwf	8	;volatile
+   709                           
+   710                           ;reloj.c: 90: counter_digito = 0;
+   711  00FA  01AE               	clrf	_counter_digito
    712                           
-   713                           ;reloj.c: 90: counter_digito = 0;
-   714  00FA  01AE               	clrf	_counter_digito
-   715                           
-   716                           ;reloj.c: 92: }
-   717                           
-   718                           ;reloj.c: 91: break;
-   719  00FB  290A               	goto	i1l53
-   720  00FC                     i1l767:	
-   721  00FC  082E               	movf	_counter_digito,w
-   722                           
-   723                           ; Switch size 1, requested type "space"
-   724                           ; Number of cases is 4, Range of values is 0 to 3
-   725                           ; switch strategies available:
-   726                           ; Name         Instructions Cycles
-   727                           ; simple_byte           13     7 (average)
-   728                           ; direct_byte           20     8 (fixed)
-   729                           ; jumptable            260     6 (fixed)
-   730                           ;	Chosen strategy is simple_byte
-   731  00FD  3A00               	xorlw	0	; case 0
-   732  00FE  1903               	skipnz
-   733  00FF  2848               	goto	i1l749
-   734  0100  3A01               	xorlw	1	; case 1
-   735  0101  1903               	skipnz
-   736  0102  2878               	goto	i1l753
-   737  0103  3A03               	xorlw	3	; case 2
-   738  0104  1903               	skipnz
-   739  0105  28A1               	goto	i1l757
-   740  0106  3A01               	xorlw	1	; case 3
-   741  0107  1903               	skipnz
-   742  0108  28CD               	goto	i1l761
-   743  0109  290A               	goto	i1l53
-   744  010A                     i1l53:	
-   745                           
-   746                           ;reloj.c: 94: PIR1bits.TMR1IF = 0;
-   747  010A  100C               	bcf	12,0	;volatile
-   748  010B                     i1l57:	
-   749  010B  1283               	bcf	3,5	;RP0=0, select bank0
-   750  010C  0824               	movf	??_ISR_TIMER_1+4,w
-   751  010D  00FF               	movwf	127
-   752  010E  0823               	movf	??_ISR_TIMER_1+3,w
-   753  010F  008A               	movwf	10
-   754  0110  0822               	movf	??_ISR_TIMER_1+2,w
-   755  0111  0084               	movwf	4
-   756  0112  0E21               	swapf	(??_ISR_TIMER_1+1)^0,w
-   757  0113  0083               	movwf	3
-   758  0114  0EFE               	swapf	126,f
-   759  0115  0E7E               	swapf	126,w
-   760  0116  0009               	retfie
-   761  0117                     __end_of_ISR_TIMER_1:	
-   762                           
-   763                           	psect	intentry
-   764  0004                     __pintentry:	
-   765                           ;incstack = 0
-   766                           ; Regs used in _ISR_TIMER_1: [wreg-fsr0h+status,2+status,0+pclath+cstack]
-   767                           
-   768  0004                     interrupt_function:	
-   769  007E                     saved_w	set	btemp
-   770  0004  00FE               	movwf	btemp
-   771  0005  0E03               	swapf	3,w
-   772  0006  1283               	bcf	3,5	;RP0=0, select bank0
-   773  0007  1303               	bcf	3,6	;RP1=0, select bank0
-   774  0008  00A1               	movwf	??_ISR_TIMER_1+1
-   775  0009  0804               	movf	4,w
-   776  000A  00A2               	movwf	??_ISR_TIMER_1+2
-   777  000B  080A               	movf	10,w
-   778  000C  00A3               	movwf	??_ISR_TIMER_1+3
-   779  000D  087F               	movf	btemp+1,w
-   780  000E  00A4               	movwf	??_ISR_TIMER_1+4
-   781  000F  120A  118A  2820   	ljmp	_ISR_TIMER_1
-   782                           
-   783                           	psect	text2
-   784  01A8                     __ptext2:	
-   785 ;; *************** function ___lwmod *****************
-   786 ;; Defined at:
-   787 ;;		line 6 in file "D:\mplab\sources\common\lwmod.c"
-   788 ;; Parameters:    Size  Location     Type
-   789 ;;  divisor         2    8[COMMON] unsigned int 
-   790 ;;  dividend        2   10[COMMON] unsigned int 
-   791 ;; Auto vars:     Size  Location     Type
-   792 ;;  counter         1   13[COMMON] unsigned char 
-   793 ;; Return value:  Size  Location     Type
-   794 ;;                  2    8[COMMON] unsigned int 
-   795 ;; Registers used:
-   796 ;;		wreg, status,2, status,0
-   797 ;; Tracked objects:
-   798 ;;		On entry : 0/0
-   799 ;;		On exit  : 0/0
-   800 ;;		Unchanged: 0/0
-   801 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   802 ;;      Params:         4       0       0       0       0
-   803 ;;      Locals:         1       0       0       0       0
-   804 ;;      Temps:          1       0       0       0       0
-   805 ;;      Totals:         6       0       0       0       0
-   806 ;;Total ram usage:        6 bytes
-   807 ;; Hardware stack levels used:    1
-   808 ;; This function calls:
-   809 ;;		Nothing
-   810 ;; This function is called by:
-   811 ;;		_ISR_TIMER_1
-   812 ;; This function uses a non-reentrant model
-   813 ;;
-   814                           
+   713                           ;reloj.c: 92: }
+   714                           
+   715                           ;reloj.c: 91: break;
+   716  00FB  290A               	goto	i1l53
+   717  00FC                     i1l767:	
+   718  00FC  082E               	movf	_counter_digito,w
+   719                           
+   720                           ; Switch size 1, requested type "space"
+   721                           ; Number of cases is 4, Range of values is 0 to 3
+   722                           ; switch strategies available:
+   723                           ; Name         Instructions Cycles
+   724                           ; simple_byte           13     7 (average)
+   725                           ; direct_byte           20     8 (fixed)
+   726                           ; jumptable            260     6 (fixed)
+   727                           ;	Chosen strategy is simple_byte
+   728  00FD  3A00               	xorlw	0	; case 0
+   729  00FE  1903               	skipnz
+   730  00FF  2848               	goto	i1l749
+   731  0100  3A01               	xorlw	1	; case 1
+   732  0101  1903               	skipnz
+   733  0102  2878               	goto	i1l753
+   734  0103  3A03               	xorlw	3	; case 2
+   735  0104  1903               	skipnz
+   736  0105  28A1               	goto	i1l757
+   737  0106  3A01               	xorlw	1	; case 3
+   738  0107  1903               	skipnz
+   739  0108  28CD               	goto	i1l761
+   740  0109  290A               	goto	i1l53
+   741  010A                     i1l53:	
+   742                           
+   743                           ;reloj.c: 94: PIR1bits.TMR1IF = 0;
+   744  010A  100C               	bcf	12,0	;volatile
+   745  010B                     i1l57:	
+   746  010B  1283               	bcf	3,5	;RP0=0, select bank0
+   747  010C  0824               	movf	??_ISR_TIMER_1+4,w
+   748  010D  00FF               	movwf	127
+   749  010E  0823               	movf	??_ISR_TIMER_1+3,w
+   750  010F  008A               	movwf	10
+   751  0110  0822               	movf	??_ISR_TIMER_1+2,w
+   752  0111  0084               	movwf	4
+   753  0112  0E21               	swapf	(??_ISR_TIMER_1+1)^0,w
+   754  0113  0083               	movwf	3
+   755  0114  0EFE               	swapf	126,f
+   756  0115  0E7E               	swapf	126,w
+   757  0116  0009               	retfie
+   758  0117                     __end_of_ISR_TIMER_1:	
+   759                           
+   760                           	psect	intentry
+   761  0004                     __pintentry:	
+   762                           ;incstack = 0
+   763                           ; Regs used in _ISR_TIMER_1: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   764                           
+   765  0004                     interrupt_function:	
+   766  007E                     saved_w	set	btemp
+   767  0004  00FE               	movwf	btemp
+   768  0005  0E03               	swapf	3,w
+   769  0006  1283               	bcf	3,5	;RP0=0, select bank0
+   770  0007  1303               	bcf	3,6	;RP1=0, select bank0
+   771  0008  00A1               	movwf	??_ISR_TIMER_1+1
+   772  0009  0804               	movf	4,w
+   773  000A  00A2               	movwf	??_ISR_TIMER_1+2
+   774  000B  080A               	movf	10,w
+   775  000C  00A3               	movwf	??_ISR_TIMER_1+3
+   776  000D  087F               	movf	btemp+1,w
+   777  000E  00A4               	movwf	??_ISR_TIMER_1+4
+   778  000F  120A  118A  2820   	ljmp	_ISR_TIMER_1
+   779                           
+   780                           	psect	text2
+   781  01A5                     __ptext2:	
+   782 ;; *************** function ___lwmod *****************
+   783 ;; Defined at:
+   784 ;;		line 6 in file "D:\mplab\sources\common\lwmod.c"
+   785 ;; Parameters:    Size  Location     Type
+   786 ;;  divisor         2    8[COMMON] unsigned int 
+   787 ;;  dividend        2   10[COMMON] unsigned int 
+   788 ;; Auto vars:     Size  Location     Type
+   789 ;;  counter         1   13[COMMON] unsigned char 
+   790 ;; Return value:  Size  Location     Type
+   791 ;;                  2    8[COMMON] unsigned int 
+   792 ;; Registers used:
+   793 ;;		wreg, status,2, status,0
+   794 ;; Tracked objects:
+   795 ;;		On entry : 0/0
+   796 ;;		On exit  : 0/0
+   797 ;;		Unchanged: 0/0
+   798 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   799 ;;      Params:         4       0       0       0       0
+   800 ;;      Locals:         1       0       0       0       0
+   801 ;;      Temps:          1       0       0       0       0
+   802 ;;      Totals:         6       0       0       0       0
+   803 ;;Total ram usage:        6 bytes
+   804 ;; Hardware stack levels used:    1
+   805 ;; This function calls:
+   806 ;;		Nothing
+   807 ;; This function is called by:
+   808 ;;		_ISR_TIMER_1
+   809 ;; This function uses a non-reentrant model
+   810 ;;
+   811                           
+   812                           
+   813                           ;psect for function ___lwmod
+   814  01A5                     ___lwmod:	
    815                           
-   816                           ;psect for function ___lwmod
-   817  01A8                     ___lwmod:	
-   818                           
-   819                           ;incstack = 0
-   820                           ; Regs used in ___lwmod: [wreg+status,2+status,0]
-   821  01A8  0878               	movf	___lwmod@divisor,w
-   822  01A9  0479               	iorwf	___lwmod@divisor+1,w
-   823  01AA  1903               	btfsc	3,2
-   824  01AB  29D5               	goto	i1l687
-   825  01AC  01FD               	clrf	___lwmod@counter
-   826  01AD  0AFD               	incf	___lwmod@counter,f
-   827  01AE                     i1l677:	
-   828  01AE  1BF9               	btfsc	___lwmod@divisor+1,7
-   829  01AF  29BC               	goto	i1l679
-   830  01B0  3001               	movlw	1
-   831  01B1                     u36_25:	
-   832  01B1  1003               	clrc
-   833  01B2  0DF8               	rlf	___lwmod@divisor,f
-   834  01B3  0DF9               	rlf	___lwmod@divisor+1,f
-   835  01B4  3EFF               	addlw	-1
-   836  01B5  1D03               	skipz
-   837  01B6  29B1               	goto	u36_25
-   838  01B7  3001               	movlw	1
-   839  01B8  00FC               	movwf	??___lwmod
-   840  01B9  087C               	movf	??___lwmod,w
-   841  01BA  07FD               	addwf	___lwmod@counter,f
-   842  01BB  29AE               	goto	i1l677
-   843  01BC                     i1l679:	
-   844  01BC  0879               	movf	___lwmod@divisor+1,w
-   845  01BD  027B               	subwf	___lwmod@dividend+1,w
-   846  01BE  1D03               	skipz
-   847  01BF  29C2               	goto	u38_25
-   848  01C0  0878               	movf	___lwmod@divisor,w
-   849  01C1  027A               	subwf	___lwmod@dividend,w
-   850  01C2                     u38_25:	
-   851  01C2  1C03               	skipc
-   852  01C3  29CA               	goto	i1l683
-   853  01C4  0878               	movf	___lwmod@divisor,w
-   854  01C5  02FA               	subwf	___lwmod@dividend,f
-   855  01C6  0879               	movf	___lwmod@divisor+1,w
-   856  01C7  1C03               	skipc
-   857  01C8  03FB               	decf	___lwmod@dividend+1,f
-   858  01C9  02FB               	subwf	___lwmod@dividend+1,f
-   859  01CA                     i1l683:	
-   860  01CA  3001               	movlw	1
-   861  01CB                     u39_25:	
-   862  01CB  1003               	clrc
-   863  01CC  0CF9               	rrf	___lwmod@divisor+1,f
-   864  01CD  0CF8               	rrf	___lwmod@divisor,f
-   865  01CE  3EFF               	addlw	-1
-   866  01CF  1D03               	skipz
-   867  01D0  29CB               	goto	u39_25
-   868  01D1  3001               	movlw	1
-   869  01D2  02FD               	subwf	___lwmod@counter,f
-   870  01D3  1D03               	btfss	3,2
-   871  01D4  29BC               	goto	i1l679
-   872  01D5                     i1l687:	
-   873  01D5  087B               	movf	___lwmod@dividend+1,w
-   874  01D6  00F9               	movwf	?___lwmod+1
-   875  01D7  087A               	movf	___lwmod@dividend,w
-   876  01D8  00F8               	movwf	?___lwmod
-   877  01D9  0008               	return
-   878  01DA                     __end_of___lwmod:	
-   879                           
-   880                           	psect	text3
-   881  016C                     __ptext3:	
-   882 ;; *************** function ___lwdiv *****************
-   883 ;; Defined at:
-   884 ;;		line 6 in file "D:\mplab\sources\common\lwdiv.c"
-   885 ;; Parameters:    Size  Location     Type
-   886 ;;  divisor         2    0[COMMON] unsigned int 
-   887 ;;  dividend        2    2[COMMON] unsigned int 
-   888 ;; Auto vars:     Size  Location     Type
-   889 ;;  quotient        2    5[COMMON] unsigned int 
-   890 ;;  counter         1    7[COMMON] unsigned char 
-   891 ;; Return value:  Size  Location     Type
-   892 ;;                  2    0[COMMON] unsigned int 
-   893 ;; Registers used:
-   894 ;;		wreg, status,2, status,0
-   895 ;; Tracked objects:
-   896 ;;		On entry : 0/0
-   897 ;;		On exit  : 0/0
-   898 ;;		Unchanged: 0/0
-   899 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   900 ;;      Params:         4       0       0       0       0
-   901 ;;      Locals:         3       0       0       0       0
-   902 ;;      Temps:          1       0       0       0       0
-   903 ;;      Totals:         8       0       0       0       0
-   904 ;;Total ram usage:        8 bytes
-   905 ;; Hardware stack levels used:    1
-   906 ;; This function calls:
-   907 ;;		Nothing
-   908 ;; This function is called by:
-   909 ;;		_ISR_TIMER_1
-   910 ;; This function uses a non-reentrant model
-   911 ;;
-   912                           
+   816                           ;incstack = 0
+   817                           ; Regs used in ___lwmod: [wreg+status,2+status,0]
+   818  01A5  0878               	movf	___lwmod@divisor,w
+   819  01A6  0479               	iorwf	___lwmod@divisor+1,w
+   820  01A7  1903               	btfsc	3,2
+   821  01A8  29D2               	goto	i1l687
+   822  01A9  01FD               	clrf	___lwmod@counter
+   823  01AA  0AFD               	incf	___lwmod@counter,f
+   824  01AB                     i1l677:	
+   825  01AB  1BF9               	btfsc	___lwmod@divisor+1,7
+   826  01AC  29B9               	goto	i1l679
+   827  01AD  3001               	movlw	1
+   828  01AE                     u36_25:	
+   829  01AE  1003               	clrc
+   830  01AF  0DF8               	rlf	___lwmod@divisor,f
+   831  01B0  0DF9               	rlf	___lwmod@divisor+1,f
+   832  01B1  3EFF               	addlw	-1
+   833  01B2  1D03               	skipz
+   834  01B3  29AE               	goto	u36_25
+   835  01B4  3001               	movlw	1
+   836  01B5  00FC               	movwf	??___lwmod
+   837  01B6  087C               	movf	??___lwmod,w
+   838  01B7  07FD               	addwf	___lwmod@counter,f
+   839  01B8  29AB               	goto	i1l677
+   840  01B9                     i1l679:	
+   841  01B9  0879               	movf	___lwmod@divisor+1,w
+   842  01BA  027B               	subwf	___lwmod@dividend+1,w
+   843  01BB  1D03               	skipz
+   844  01BC  29BF               	goto	u38_25
+   845  01BD  0878               	movf	___lwmod@divisor,w
+   846  01BE  027A               	subwf	___lwmod@dividend,w
+   847  01BF                     u38_25:	
+   848  01BF  1C03               	skipc
+   849  01C0  29C7               	goto	i1l683
+   850  01C1  0878               	movf	___lwmod@divisor,w
+   851  01C2  02FA               	subwf	___lwmod@dividend,f
+   852  01C3  0879               	movf	___lwmod@divisor+1,w
+   853  01C4  1C03               	skipc
+   854  01C5  03FB               	decf	___lwmod@dividend+1,f
+   855  01C6  02FB               	subwf	___lwmod@dividend+1,f
+   856  01C7                     i1l683:	
+   857  01C7  3001               	movlw	1
+   858  01C8                     u39_25:	
+   859  01C8  1003               	clrc
+   860  01C9  0CF9               	rrf	___lwmod@divisor+1,f
+   861  01CA  0CF8               	rrf	___lwmod@divisor,f
+   862  01CB  3EFF               	addlw	-1
+   863  01CC  1D03               	skipz
+   864  01CD  29C8               	goto	u39_25
+   865  01CE  3001               	movlw	1
+   866  01CF  02FD               	subwf	___lwmod@counter,f
+   867  01D0  1D03               	btfss	3,2
+   868  01D1  29B9               	goto	i1l679
+   869  01D2                     i1l687:	
+   870  01D2  087B               	movf	___lwmod@dividend+1,w
+   871  01D3  00F9               	movwf	?___lwmod+1
+   872  01D4  087A               	movf	___lwmod@dividend,w
+   873  01D5  00F8               	movwf	?___lwmod
+   874  01D6  0008               	return
+   875  01D7                     __end_of___lwmod:	
+   876                           
+   877                           	psect	text3
+   878  0169                     __ptext3:	
+   879 ;; *************** function ___lwdiv *****************
+   880 ;; Defined at:
+   881 ;;		line 6 in file "D:\mplab\sources\common\lwdiv.c"
+   882 ;; Parameters:    Size  Location     Type
+   883 ;;  divisor         2    0[COMMON] unsigned int 
+   884 ;;  dividend        2    2[COMMON] unsigned int 
+   885 ;; Auto vars:     Size  Location     Type
+   886 ;;  quotient        2    5[COMMON] unsigned int 
+   887 ;;  counter         1    7[COMMON] unsigned char 
+   888 ;; Return value:  Size  Location     Type
+   889 ;;                  2    0[COMMON] unsigned int 
+   890 ;; Registers used:
+   891 ;;		wreg, status,2, status,0
+   892 ;; Tracked objects:
+   893 ;;		On entry : 0/0
+   894 ;;		On exit  : 0/0
+   895 ;;		Unchanged: 0/0
+   896 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   897 ;;      Params:         4       0       0       0       0
+   898 ;;      Locals:         3       0       0       0       0
+   899 ;;      Temps:          1       0       0       0       0
+   900 ;;      Totals:         8       0       0       0       0
+   901 ;;Total ram usage:        8 bytes
+   902 ;; Hardware stack levels used:    1
+   903 ;; This function calls:
+   904 ;;		Nothing
+   905 ;; This function is called by:
+   906 ;;		_ISR_TIMER_1
+   907 ;; This function uses a non-reentrant model
+   908 ;;
+   909                           
+   910                           
+   911                           ;psect for function ___lwdiv
+   912  0169                     ___lwdiv:	
    913                           
-   914                           ;psect for function ___lwdiv
-   915  016C                     ___lwdiv:	
-   916                           
-   917                           ;incstack = 0
-   918                           ; Regs used in ___lwdiv: [wreg+status,2+status,0]
-   919  016C  01F5               	clrf	___lwdiv@quotient
-   920  016D  01F6               	clrf	___lwdiv@quotient+1
-   921  016E  0870               	movf	___lwdiv@divisor,w
-   922  016F  0471               	iorwf	___lwdiv@divisor+1,w
-   923  0170  1903               	btfsc	3,2
-   924  0171  29A3               	goto	i1l665
-   925  0172  01F7               	clrf	___lwdiv@counter
-   926  0173  0AF7               	incf	___lwdiv@counter,f
-   927  0174                     i1l653:	
-   928  0174  1BF1               	btfsc	___lwdiv@divisor+1,7
-   929  0175  2982               	goto	i1l655
-   930  0176  3001               	movlw	1
-   931  0177                     u29_25:	
-   932  0177  1003               	clrc
-   933  0178  0DF0               	rlf	___lwdiv@divisor,f
-   934  0179  0DF1               	rlf	___lwdiv@divisor+1,f
-   935  017A  3EFF               	addlw	-1
-   936  017B  1D03               	skipz
-   937  017C  2977               	goto	u29_25
-   938  017D  3001               	movlw	1
-   939  017E  00F4               	movwf	??___lwdiv
-   940  017F  0874               	movf	??___lwdiv,w
-   941  0180  07F7               	addwf	___lwdiv@counter,f
-   942  0181  2974               	goto	i1l653
-   943  0182                     i1l655:	
-   944  0182  3001               	movlw	1
-   945  0183                     u31_25:	
-   946  0183  1003               	clrc
-   947  0184  0DF5               	rlf	___lwdiv@quotient,f
-   948  0185  0DF6               	rlf	___lwdiv@quotient+1,f
-   949  0186  3EFF               	addlw	-1
-   950  0187  1D03               	skipz
-   951  0188  2983               	goto	u31_25
-   952  0189  0871               	movf	___lwdiv@divisor+1,w
-   953  018A  0273               	subwf	___lwdiv@dividend+1,w
-   954  018B  1D03               	skipz
-   955  018C  298F               	goto	u32_25
-   956  018D  0870               	movf	___lwdiv@divisor,w
-   957  018E  0272               	subwf	___lwdiv@dividend,w
-   958  018F                     u32_25:	
-   959  018F  1C03               	skipc
-   960  0190  2998               	goto	i1l661
-   961  0191  0870               	movf	___lwdiv@divisor,w
-   962  0192  02F2               	subwf	___lwdiv@dividend,f
-   963  0193  0871               	movf	___lwdiv@divisor+1,w
-   964  0194  1C03               	skipc
-   965  0195  03F3               	decf	___lwdiv@dividend+1,f
-   966  0196  02F3               	subwf	___lwdiv@dividend+1,f
-   967  0197  1475               	bsf	___lwdiv@quotient,0
-   968  0198                     i1l661:	
-   969  0198  3001               	movlw	1
-   970  0199                     u33_25:	
-   971  0199  1003               	clrc
-   972  019A  0CF1               	rrf	___lwdiv@divisor+1,f
-   973  019B  0CF0               	rrf	___lwdiv@divisor,f
-   974  019C  3EFF               	addlw	-1
-   975  019D  1D03               	skipz
-   976  019E  2999               	goto	u33_25
-   977  019F  3001               	movlw	1
-   978  01A0  02F7               	subwf	___lwdiv@counter,f
-   979  01A1  1D03               	btfss	3,2
-   980  01A2  2982               	goto	i1l655
-   981  01A3                     i1l665:	
-   982  01A3  0876               	movf	___lwdiv@quotient+1,w
-   983  01A4  00F1               	movwf	?___lwdiv+1
-   984  01A5  0875               	movf	___lwdiv@quotient,w
-   985  01A6  00F0               	movwf	?___lwdiv
-   986  01A7  0008               	return
-   987  01A8                     __end_of___lwdiv:	
-   988  007E                     btemp	set	126	;btemp
-   989  007E                     wtemp0	set	126
+   914                           ;incstack = 0
+   915                           ; Regs used in ___lwdiv: [wreg+status,2+status,0]
+   916  0169  01F5               	clrf	___lwdiv@quotient
+   917  016A  01F6               	clrf	___lwdiv@quotient+1
+   918  016B  0870               	movf	___lwdiv@divisor,w
+   919  016C  0471               	iorwf	___lwdiv@divisor+1,w
+   920  016D  1903               	btfsc	3,2
+   921  016E  29A0               	goto	i1l665
+   922  016F  01F7               	clrf	___lwdiv@counter
+   923  0170  0AF7               	incf	___lwdiv@counter,f
+   924  0171                     i1l653:	
+   925  0171  1BF1               	btfsc	___lwdiv@divisor+1,7
+   926  0172  297F               	goto	i1l655
+   927  0173  3001               	movlw	1
+   928  0174                     u29_25:	
+   929  0174  1003               	clrc
+   930  0175  0DF0               	rlf	___lwdiv@divisor,f
+   931  0176  0DF1               	rlf	___lwdiv@divisor+1,f
+   932  0177  3EFF               	addlw	-1
+   933  0178  1D03               	skipz
+   934  0179  2974               	goto	u29_25
+   935  017A  3001               	movlw	1
+   936  017B  00F4               	movwf	??___lwdiv
+   937  017C  0874               	movf	??___lwdiv,w
+   938  017D  07F7               	addwf	___lwdiv@counter,f
+   939  017E  2971               	goto	i1l653
+   940  017F                     i1l655:	
+   941  017F  3001               	movlw	1
+   942  0180                     u31_25:	
+   943  0180  1003               	clrc
+   944  0181  0DF5               	rlf	___lwdiv@quotient,f
+   945  0182  0DF6               	rlf	___lwdiv@quotient+1,f
+   946  0183  3EFF               	addlw	-1
+   947  0184  1D03               	skipz
+   948  0185  2980               	goto	u31_25
+   949  0186  0871               	movf	___lwdiv@divisor+1,w
+   950  0187  0273               	subwf	___lwdiv@dividend+1,w
+   951  0188  1D03               	skipz
+   952  0189  298C               	goto	u32_25
+   953  018A  0870               	movf	___lwdiv@divisor,w
+   954  018B  0272               	subwf	___lwdiv@dividend,w
+   955  018C                     u32_25:	
+   956  018C  1C03               	skipc
+   957  018D  2995               	goto	i1l661
+   958  018E  0870               	movf	___lwdiv@divisor,w
+   959  018F  02F2               	subwf	___lwdiv@dividend,f
+   960  0190  0871               	movf	___lwdiv@divisor+1,w
+   961  0191  1C03               	skipc
+   962  0192  03F3               	decf	___lwdiv@dividend+1,f
+   963  0193  02F3               	subwf	___lwdiv@dividend+1,f
+   964  0194  1475               	bsf	___lwdiv@quotient,0
+   965  0195                     i1l661:	
+   966  0195  3001               	movlw	1
+   967  0196                     u33_25:	
+   968  0196  1003               	clrc
+   969  0197  0CF1               	rrf	___lwdiv@divisor+1,f
+   970  0198  0CF0               	rrf	___lwdiv@divisor,f
+   971  0199  3EFF               	addlw	-1
+   972  019A  1D03               	skipz
+   973  019B  2996               	goto	u33_25
+   974  019C  3001               	movlw	1
+   975  019D  02F7               	subwf	___lwdiv@counter,f
+   976  019E  1D03               	btfss	3,2
+   977  019F  297F               	goto	i1l655
+   978  01A0                     i1l665:	
+   979  01A0  0876               	movf	___lwdiv@quotient+1,w
+   980  01A1  00F1               	movwf	?___lwdiv+1
+   981  01A2  0875               	movf	___lwdiv@quotient,w
+   982  01A3  00F0               	movwf	?___lwdiv
+   983  01A4  0008               	return
+   984  01A5                     __end_of___lwdiv:	
+   985  007E                     btemp	set	126	;btemp
+   986  007E                     wtemp0	set	126
 
 
 Data Sizes:
@@ -1129,43 +1126,43 @@ DATA                 0      0      1E      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.41 build -162212810 
-Symbol Table                                                                                   Thu Feb 24 11:32:43 2022
+Symbol Table                                                                                   Thu Feb 24 17:29:49 2022
 
-            __CFG_CP$OFF 0000                       l39 014A              __CFG_LVP$ON 0000  
-                    l725 0157                      l717 0130                      u420 0146  
-                    u430 0147             __CFG_CPD$OFF 0000                      u557 013A  
-                    u567 0152                      u577 0161                      fsr0 0004  
+            __CFG_CP$OFF 0000                       l39 0149              __CFG_LVP$ON 0000  
+                    l725 0155                      l717 0130                      u420 0145  
+                    u430 0146             __CFG_CPD$OFF 0000                      u557 013A  
+                    u567 0151                      u577 015F                      fsr0 0004  
            __CFG_IESO$ON 0000             __CFG_FOSC$XT 0000                     i1l53 010A  
                    i1l57 010B             __CFG_WRT$OFF 0000            __CFG_FCMEN$ON 0000  
                    _main 0117                     btemp 007E            __CFG_BOREN$ON 0000  
                    start 0012            __CFG_MCLRE$ON 0000                    ?_main 0070  
-          __CFG_WDTE$OFF 0000                    _ANSEL 0188          __end_of___lwdiv 01A8  
-        __end_of___lwmod 01DA                    i1l661 0198                    i1l653 0174  
-                  i1l655 0182                    i1l665 01A3                    i1l761 00CD  
-                  i1l753 0078                    i1l683 01CA                    i1l677 01AE  
-                  i1l757 00A1                    i1l749 0048                    i1l679 01BC  
-                  i1l687 01D5                    i1l767 00FC                    u31_25 0183  
-                  u32_25 018F                    _TMR1H 000F                    u33_25 0199  
+          __CFG_WDTE$OFF 0000                    _ANSEL 0188          __end_of___lwdiv 01A5  
+        __end_of___lwmod 01D7                    i1l661 0195                    i1l653 0171  
+                  i1l655 017F                    i1l665 01A0                    i1l761 00CD  
+                  i1l753 0078                    i1l683 01C7                    i1l677 01AB  
+                  i1l757 00A1                    i1l749 0048                    i1l679 01B9  
+                  i1l687 01D2                    i1l767 00FC                    u31_25 0180  
+                  u32_25 018C                    _TMR1H 000F                    u33_25 0196  
                   _TMR1L 000E                    _PORTD 0008                    u51_25 005E  
-                  u36_25 01B1                    u52_25 007B                    u29_25 0177  
-                  u53_25 00A4                    u38_25 01C2                    u54_25 00E3  
-                  u39_25 01CB                    _TRISD 0088                    pclath 000A  
+                  u36_25 01AE                    u52_25 007B                    u29_25 0174  
+                  u53_25 00A4                    u38_25 01BF                    u54_25 00E3  
+                  u39_25 01C8                    _TRISD 0088                    pclath 000A  
                   status 0003                    wtemp0 007E          __initialization 0015  
-           ?_ISR_TIMER_1 0070             __end_of_main 016C                   ??_main 0029  
+           ?_ISR_TIMER_1 0070             __end_of_main 0169                   ??_main 0029  
                  _TRISA0 0428                   _TRISA1 0429           __CFG_PWRTE$OFF 0000  
               ??___lwdiv 0074                ??___lwmod 007C                   saved_w 007E  
 __end_of__initialization 001C           __pcstackCOMMON 0070               __pbssBANK0 002B  
              __pmaintext 0117           _counter_digito 002E               __pintentry 0004  
-   __size_of_ISR_TIMER_1 00F7         _counter_segundos 002B                  ___lwdiv 016C  
-                ___lwmod 01A8                  __ptext1 0020                  __ptext2 01A8  
-                __ptext3 016C                _T1CONbits 0010     end_of_initialization 001C  
+   __size_of_ISR_TIMER_1 00F7         _counter_segundos 002B                  ___lwdiv 0169  
+                ___lwmod 01A5                  __ptext1 0020                  __ptext2 01A5  
+                __ptext3 0169                _T1CONbits 0010     end_of_initialization 001C  
               _PORTAbits 0005      start_initialization 0015             _counter_20ms 002D  
               ___latbits 0002            __pcstackBANK0 0020         ___lwdiv@dividend 0072  
           ??_ISR_TIMER_1 0020                 ?___lwdiv 0070                 ?___lwmod 0078  
        ___lwdiv@quotient 0075        interrupt_function 0004                 _PIE1bits 008C  
                _PIR1bits 000C      __end_of_ISR_TIMER_1 0117         __size_of___lwdiv 003C  
        __size_of___lwmod 0032          ___lwdiv@divisor 0070          ___lwdiv@counter 0077  
-               _flag_run 002F        __CFG_BOR4V$BOR40V 0000            __size_of_main 0055  
+               _flag_run 002F        __CFG_BOR4V$BOR40V 0000            __size_of_main 0052  
             _ISR_TIMER_1 0020               _INTCONbits 000B                 intlevel1 0000  
         _ISR_TIMER_1$593 0025          _ISR_TIMER_1$594 0027         ___lwmod@dividend 007A  
         ___lwmod@divisor 0078          ___lwmod@counter 007D  

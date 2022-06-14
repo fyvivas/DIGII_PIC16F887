@@ -62,7 +62,7 @@ stacklo 0 0 ABS 0
 saved_w 7E 0 ABS 0
 __Hinit 12 0 CODE 0
 __Linit 12 0 CODE 0
-__end_of_main 16C 0 CODE 0
+__end_of_main 169 0 CODE 0
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 __CFG_LVP$ON 0 0 ABS 0
@@ -85,17 +85,17 @@ ___latbits 2 0 ABS 0
 __Hpowerup 0 0 CODE 0
 __Lpowerup 0 0 CODE 0
 __ptext1 20 0 CODE 0
-__ptext2 1A8 0 CODE 0
-__ptext3 16C 0 CODE 0
+__ptext2 1A5 0 CODE 0
+__ptext3 169 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
 __end_of__initialization 1C 0 CODE 0
-__end_of___lwdiv 1A8 0 CODE 0
+__end_of___lwdiv 1A5 0 CODE 0
 __Hidloc 0 0 IDLOC 0
 __Lidloc 0 0 IDLOC 0
 __Hstack 0 0 STACK 2
 __Lstack 0 0 STACK 2
-___lwmod 1A8 0 CODE 0
+___lwmod 1A5 0 CODE 0
 __Hspace_0 2009 0 ABS 0
 __Lspace_0 0 0 ABS 0
 __CFG_IESO$ON 0 0 ABS 0
@@ -106,7 +106,7 @@ __Lspace_2 0 0 ABS 0
 __Hcinit 20 0 CODE 0
 __Lcinit 15 0 CODE 0
 __Hspace_3 0 0 ABS 0
-___lwdiv 16C 0 CODE 0
+___lwdiv 169 0 CODE 0
 __Lspace_3 0 0 ABS 0
 __size_of_main 0 0 ABS 0
 __size_of___lwdiv 0 0 ABS 0
@@ -115,7 +115,7 @@ __LbssBANK0 0 0 ABS 0
 __pbssBANK0 2B 0 BANK0 1
 _counter_segundos 2B 0 BANK0 1
 _ISR_TIMER_1$593 25 0 BANK0 1
-__end_of___lwmod 1DA 0 CODE 0
+__end_of___lwmod 1D7 0 CODE 0
 ___lwmod@divisor 78 0 COMMON 1
 __CFG_PWRTE$OFF 0 0 ABS 0
 _INTCONbits B 0 ABS 0
@@ -152,13 +152,13 @@ __CFG_CP$OFF 0 0 ABS 0
 __CFG_FCMEN$ON 0 0 ABS 0
 %segments
 reset_vec 0 5 CODE 0 0
-intentry 8 3B3 CODE 8 0
+intentry 8 3AD CODE 8 0
 config 400E 4011 CONFIG 400E 0
 cstackCOMMON 70 7D COMMON 70 1
 cstackBANK0 20 2F BANK0 20 1
 %locals
 dist/default/production\TIMER.X.production.obj
-C:\Users\ASUS\AppData\Local\Temp\sbmk.
+C:\Users\ASUS\AppData\Local\Temp\s8l0.
 244 15 0 CODE 0
 247 15 0 CODE 0
 267 15 0 CODE 0
@@ -189,14 +189,14 @@ reloj.c
 45 12D 0 CODE 0
 48 130 0 CODE 0
 49 134 0 CODE 0
-50 13F 0 CODE 0
-51 14A 0 CODE 0
-52 14C 0 CODE 0
-54 157 0 CODE 0
-55 15B 0 CODE 0
-56 166 0 CODE 0
-57 16A 0 CODE 0
-47 16B 0 CODE 0
+50 13E 0 CODE 0
+51 149 0 CODE 0
+52 14B 0 CODE 0
+54 155 0 CODE 0
+55 159 0 CODE 0
+56 163 0 CODE 0
+57 167 0 CODE 0
+47 168 0 CODE 0
 63 20 0 CODE 0
 64 20 0 CODE 0
 65 28 0 CODE 0
@@ -223,31 +223,31 @@ reloj.c
 96 10B 0 CODE 0
 63 4 0 CODE 0
 D:\mplab\sources\common\lwmod.c
-6 1A8 0 CODE 0
-13 1A8 0 CODE 0
-14 1AC 0 CODE 0
-15 1AE 0 CODE 0
-16 1B0 0 CODE 0
-17 1B7 0 CODE 0
-15 1BB 0 CODE 0
-20 1BC 0 CODE 0
-21 1C4 0 CODE 0
-22 1CA 0 CODE 0
-23 1D1 0 CODE 0
-25 1D5 0 CODE 0
+6 1A5 0 CODE 0
+13 1A5 0 CODE 0
+14 1A9 0 CODE 0
+15 1AB 0 CODE 0
+16 1AD 0 CODE 0
+17 1B4 0 CODE 0
+15 1B8 0 CODE 0
+20 1B9 0 CODE 0
+21 1C1 0 CODE 0
+22 1C7 0 CODE 0
+23 1CE 0 CODE 0
+25 1D2 0 CODE 0
 D:\mplab\sources\common\lwdiv.c
-6 16C 0 CODE 0
-14 16C 0 CODE 0
-15 16E 0 CODE 0
-16 172 0 CODE 0
-17 174 0 CODE 0
-18 176 0 CODE 0
-19 17D 0 CODE 0
-17 181 0 CODE 0
-22 182 0 CODE 0
-23 189 0 CODE 0
-24 191 0 CODE 0
-25 197 0 CODE 0
-27 198 0 CODE 0
-28 19F 0 CODE 0
-30 1A3 0 CODE 0
+6 169 0 CODE 0
+14 169 0 CODE 0
+15 16B 0 CODE 0
+16 16F 0 CODE 0
+17 171 0 CODE 0
+18 173 0 CODE 0
+19 17A 0 CODE 0
+17 17E 0 CODE 0
+22 17F 0 CODE 0
+23 186 0 CODE 0
+24 18E 0 CODE 0
+25 194 0 CODE 0
+27 195 0 CODE 0
+28 19C 0 CODE 0
+30 1A0 0 CODE 0

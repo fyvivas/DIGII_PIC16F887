@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=D:\mplab\dat\en_msgs.txt -cs \
   -h+dist/default/production\TIMER.X.production.sym \
   --cmf=dist/default/production\TIMER.X.production.cmf -z -Q16F887 \
-  -oC:\Users\ASUS\AppData\Local\Temp\sbmk.2 \
+  -oC:\Users\ASUS\AppData\Local\Temp\s8l0.2 \
   -Mdist/default/production/TIMER.X.production.map -E1 -ver=XC8 \
   -ASTACK=0110h-016fh -pstack=STACK -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh \
   -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -pfunctab=CODE -ACONFIG=02007h-02008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\ASUS\AppData\Local\Temp\sbmk.obj \
+  -DENTRY=2 -k C:\Users\ASUS\AppData\Local\Temp\s8l0.obj \
   dist/default/production\TIMER.X.production.obj 
 
 Object code version is 3.11
@@ -28,17 +28,17 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ASUS\AppData\Local\Temp\sbmk.obj
+C:\Users\ASUS\AppData\Local\Temp\s8l0.obj
                 end_init                             12       12        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2     400E       0
 dist/default/production\TIMER.X.production.obj
                 cinit                                15       15        B        8       0
                 intentry                              4        4        E        8       0
-                text3                               16C      16C       3C        8       0
-                text2                               1A8      1A8       32        8       0
+                text3                               169      169       3C        8       0
+                text2                               1A5      1A5       32        8       0
                 text1                                20       20       F7        8       0
-                maintext                            117      117       55        8       0
+                maintext                            117      117       52        8       0
                 cstackBANK0                          20       20        B       20       1
                 cstackCOMMON                         70       70        E       70       1
                 bssBANK0                             2B       2B        5       20       1
@@ -51,10 +51,10 @@ TOTAL           Name                               Link     Load   Length     Sp
                 cinit                                15       15        B         0
                 intentry                              4        4        E         0
                 reset_vec                             0        0        3         0
-                text3                               16C      16C       3C         0
-                text2                               1A8      1A8       32         0
+                text3                               169      169       3C         0
+                text2                               1A5      1A5       32         0
                 text1                                20       20       F7         0
-                maintext                            117      117       55         0
+                maintext                            117      117       52         0
 
         CLASS   STRCODE        
 
@@ -102,7 +102,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
-                intentry                       000004  0001D6  0001DA         8       0  CODE        2
+                intentry                       000004  0001D3  0001D7         8       0  CODE        2
                 cstackBANK0                    000020  000010  000030        20       1  BANK0       1
                 cstackCOMMON                   000070  00000E  00007E        70       1  COMMON      1
                 config                         002007  000002  002009      400E       0  CONFIG      2
@@ -116,12 +116,12 @@ UNUSED ADDRESS RANGES
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
         CODE             0003-0003              1           2
-                         01DA-1FFF            800
+                         01D7-1FFF            800
         CONST            0003-0003              1           2
-                         01DA-1FFF            100
+                         01D7-1FFF            100
         EEDATA           2100-21FF            100           2
         ENTRY            0003-0003              1           2
-                         01DA-1FFF            100
+                         01D7-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0030-006F             40           1
                          00A0-00EF             50
@@ -133,9 +133,9 @@ UNUSED ADDRESS RANGES
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
         STRCODE          0003-0003              1           2
-                         01DA-1FFF           1E26
+                         01D7-1FFF           1E29
         STRING           0003-0003              1           2
-                         01DA-1FFF            100
+                         01D7-1FFF            100
 
                                   Symbol Table
 
@@ -242,21 +242,21 @@ __S2                     (abs)        0000
 __S3                     (abs)        0000
 ___int_sp                stack        0000
 ___latbits               (abs)        0002
-___lwdiv                 text3        016C
+___lwdiv                 text3        0169
 ___lwdiv@counter         cstackCOMMON 0077
 ___lwdiv@dividend        cstackCOMMON 0072
 ___lwdiv@divisor         cstackCOMMON 0070
 ___lwdiv@quotient        cstackCOMMON 0075
-___lwmod                 text2        01A8
+___lwmod                 text2        01A5
 ___lwmod@counter         cstackCOMMON 007D
 ___lwmod@dividend        cstackCOMMON 007A
 ___lwmod@divisor         cstackCOMMON 0078
 ___sp                    stack        0000
 __end_of_ISR_TIMER_1     text1        0117
-__end_of___lwdiv         text3        01A8
-__end_of___lwmod         text2        01DA
+__end_of___lwdiv         text3        01A5
+__end_of___lwmod         text2        01D7
 __end_of__initialization cinit        001C
-__end_of_main            maintext     016C
+__end_of_main            maintext     0169
 __initialization         cinit        0015
 __pbssBANK0              bssBANK0     002B
 __pcstackBANK0           cstackBANK0  0020
@@ -264,8 +264,8 @@ __pcstackCOMMON          cstackCOMMON 0070
 __pintentry              intentry     0004
 __pmaintext              maintext     0117
 __ptext1                 text1        0020
-__ptext2                 text2        01A8
-__ptext3                 text3        016C
+__ptext2                 text2        01A5
+__ptext3                 text3        0169
 __size_of_ISR_TIMER_1    (abs)        0000
 __size_of___lwdiv        (abs)        0000
 __size_of___lwmod        (abs)        0000
@@ -421,18 +421,18 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 D:\mplab\sources\common\lwmod.c
-		___lwmod       		CODE           	01A8	0000	51
+		___lwmod       		CODE           	01A5	0000	51
 
 D:\mplab\sources\common\lwmod.c estimated size: 51
 
 reloj.c
-		_main          		CODE           	0117	0000	86
+		_main          		CODE           	0117	0000	83
 		_ISR_TIMER_1   		CODE           	0020	0000	248
 
-reloj.c estimated size: 334
+reloj.c estimated size: 331
 
 D:\mplab\sources\common\lwdiv.c
-		___lwdiv       		CODE           	016C	0000	61
+		___lwdiv       		CODE           	0169	0000	61
 
 D:\mplab\sources\common\lwdiv.c estimated size: 61
 
