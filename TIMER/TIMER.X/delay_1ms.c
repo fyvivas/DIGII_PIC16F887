@@ -18,9 +18,9 @@ intended publication of this material.
 ******************************************************************************
 */
 
-#include "fuses.h"		/* Configuration header file */
 #include <xc.h>
 #include <pic16f887.h>  /*Header file PIC18f4550 definitions*/
+#include "config.h"		/* Configuration header file */
 
 //#define _XTAL_FREQ 4000000//frecuencia del oscilador
 //TMR1=65535-{delay*[fosc/(4*prescaler)]} -1

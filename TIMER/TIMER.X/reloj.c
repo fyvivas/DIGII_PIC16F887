@@ -18,7 +18,7 @@ intended publication of this material.
 ******************************************************************************
 */
 
-#include "fuses.h"		/* Configuration header file */
+#include "config.h"		/* Configuration header file */
 #include <xc.h>
 #include <pic16f887.h>  /*Header file PIC18f4550 definitions*/
 

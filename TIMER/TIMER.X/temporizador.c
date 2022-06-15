@@ -20,7 +20,7 @@ intended publication of this material.
 
 #include    <xc.h>
 #include    <pic16f887.h> //Header file PIC16f887 definitions
-#include    "fuses.h"   //Header file Configurations bits Settings
+#include    "config.h"   //Header file Configurations bits Settings
 
 //#define _XTAL_FREQ 1000000L
 

@@ -11,86 +11,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S15 . . . ]
 "468
 [v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
-"657
-[s S23 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S23 . TMR1ON TMR1CS nT1SYNC T1OSCEN T1CKPS TMR1GE T1GINV ]
-"666
-[s S24 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S24 . . T1INSYNC . T1CKPS0 T1CKPS1 . T1GIV ]
-"675
-[s S25 :2 `uc 1 :1 `uc 1 ]
-[n S25 . . T1SYNC ]
-"656
-[u S22 `S23 1 `S24 1 `S25 1 ]
-[n S22 . . . . ]
-"680
-[v _T1CONbits `VS22 ~T0 @X0 0 e@16 ]
-"645
-[v _TMR1H `Vuc ~T0 @X0 0 e@15 ]
-"639
-[v _TMR1L `Vuc ~T0 @X0 0 e@14 ]
-"528
-[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S19 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
-"527
-[u S18 `S19 1 ]
-[n S18 . . ]
-"538
-[v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
-"1664
-[s S63 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S63 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE ]
-"1663
-[u S62 `S63 1 ]
-[n S62 . . ]
-"1674
-[v _PIE1bits `VS62 ~T0 @X0 0 e@140 ]
+"1314
+[s S50 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S50 . PS PSA T0SE T0CS INTEDG nRBPU ]
+"1322
+[s S51 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S51 . PS0 PS1 PS2 ]
+"1313
+[u S49 `S50 1 `S51 1 ]
+[n S49 . . . ]
+"1328
+[v _OPTION_REGbits `VS49 ~T0 @X0 0 e@129 ]
+"55
+[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
 "1560
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
-"4040
-[v _TRISA0 `Vb ~T0 @X0 0 e@1064 ]
-"4042
-[v _TRISA1 `Vb ~T0 @X0 0 e@1065 ]
+"341
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"4048
+[v _TRISA4 `Vb ~T0 @X0 0 e@1068 ]
 "3312
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
-"164
-[s S6 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S6 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"163
-[u S5 `S6 1 ]
-[n S5 . . ]
-"175
-[v _PORTAbits `VS5 ~T0 @X0 0 e@5 ]
-[v F1637 `(v ~T0 @X0 1 tf1`ul ]
-"152 D:\mplab\include\pic.h
-[v __delay `JF1637 ~T0 @X0 0 e ]
-[p i __delay ]
-"341 D:\mplab\include\pic16f887.h
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
-"29 fuses.h
-[p x FOSC=XT ]
-"30
-[p x WDTE=OFF ]
-"31
-[p x PWRTE=OFF ]
-"32
-[p x MCLRE=ON ]
-"33
-[p x CP=OFF ]
-"34
-[p x CPD=OFF ]
-"35
-[p x BOREN=ON ]
-"36
-[p x IESO=ON ]
-"37
-[p x FCMEN=ON ]
-"38
-[p x LVP=ON ]
-"41
-[p x BOR4V=BOR40V ]
-"42
-[p x WRT=OFF ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -1575,250 +1516,102 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 192: extern unsigned char __resetbits;
 [; ;pic.h: 193: extern __bit __powerdown;
 [; ;pic.h: 194: extern __bit __timeout;
-"25 reloj.c
-[v _flag_run `uc ~T0 @X0 1 e ]
-[i _flag_run
--> -> 0 `i `uc
-]
-[; ;reloj.c: 25: unsigned char flag_run = 0;
-"26
-[v _counter_digito `uc ~T0 @X0 1 e ]
-[i _counter_digito
--> -> 0 `i `uc
-]
-[; ;reloj.c: 26: unsigned char counter_digito = 0;
-"27
-[v _counter_segundos `ui ~T0 @X0 1 e ]
-[i _counter_segundos
--> -> 0 `i `ui
-]
-[; ;reloj.c: 27: unsigned int counter_segundos = 0;
-"28
-[v _counter_20ms `uc ~T0 @X0 1 e ]
-[i _counter_20ms
--> -> 0 `i `uc
-]
-[; ;reloj.c: 28: unsigned char counter_20ms = 0;
+"29 config.h
+[p x FOSC=INTRC_CLKOUT ]
 "30
+[p x WDTE=OFF ]
+"31
+[p x PWRTE=OFF ]
+"32
+[p x MCLRE=OFF ]
+"33
+[p x CP=OFF ]
+"34
+[p x CPD=OFF ]
+"35
+[p x BOREN=OFF ]
+"36
+[p x IESO=OFF ]
+"37
+[p x FCMEN=OFF ]
+"38
+[p x LVP=OFF ]
+"41
+[p x BOR4V=BOR40V ]
+"42
+[p x WRT=OFF ]
+"25 contador.c
+[v _count `uc ~T0 @X0 1 e ]
+[i _count
+-> -> 0 `i `uc
+]
+[; ;contador.c: 25: unsigned char count = 0;
+"27
 [v _main `(i ~T0 @X0 1 ef ]
 {
-[; ;reloj.c: 30: int main(void) {
+[; ;contador.c: 27: int main(void) {
 [e :U _main ]
 [f ]
-[; ;reloj.c: 31: INTCONbits.GIE = 0;
-"31
+[; ;contador.c: 28: INTCONbits.GIE = 0;
+"28
 [e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
-[; ;reloj.c: 33: T1CONbits.TMR1CS = 0;
+[; ;contador.c: 29: OPTION_REGbits.T0CS = 1;
+"29
+[e = . . _OPTION_REGbits 0 3 -> -> 1 `i `uc ]
+[; ;contador.c: 30: OPTION_REGbits.T0SE = 1;
+"30
+[e = . . _OPTION_REGbits 0 2 -> -> 1 `i `uc ]
+[; ;contador.c: 31: TMR0 = 0;
+"31
+[e = _TMR0 -> -> 0 `i `uc ]
+[; ;contador.c: 33: TRISD = 0x00;
 "33
-[e = . . _T1CONbits 0 1 -> -> 0 `i `uc ]
-[; ;reloj.c: 34: T1CONbits.T1CKPS = 0b01;
-"34
-[e = . . _T1CONbits 0 4 -> -> 1 `i `uc ]
-[; ;reloj.c: 35: TMR1H = 0xD8;
-"35
-[e = _TMR1H -> -> 216 `i `uc ]
-[; ;reloj.c: 36: TMR1L = 0xEF;
-"36
-[e = _TMR1L -> -> 239 `i `uc ]
-[; ;reloj.c: 37: T1CONbits.TMR1ON = 1;
-"37
-[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
-[; ;reloj.c: 38: PIR1bits.TMR1IF = 0;
-"38
-[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-[; ;reloj.c: 39: PIE1bits.TMR1IE = 1;
-"39
-[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
-[; ;reloj.c: 40: INTCONbits.PEIE = 1;
-"40
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;reloj.c: 41: INTCONbits.GIE = 1;
-"41
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;reloj.c: 42: TRISD = 0;
-"42
 [e = _TRISD -> -> 0 `i `uc ]
-[; ;reloj.c: 43: TRISA0 = 1;
-"43
-[e = _TRISA0 -> -> 1 `i `b ]
-[; ;reloj.c: 44: TRISA1 = 1;
-"44
-[e = _TRISA1 -> -> 1 `i `b ]
-[; ;reloj.c: 45: ANSEL = 0x00;
-"45
+[; ;contador.c: 34: PORTD = 0x00;
+"34
+[e = _PORTD -> -> 0 `i `uc ]
+[; ;contador.c: 36: TRISA4 = 1;
+"36
+[e = _TRISA4 -> -> 1 `i `b ]
+[; ;contador.c: 37: ANSEL = 0x00;
+"37
 [e = _ANSEL -> -> 0 `i `uc ]
-[; ;reloj.c: 47: while (1) {
-"47
+[; ;contador.c: 39: while (1) {
+"39
 [e :U 140 ]
 {
-[; ;reloj.c: 48: if (!PORTAbits.RA0) {
-"48
-[e $ ! ! != -> . . _PORTAbits 0 0 `i -> -> -> 0 `i `Vuc `i 142  ]
+[; ;contador.c: 40: if (TMR0 == 10) {
+"40
+[e $ ! == -> _TMR0 `i -> 10 `i 142  ]
 {
-[; ;reloj.c: 49: _delay((unsigned long)((50)*(8000000/4000.0)));
-"49
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;reloj.c: 50: flag_run = !flag_run;
-"50
-[e = _flag_run -> -> ! != -> _flag_run `i -> -> -> 0 `i `uc `i `i `uc ]
-[; ;reloj.c: 51: while (!PORTAbits.RA0);
-"51
-[e $U 143  ]
-[e :U 144 ]
-[e :U 143 ]
-[e $ ! != -> . . _PORTAbits 0 0 `i -> -> -> 0 `i `Vuc `i 144  ]
-[e :U 145 ]
-[; ;reloj.c: 52: _delay((unsigned long)((50)*(8000000/4000.0)));
-"52
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"53
+[; ;contador.c: 41: TMR0 = 0;
+"41
+[e = _TMR0 -> -> 0 `i `uc ]
+[; ;contador.c: 42: count = 0;
+"42
+[e = _count -> -> 0 `i `uc ]
+"43
 }
 [e :U 142 ]
-[; ;reloj.c: 53: }
-[; ;reloj.c: 54: if (!PORTAbits.RA1) {
-"54
-[e $ ! ! != -> . . _PORTAbits 0 1 `i -> -> -> 0 `i `Vuc `i 146  ]
-{
-[; ;reloj.c: 55: _delay((unsigned long)((50)*(8000000/4000.0)));
-"55
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;reloj.c: 56: counter_segundos = 0;
-"56
-[e = _counter_segundos -> -> 0 `i `ui ]
-[; ;reloj.c: 57: flag_run = 0;
-"57
-[e = _flag_run -> -> 0 `i `uc ]
-"58
-}
-[e :U 146 ]
-"59
+[; ;contador.c: 43: }
+[; ;contador.c: 44: count = TMR0;
+"44
+[e = _count _TMR0 ]
+[; ;contador.c: 45: PORTD = (1 << 4) | count;
+"45
+[e = _PORTD -> | << -> 1 `i -> 4 `i -> _count `i `uc ]
+"46
 }
 [e :U 139 ]
-"47
+"39
 [e $U 140  ]
 [e :U 141 ]
-[; ;reloj.c: 58: }
-[; ;reloj.c: 59: }
-[; ;reloj.c: 60: return 1;
-"60
+[; ;contador.c: 46: }
+[; ;contador.c: 47: return 1;
+"47
 [e ) -> 1 `i ]
 [e $UE 138  ]
-[; ;reloj.c: 61: }
-"61
+[; ;contador.c: 48: }
+"48
 [e :UE 138 ]
-}
-[v F1655 `(v ~T0 @X0 1 tf ]
-"63
-[v _ISR_TIMER_1 `IF1655 ~T0 @X0 1 e ]
-{
-[; ;reloj.c: 63: void interrupt ISR_TIMER_1(void) {
-[e :U _ISR_TIMER_1 ]
-[f ]
-[; ;reloj.c: 64: if (PIE1bits.TMR1IE && PIR1bits.TMR1IF) {
-"64
-[e $ ! && != -> . . _PIE1bits 0 0 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 148  ]
-{
-[; ;reloj.c: 65: TMR1H = 0xD8;
-"65
-[e = _TMR1H -> -> 216 `i `uc ]
-[; ;reloj.c: 66: TMR1L = 0xEF;
-"66
-[e = _TMR1L -> -> 239 `i `uc ]
-[; ;reloj.c: 68: if (++counter_20ms == 100 && flag_run) {
-"68
-[e $ ! && == -> =+ _counter_20ms -> -> 1 `i `uc `i -> 100 `i != -> _flag_run `i -> -> -> 0 `i `uc `i 149  ]
-{
-[; ;reloj.c: 69: counter_20ms = 0;
-"69
-[e = _counter_20ms -> -> 0 `i `uc ]
-[; ;reloj.c: 70: if (++counter_segundos == 3600) {
-"70
-[e $ ! == =+ _counter_segundos -> -> 1 `i `ui -> -> 3600 `i `ui 150  ]
-{
-[; ;reloj.c: 71: counter_segundos = 0;
-"71
-[e = _counter_segundos -> -> 0 `i `ui ]
-"72
-}
-[e :U 150 ]
-"73
-}
-[e :U 149 ]
-[; ;reloj.c: 72: }
-[; ;reloj.c: 73: }
-[; ;reloj.c: 75: switch (counter_digito) {
-"75
-[e $U 152  ]
-{
-[; ;reloj.c: 76: case 0:
-"76
-[e :U 153 ]
-[; ;reloj.c: 77: PORTD = (counter_digito << 4) + (counter_segundos / 60) / 10;
-"77
-[e = _PORTD -> + -> << -> _counter_digito `i -> 4 `i `ui / / _counter_segundos -> -> 60 `i `ui -> -> 10 `i `ui `uc ]
-[; ;reloj.c: 78: counter_digito = 1;
-"78
-[e = _counter_digito -> -> 1 `i `uc ]
-[; ;reloj.c: 79: break;
-"79
-[e $U 151  ]
-[; ;reloj.c: 80: case 1:
-"80
-[e :U 154 ]
-[; ;reloj.c: 81: PORTD = (counter_digito << 4) + (counter_segundos / 60) % 10;
-"81
-[e = _PORTD -> + -> << -> _counter_digito `i -> 4 `i `ui % / _counter_segundos -> -> 60 `i `ui -> -> 10 `i `ui `uc ]
-[; ;reloj.c: 82: counter_digito = 2;
-"82
-[e = _counter_digito -> -> 2 `i `uc ]
-[; ;reloj.c: 83: break;
-"83
-[e $U 151  ]
-[; ;reloj.c: 84: case 2:
-"84
-[e :U 155 ]
-[; ;reloj.c: 85: PORTD = (counter_digito << 4) + (counter_segundos % 60) / 10;
-"85
-[e = _PORTD -> + -> << -> _counter_digito `i -> 4 `i `ui / % _counter_segundos -> -> 60 `i `ui -> -> 10 `i `ui `uc ]
-[; ;reloj.c: 86: counter_digito = 3;
-"86
-[e = _counter_digito -> -> 3 `i `uc ]
-[; ;reloj.c: 87: break;
-"87
-[e $U 151  ]
-[; ;reloj.c: 88: case 3:
-"88
-[e :U 156 ]
-[; ;reloj.c: 89: PORTD = (counter_digito << 4) + (counter_segundos % 60) % 10;
-"89
-[e = _PORTD -> + -> << -> _counter_digito `i -> 4 `i `ui % % _counter_segundos -> -> 60 `i `ui -> -> 10 `i `ui `uc ]
-[; ;reloj.c: 90: counter_digito = 0;
-"90
-[e = _counter_digito -> -> 0 `i `uc ]
-[; ;reloj.c: 91: break;
-"91
-[e $U 151  ]
-"92
-}
-[; ;reloj.c: 92: }
-[e $U 151  ]
-"75
-[e :U 152 ]
-[e [\ _counter_digito , $ -> -> 0 `i `uc 153
- , $ -> -> 1 `i `uc 154
- , $ -> -> 2 `i `uc 155
- , $ -> -> 3 `i `uc 156
- 151 ]
-"92
-[e :U 151 ]
-[; ;reloj.c: 94: PIR1bits.TMR1IF = 0;
-"94
-[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-"95
-}
-[e :U 148 ]
-[; ;reloj.c: 95: }
-[; ;reloj.c: 96: }
-"96
-[e :UE 147 ]
 }

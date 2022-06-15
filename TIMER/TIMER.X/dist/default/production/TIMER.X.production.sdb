@@ -3,34 +3,20 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 6 ]
+"27 C:\Users\ASUS\Documents\GitHub\DIGII_PIC16F887\TIMER\TIMER.X\contador.c
+[v _main main `(i  1 e 2 0 ]
 "62 D:\mplab\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 D:\mplab\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
-"6 D:\mplab\sources\common\lwdiv.c
-[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"6 D:\mplab\sources\common\lwmod.c
-[v ___lwmod __lwmod `(ui  1 e 2 0 ]
 "6 D:\mplab\sources\pic\eeprom.c
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"30 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
-[v _main main `(i  1 e 2 0 ]
-"63
-[v _ISR_TIMER_1 ISR_TIMER_1 `II(v  1 e 1 0 ]
-[s S138 . 1 `uc 1 RA0 1 0 :1:0 
-`uc 1 RA1 1 0 :1:1 
-`uc 1 RA2 1 0 :1:2 
-`uc 1 RA3 1 0 :1:3 
-`uc 1 RA4 1 0 :1:4 
-`uc 1 RA5 1 0 :1:5 
-`uc 1 RA6 1 0 :1:6 
-`uc 1 RA7 1 0 :1:7 
-]
-"175 D:\mplab\include\pic16f887.h
-[u S147 . 1 `S138 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES147  1 e 1 @5 ]
+"25 C:\Users\ASUS\Documents\GitHub\DIGII_PIC16F887\TIMER\TIMER.X\contador.c
+[v _count count `uc  1 e 1 0 ]
+"55 D:\mplab\include\pic16f887.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
 "341
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 [s S19 . 1 `uc 1 RBIF 1 0 :1:0 
@@ -50,99 +36,28 @@
 ]
 [u S33 . 1 `S19 1 . 1 0 `S28 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES33  1 e 1 @11 ]
-[s S96 . 1 `uc 1 TMR1IF 1 0 :1:0 
-`uc 1 TMR2IF 1 0 :1:1 
-`uc 1 CCP1IF 1 0 :1:2 
-`uc 1 SSPIF 1 0 :1:3 
-`uc 1 TXIF 1 0 :1:4 
-`uc 1 RCIF 1 0 :1:5 
-`uc 1 ADIF 1 0 :1:6 
+[s S51 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
 ]
-"538
-[u S104 . 1 `S96 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES104  1 e 1 @12 ]
-"639
-[v _TMR1L TMR1L `VEuc  1 e 1 @14 ]
-"645
-[v _TMR1H TMR1H `VEuc  1 e 1 @15 ]
-[s S51 . 1 `uc 1 TMR1ON 1 0 :1:0 
-`uc 1 TMR1CS 1 0 :1:1 
-`uc 1 nT1SYNC 1 0 :1:2 
-`uc 1 T1OSCEN 1 0 :1:3 
-`uc 1 T1CKPS 1 0 :2:4 
-`uc 1 TMR1GE 1 0 :1:6 
-`uc 1 T1GINV 1 0 :1:7 
+"1328
+[s S58 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
 ]
-"680
-[s S59 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 T1INSYNC 1 0 :1:2 
-`uc 1 . 1 0 :1:3 
-`uc 1 T1CKPS0 1 0 :1:4 
-`uc 1 T1CKPS1 1 0 :1:5 
-`uc 1 . 1 0 :1:6 
-`uc 1 T1GIV 1 0 :1:7 
-]
-[s S67 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 T1SYNC 1 0 :1:2 
-]
-[u S70 . 1 `S51 1 . 1 0 `S59 1 . 1 0 `S67 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES70  1 e 1 @16 ]
+[u S62 . 1 `S51 1 . 1 0 `S58 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES62  1 e 1 @129 ]
 "1560
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S115 . 1 `uc 1 TMR1IE 1 0 :1:0 
-`uc 1 TMR2IE 1 0 :1:1 
-`uc 1 CCP1IE 1 0 :1:2 
-`uc 1 SSPIE 1 0 :1:3 
-`uc 1 TXIE 1 0 :1:4 
-`uc 1 RCIE 1 0 :1:5 
-`uc 1 ADIE 1 0 :1:6 
-]
-"1674
-[u S123 . 1 `S115 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES123  1 e 1 @140 ]
 "3312
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
-"4040
-[v _TRISA0 TRISA0 `VEb  1 e 0 @1064 ]
-"4042
-[v _TRISA1 TRISA1 `VEb  1 e 0 @1065 ]
-"25 C:\Users\ASUS\Documents\GitHub\DigIIC_MICROS\TIMER\TIMER.X\reloj.c
-[v _flag_run flag_run `uc  1 e 1 0 ]
-"26
-[v _counter_digito counter_digito `uc  1 e 1 0 ]
-"27
-[v _counter_segundos counter_segundos `ui  1 e 2 0 ]
-"28
-[v _counter_20ms counter_20ms `uc  1 e 1 0 ]
-"30
+"4048
+[v _TRISA4 TRISA4 `VEb  1 e 0 @1068 ]
+"27 C:\Users\ASUS\Documents\GitHub\DIGII_PIC16F887\TIMER\TIMER.X\contador.c
 [v _main main `(i  1 e 2 0 ]
 {
-"61
-} 0
-"63
-[v _ISR_TIMER_1 ISR_TIMER_1 `II(v  1 e 1 0 ]
-{
-"96
-} 0
-"6 D:\mplab\sources\common\lwmod.c
-[v ___lwmod __lwmod `(ui  1 e 2 0 ]
-{
-"11
-[v ___lwmod@counter counter `uc  1 a 1 13 ]
-"6
-[v ___lwmod@divisor divisor `ui  1 p 2 8 ]
-[v ___lwmod@dividend dividend `ui  1 p 2 10 ]
-"26
-} 0
-"6 D:\mplab\sources\common\lwdiv.c
-[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-{
-"11
-[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
-"12
-[v ___lwdiv@counter counter `uc  1 a 1 7 ]
-"6
-[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
-[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
-"31
+"48
 } 0

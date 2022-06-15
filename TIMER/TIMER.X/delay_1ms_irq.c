@@ -1,7 +1,7 @@
 /*!
 \file   delay_1ms_irq.c
 \date   2020-11-13
-\author Fulvio Vivas <fulvio.vivas@unicauca.edu.co>
+\author Fulvio Vivas <fyvivas@unicauca.edu.co>
 \brief  Generating a delay of 1 ms in PIC18F4550 using Timer1.
 
 \par Copyright
@@ -18,9 +18,9 @@ intended publication of this material.
 ******************************************************************************
 */
 
-#include "fuses.h"		/* Configuration header file */
 #include <xc.h>
 #include <pic16f887.h>  /*Header file PIC18f4550 definitions*/
+#include "config.h"		/* Configuration header file */
 
 //#define _XTAL_FREQ 4000000//frecuencia del oscilador
 //TMR1=65535-(delay)(1Mhz)/8 -1

@@ -1,22 +1,5 @@
 
-# 1 "reloj.c"
-
-
-# 29 "fuses.h"
-#pragma config FOSC = XT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = ON
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = ON
-#pragma config IESO = ON
-#pragma config FCMEN = ON
-#pragma config LVP = ON
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
+# 1 "contador.c"
 
 # 26 "D:\mplab\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -2105,77 +2088,46 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 25 "reloj.c"
-unsigned char flag_run = 0;
-unsigned char counter_digito = 0;
-unsigned int counter_segundos = 0;
-unsigned char counter_20ms = 0;
+
+# 29 "config.h"
+#pragma config FOSC = INTRC_CLKOUT
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config MCLRE = OFF
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = OFF
+#pragma config IESO = OFF
+#pragma config FCMEN = OFF
+#pragma config LVP = OFF
+
+
+#pragma config BOR4V = BOR40V
+#pragma config WRT = OFF
+
+# 25 "contador.c"
+unsigned char count = 0;
 
 int main(void) {
 INTCONbits.GIE = 0;
+OPTION_REGbits.T0CS = 1;
+OPTION_REGbits.T0SE = 1;
+TMR0 = 0;
 
-T1CONbits.TMR1CS = 0;
-T1CONbits.T1CKPS = 0b01;
-TMR1H = 0xD8;
-TMR1L = 0xEF;
-T1CONbits.TMR1ON = 1;
-PIR1bits.TMR1IF = 0;
-PIE1bits.TMR1IE = 1;
-INTCONbits.PEIE = 1;
-INTCONbits.GIE = 1;
-TRISD = 0;
-TRISA0 = 1;
-TRISA1 = 1;
+TRISD = 0x00;
+PORTD = 0x00;
+
+TRISA4 = 1;
 ANSEL = 0x00;
 
 while (1) {
-if (!PORTAbits.RA0) {
-_delay((unsigned long)((50)*(8000000/4000.0)));
-flag_run = !flag_run;
-while (!PORTAbits.RA0);
-_delay((unsigned long)((50)*(8000000/4000.0)));
+if (TMR0 == 10) {
+TMR0 = 0;
+count = 0;
 }
-if (!PORTAbits.RA1) {
-_delay((unsigned long)((50)*(8000000/4000.0)));
-counter_segundos = 0;
-flag_run = 0;
-}
+count = TMR0;
+PORTD = (1 << 4) | count;
 }
 return 1;
-}
-
-void interrupt ISR_TIMER_1(void) {
-if (PIE1bits.TMR1IE && PIR1bits.TMR1IF) {
-TMR1H = 0xD8;
-TMR1L = 0xEF;
-
-if (++counter_20ms == 100 && flag_run) {
-counter_20ms = 0;
-if (++counter_segundos == 3600) {
-counter_segundos = 0;
-}
-}
-
-switch (counter_digito) {
-case 0:
-PORTD = (counter_digito << 4) + (counter_segundos / 60) / 10;
-counter_digito = 1;
-break;
-case 1:
-PORTD = (counter_digito << 4) + (counter_segundos / 60) % 10;
-counter_digito = 2;
-break;
-case 2:
-PORTD = (counter_digito << 4) + (counter_segundos % 60) / 10;
-counter_digito = 3;
-break;
-case 3:
-PORTD = (counter_digito << 4) + (counter_segundos % 60) % 10;
-counter_digito = 0;
-break;
-}
-
-PIR1bits.TMR1IF = 0;
-}
 }
 
