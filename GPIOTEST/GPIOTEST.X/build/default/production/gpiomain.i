@@ -1,4 +1,4 @@
-# 1 "blinktest.c"
+# 1 "gpiomain.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,22 +6,24 @@
 # 1 "<built-in>" 2
 # 1 "C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "blinktest.c" 2
-# 26 "blinktest.c"
-#pragma config FOSC = XT
+# 1 "gpiomain.c" 2
+# 22 "gpiomain.c"
+#pragma config FOSC = INTRC_CLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
-#pragma config MCLRE = ON
+#pragma config MCLRE = OFF
 #pragma config CP = OFF
 #pragma config CPD = OFF
-#pragma config BOREN = ON
-#pragma config IESO = ON
-#pragma config FCMEN = ON
-#pragma config LVP = ON
+#pragma config BOREN = OFF
+#pragma config IESO = OFF
+#pragma config FCMEN = OFF
+#pragma config LVP = OFF
 
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
+
+
 
 
 
@@ -2644,41 +2646,33 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 44 "blinktest.c" 2
+# 42 "gpiomain.c" 2
+# 63 "gpiomain.c"
+int main(void) {
+    OSCCON=0x71;
+
+    TRISDbits.TRISD7 = 0;
+    TRISDbits.TRISD6 = 0;
+    TRISDbits.TRISD5 = 0;
+    TRISDbits.TRISD4 = 0;
+
+    TRISBbits.TRISB7 = 1;
+    TRISBbits.TRISB6 = 1;
+    TRISBbits.TRISB5 = 1;
+    TRISBbits.TRISB4 = 1;
 
 
-# 1 "./pinout.h" 1
-# 46 "blinktest.c" 2
 
-
-
-void MSdelay(unsigned int val);
-
-void main(void){
-
-    TRISB = 0xEF;
-
-
-
-
-    while(1){
-        RB4 = 1;
-        MSdelay(500);
-        RB4 = 0;
-        _delay((unsigned long)((500)*(8000000/4000.0)));
+    while (1) {
+        if(!PORTBbits.RB4){
+            PORTDbits.RD4=1;
+        }
+        else{
+            PORTDbits.RD4=0;
+        }
+        if(!PORTBbits.RB5){PORTDbits.RD5=1;}else{PORTDbits.RD5=0;}
+        if(!PORTBbits.RB6){PORTDbits.RD6=1;}else{PORTDbits.RD6=0;}
+        if(!PORTBbits.RB7){PORTDbits.RD7=1;}else{PORTDbits.RD7=0;}
     }
-
-}
-
-void MSdelay(unsigned int val)
-{
- unsigned int i,j;
- for(i=0;i<val;i++)
-     for(j=0;j<165;j++);
-}
-
-void delay_ms(int t){
-    for(int i=0;i<t;i++){
-        _delay((unsigned long)((1)*(8000000/4000.0)));
-    }
+    return 1;
 }

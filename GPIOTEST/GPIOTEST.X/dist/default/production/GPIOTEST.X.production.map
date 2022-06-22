@@ -5,9 +5,9 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.36\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\GPIOTEST.X.production.sym \
   --cmf=dist/default/production\GPIOTEST.X.production.cmf -z -Q16F887 \
-  -oC:\Users\ASUS\AppData\Local\Temp\xcAs188.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\ASUS\AppData\Local\Temp\xcAs22k.4 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/GPIOTEST.X.production.map \
-  --md=C:\Users\ASUS\AppData\Local\Temp\xcAs188.dat -E1 -ver=XC8 Compiler \
+  --md=C:\Users\ASUS\AppData\Local\Temp\xcAs22k.dat -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 \
   -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 -ACOMMON=070h-07Fh \
   -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh -ABANK2=0110h-016Fh \
@@ -18,7 +18,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\ASUS\AppData\Local\Temp\xcAs188.o \
+  -pfunctab=ENTRY -k C:\Users\ASUS\AppData\Local\Temp\xcAs22k.o \
   dist/default/production\GPIOTEST.X.production.o 
 
 Object code version is 3.11
@@ -28,22 +28,19 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ASUS\AppData\Local\Temp\xcAs188.o
+C:\Users\ASUS\AppData\Local\Temp\xcAs22k.o
                 end_init                              0        0        3        0       0
                 config                             2007     2007        2        0       4
 dist/default/production\GPIOTEST.X.production.o
                 cinit                               7FC      7FC        4      FF8       0
                 config                             2007     2007        2        0       4
-                text1                               7D7      7D7       25      FAE       0
-                maintext                            7B3      7B3       24      F66       0
-                cstackCOMMON                         70       70        9       70       1
+                maintext                            7CF      7CF       2D      F9E       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CODE           
                 end_init                              0        0        3         0
                 cinit                               7FC      7FC        4         0
-                text1                               7D7      7D7       25         0
-                maintext                            7B3      7B3       24         0
+                maintext                            7CF      7CF       2D         0
 
         CLASS   STRCODE        
 
@@ -54,7 +51,6 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   ENTRY          
 
         CLASS   COMMON         
-                cstackCOMMON                         70       70        9         1
 
         CLASS   BANK0          
 
@@ -91,9 +87,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
-                cstackCOMMON                   000070  000009  000079        70       1  COMMON      1
-                maintext                       0007B3  000024  0007D7       F66       0  CODE        2
-                text1                          0007D7  000025  0007FC       FAE       0  CODE        2
+                maintext                       0007CF  00002D  0007FC       F9E       0  CODE        2
                 cinit                          0007FC  000004  000800       FF8       0  CODE        2
 
 
@@ -104,13 +98,13 @@ UNUSED ADDRESS RANGES
         BANK1            00A0-00EF             50           1
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
-        CODE             0003-07B2            7B0           2
+        CODE             0003-07CE            7CC           2
                          0800-1FFF            800
-        COMMON           0079-007D              5           1
-        CONST            0003-07B2            100           2
+        COMMON           0070-007D              E           1
+        CONST            0003-07CE            100           2
                          0800-1FFF            100
         EEDATA           2100-21FF            100           2
-        ENTRY            0003-07B2            100           2
+        ENTRY            0003-07CE            100           2
                          0800-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0020-006F             50           1
@@ -121,19 +115,18 @@ UNUSED ADDRESS RANGES
         SFR1             0080-009F             20           1
         SFR2             0100-010F             10           1
         SFR3             0180-018F             10           1
-        STRCODE          0003-07B2            7B0           2
+        STRCODE          0003-07CE            7CC           2
                          0800-1FFF           1800
-        STRING           0003-07B2            100           2
+        STRING           0003-07CE            100           2
                          0800-1FFF            100
 
                                   Symbol Table
 
-MSdelay@i                cstackCOMMON 0072
-MSdelay@j                cstackCOMMON 0074
-MSdelay@val              cstackCOMMON 0070
-_MSdelay                 text1        07D7
-_RB4                     (abs)        0034
-_TRISB                   (abs)        0086
+_OSCCON                  (abs)        008F
+_PORTBbits               (abs)        0006
+_PORTDbits               (abs)        0008
+_TRISBbits               (abs)        0086
+_TRISDbits               (abs)        0088
 __Habs1                  abs1         0000
 __Hbank0                 bank0        0000
 __Hbank1                 bank1        0000
@@ -159,7 +152,7 @@ __Hsfr1                  sfr1         0000
 __Hsfr2                  sfr2         0000
 __Hsfr3                  sfr3         0000
 __Hspace_0               (abs)        0800
-__Hspace_1               (abs)        0079
+__Hspace_1               (abs)        0000
 __Hspace_2               (abs)        0000
 __Hspace_3               (abs)        0000
 __Hspace_4               (abs)        4010
@@ -199,21 +192,19 @@ __Lstack                 stack        0000
 __Lstrings               strings      0000
 __Ltext                  text         0000
 __S0                     (abs)        0800
-__S1                     (abs)        0079
+__S1                     (abs)        0000
 __S3                     (abs)        0000
 ___int_sp                stack        0000
 ___latbits               (abs)        0002
 ___sp                    stack        0000
 ___stackhi               (abs)        0000
 ___stacklo               (abs)        0000
-__end_of_MSdelay         text1        07FC
 __end_of__initialization cinit        07FC
-__end_of_main            maintext     07D7
+__end_of_main            maintext     07FC
 __initialization         cinit        07FC
-__pcstackCOMMON          cstackCOMMON 0070
-__pmaintext              maintext     07B3
-__ptext1                 text1        07D7
-_main                    maintext     07B3
+__pcstackCOMMON          cstackCOMMON 0000
+__pmaintext              maintext     07CF
+_main                    maintext     07CF
 btemp                    (abs)        007E
 end_of_initialization    cinit        07FC
 intlevel0                functab      0000
@@ -236,9 +227,8 @@ shared
 
 shared estimated size: 1
 
-blinktest.c
-		_main          		CODE           	07B3	0000	36
-		_MSdelay       		CODE           	07D7	0000	37
+gpiomain.c
+		_main          		CODE           	07CF	0000	45
 
-blinktest.c estimated size: 73
+gpiomain.c estimated size: 45
 

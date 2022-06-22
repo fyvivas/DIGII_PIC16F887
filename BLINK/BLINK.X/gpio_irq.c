@@ -76,7 +76,7 @@ void main(){
     
 }
 
-void interrupt int_ext(){//rutina de atención a las interrupciones
+void __interrupt() int_ext(){//rutina de atención a las interrupciones
     if(INTCONbits.INTF){//si la bandera de detección de la 
         LED_RED = ON;           //interrrrupción externa se pone a 1
         for(int i=0;i<8;i++){

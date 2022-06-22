@@ -1,4 +1,4 @@
-# 1 "blinktest.c"
+# 1 "gpio_irq.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,27 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "blinktest.c" 2
-# 26 "blinktest.c"
-#pragma config FOSC = XT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = ON
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = ON
-#pragma config IESO = ON
-#pragma config FCMEN = ON
-#pragma config LVP = ON
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-
-
-
-
-
+# 1 "gpio_irq.c" 2
+# 21 "gpio_irq.c"
 # 1 "C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2644,41 +2625,64 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 44 "blinktest.c" 2
+# 21 "gpio_irq.c" 2
 
 
-# 1 "./pinout.h" 1
-# 46 "blinktest.c" 2
+# 1 "./config.h" 1
+# 29 "./config.h"
+#pragma config FOSC = XT
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config MCLRE = ON
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = ON
+#pragma config IESO = ON
+#pragma config FCMEN = ON
+#pragma config LVP = ON
+
+
+#pragma config BOR4V = BOR40V
+#pragma config WRT = OFF
+# 23 "gpio_irq.c" 2
+# 55 "gpio_irq.c"
+void main(){
+    TRISB7 = 0;
+    TRISD = 0x00;
+    PORTD = 0b00000001;
+    TRISB0 = 1;
+
+    ANSELH = 0x00;
+
+    INTCON= 0b11010000;
 
 
 
-void MSdelay(unsigned int val);
-
-void main(void){
-
-    TRISB = 0xEF;
 
 
+
+    OPTION_REGbits.INTEDG=1;
 
 
     while(1){
-        RB4 = 1;
-        MSdelay(500);
-        RB4 = 0;
-        _delay((unsigned long)((500)*(8000000/4000.0)));
+
     }
 
 }
 
-void MSdelay(unsigned int val)
-{
- unsigned int i,j;
- for(i=0;i<val;i++)
-     for(j=0;j<165;j++);
-}
+void __attribute__((picinterrupt(("")))) int_ext(){
+    if(INTCONbits.INTF){
+        RB7 = 1;
+        for(int i=0;i<8;i++){
+            PORTD = PORTD << 1;
+            if(PORTD == 0x00){
+                PORTD = 0b00000001;
+            }
+            _delay((unsigned long)((100)*(4000000/4000.0)));
+        }
+        INTCONbits.INTF=0;
 
-void delay_ms(int t){
-    for(int i=0;i<t;i++){
-        _delay((unsigned long)((1)*(8000000/4000.0)));
+        RB7 = 0;
     }
+
 }

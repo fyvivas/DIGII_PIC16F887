@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=blinktest.c
+SOURCEFILES_QUOTED_IF_SPACED=gpiomain.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/blinktest.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/blinktest.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/gpiomain.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/gpiomain.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/blinktest.p1
+OBJECTFILES=${OBJECTDIR}/gpiomain.p1
 
 # Source Files
-SOURCEFILES=blinktest.c
+SOURCEFILES=gpiomain.c
 
 
 
@@ -94,22 +94,22 @@ MP_PROCESSOR_OPTION=16F887
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/blinktest.p1: blinktest.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/gpiomain.p1: gpiomain.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/blinktest.p1.d 
-	@${RM} ${OBJECTDIR}/blinktest.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/blinktest.p1 blinktest.c 
-	@-${MV} ${OBJECTDIR}/blinktest.d ${OBJECTDIR}/blinktest.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/blinktest.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/gpiomain.p1.d 
+	@${RM} ${OBJECTDIR}/gpiomain.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/gpiomain.p1 gpiomain.c 
+	@-${MV} ${OBJECTDIR}/gpiomain.d ${OBJECTDIR}/gpiomain.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/gpiomain.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
-${OBJECTDIR}/blinktest.p1: blinktest.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/gpiomain.p1: gpiomain.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/blinktest.p1.d 
-	@${RM} ${OBJECTDIR}/blinktest.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/blinktest.p1 blinktest.c 
-	@-${MV} ${OBJECTDIR}/blinktest.d ${OBJECTDIR}/blinktest.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/blinktest.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/gpiomain.p1.d 
+	@${RM} ${OBJECTDIR}/gpiomain.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/gpiomain.p1 gpiomain.c 
+	@-${MV} ${OBJECTDIR}/gpiomain.d ${OBJECTDIR}/gpiomain.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/gpiomain.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

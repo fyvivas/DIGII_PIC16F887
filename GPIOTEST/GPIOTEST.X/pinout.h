@@ -12,7 +12,6 @@
 extern "C" {
 #endif
 
-#define _XTAL_FREQ 8000000//frecuencia del oscilador  
 #define PIN_LED_RED TRISB4
 #define LED_RED RB4
 #define ON 1
