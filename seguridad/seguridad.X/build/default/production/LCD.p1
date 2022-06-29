@@ -1,0 +1,533 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"1603 C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1603: extern volatile unsigned char TRISD __attribute__((address(0x088)));
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+[v F36 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
+[v __delay `JF36 ~T0 @X0 0 e ]
+[p i __delay ]
+"36 ./LCD.h
+[; ;./LCD.h: 36: void LCD_Command(unsigned char );
+[v _LCD_Command `(v ~T0 @X0 0 ef1`uc ]
+"353 C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 353: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"359
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 359:     struct {
+[s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S12 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+"358
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 358: typedef union {
+[u S11 `S12 1 ]
+[n S11 . . ]
+"370
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 370: extern volatile PORTDbits_t PORTDbits __attribute__((address(0x008)));
+[v _PORTDbits `VS11 ~T0 @X0 0 e@8 ]
+"8 C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
+"55 C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 55: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"62
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 62: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"69
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 69: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"76
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 76: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"162
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 162: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"169
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 169: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"231
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 231: __asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+"293
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 293: __asm("PORTC equ 07h");
+[; <" PORTC equ 07h ;# ">
+"355
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 355: __asm("PORTD equ 08h");
+[; <" PORTD equ 08h ;# ">
+"417
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 417: __asm("PORTE equ 09h");
+[; <" PORTE equ 09h ;# ">
+"455
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 455: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"462
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 462: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"540
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 540: __asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+"596
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 596: __asm("PIR2 equ 0Dh");
+[; <" PIR2 equ 0Dh ;# ">
+"653
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 653: __asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+"660
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 660: __asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+"667
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 667: __asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+"674
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 674: __asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+"768
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 768: __asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+"775
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 775: __asm("T2CON equ 012h");
+[; <" T2CON equ 012h ;# ">
+"846
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 846: __asm("SSPBUF equ 013h");
+[; <" SSPBUF equ 013h ;# ">
+"853
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 853: __asm("SSPCON equ 014h");
+[; <" SSPCON equ 014h ;# ">
+"923
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 923: __asm("CCPR1 equ 015h");
+[; <" CCPR1 equ 015h ;# ">
+"930
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 930: __asm("CCPR1L equ 015h");
+[; <" CCPR1L equ 015h ;# ">
+"937
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 937: __asm("CCPR1H equ 016h");
+[; <" CCPR1H equ 016h ;# ">
+"944
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 944: __asm("CCP1CON equ 017h");
+[; <" CCP1CON equ 017h ;# ">
+"1041
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1041: __asm("RCSTA equ 018h");
+[; <" RCSTA equ 018h ;# ">
+"1136
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1136: __asm("TXREG equ 019h");
+[; <" TXREG equ 019h ;# ">
+"1143
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1143: __asm("RCREG equ 01Ah");
+[; <" RCREG equ 01Ah ;# ">
+"1150
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1150: __asm("CCPR2 equ 01Bh");
+[; <" CCPR2 equ 01Bh ;# ">
+"1157
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1157: __asm("CCPR2L equ 01Bh");
+[; <" CCPR2L equ 01Bh ;# ">
+"1164
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1164: __asm("CCPR2H equ 01Ch");
+[; <" CCPR2H equ 01Ch ;# ">
+"1171
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1171: __asm("CCP2CON equ 01Dh");
+[; <" CCP2CON equ 01Dh ;# ">
+"1241
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1241: __asm("ADRESH equ 01Eh");
+[; <" ADRESH equ 01Eh ;# ">
+"1248
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1248: __asm("ADCON0 equ 01Fh");
+[; <" ADCON0 equ 01Fh ;# ">
+"1349
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1349: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"1419
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1419: __asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+"1481
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1481: __asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+"1543
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1543: __asm("TRISC equ 087h");
+[; <" TRISC equ 087h ;# ">
+"1605
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1605: __asm("TRISD equ 088h");
+[; <" TRISD equ 088h ;# ">
+"1667
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1667: __asm("TRISE equ 089h");
+[; <" TRISE equ 089h ;# ">
+"1705
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1705: __asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+"1761
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1761: __asm("PIE2 equ 08Dh");
+[; <" PIE2 equ 08Dh ;# ">
+"1818
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1818: __asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+"1865
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1865: __asm("OSCCON equ 08Fh");
+[; <" OSCCON equ 08Fh ;# ">
+"1930
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1930: __asm("OSCTUNE equ 090h");
+[; <" OSCTUNE equ 090h ;# ">
+"1982
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1982: __asm("SSPCON2 equ 091h");
+[; <" SSPCON2 equ 091h ;# ">
+"2044
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2044: __asm("PR2 equ 092h");
+[; <" PR2 equ 092h ;# ">
+"2051
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2051: __asm("SSPADD equ 093h");
+[; <" SSPADD equ 093h ;# ">
+"2058
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2058: __asm("SSPMSK equ 093h");
+[; <" SSPMSK equ 093h ;# ">
+"2063
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2063: __asm("MSK equ 093h");
+[; <" MSK equ 093h ;# ">
+"2180
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2180: __asm("SSPSTAT equ 094h");
+[; <" SSPSTAT equ 094h ;# ">
+"2349
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2349: __asm("WPUB equ 095h");
+[; <" WPUB equ 095h ;# ">
+"2419
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2419: __asm("IOCB equ 096h");
+[; <" IOCB equ 096h ;# ">
+"2489
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2489: __asm("VRCON equ 097h");
+[; <" VRCON equ 097h ;# ">
+"2559
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2559: __asm("TXSTA equ 098h");
+[; <" TXSTA equ 098h ;# ">
+"2645
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2645: __asm("SPBRG equ 099h");
+[; <" SPBRG equ 099h ;# ">
+"2707
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2707: __asm("SPBRGH equ 09Ah");
+[; <" SPBRGH equ 09Ah ;# ">
+"2777
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2777: __asm("PWM1CON equ 09Bh");
+[; <" PWM1CON equ 09Bh ;# ">
+"2847
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2847: __asm("ECCPAS equ 09Ch");
+[; <" ECCPAS equ 09Ch ;# ">
+"2929
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2929: __asm("PSTRCON equ 09Dh");
+[; <" PSTRCON equ 09Dh ;# ">
+"2973
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2973: __asm("ADRESL equ 09Eh");
+[; <" ADRESL equ 09Eh ;# ">
+"2980
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2980: __asm("ADCON1 equ 09Fh");
+[; <" ADCON1 equ 09Fh ;# ">
+"3014
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3014: __asm("WDTCON equ 0105h");
+[; <" WDTCON equ 0105h ;# ">
+"3067
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3067: __asm("CM1CON0 equ 0107h");
+[; <" CM1CON0 equ 0107h ;# ">
+"3132
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3132: __asm("CM2CON0 equ 0108h");
+[; <" CM2CON0 equ 0108h ;# ">
+"3197
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3197: __asm("CM2CON1 equ 0109h");
+[; <" CM2CON1 equ 0109h ;# ">
+"3248
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3248: __asm("EEDATA equ 010Ch");
+[; <" EEDATA equ 010Ch ;# ">
+"3253
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3253: __asm("EEDAT equ 010Ch");
+[; <" EEDAT equ 010Ch ;# ">
+"3260
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3260: __asm("EEADR equ 010Dh");
+[; <" EEADR equ 010Dh ;# ">
+"3267
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3267: __asm("EEDATH equ 010Eh");
+[; <" EEDATH equ 010Eh ;# ">
+"3274
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3274: __asm("EEADRH equ 010Fh");
+[; <" EEADRH equ 010Fh ;# ">
+"3281
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3281: __asm("SRCON equ 0185h");
+[; <" SRCON equ 0185h ;# ">
+"3338
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3338: __asm("BAUDCTL equ 0187h");
+[; <" BAUDCTL equ 0187h ;# ">
+"3390
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3390: __asm("ANSEL equ 0188h");
+[; <" ANSEL equ 0188h ;# ">
+"3452
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3452: __asm("ANSELH equ 0189h");
+[; <" ANSELH equ 0189h ;# ">
+"3502
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3502: __asm("EECON1 equ 018Ch");
+[; <" EECON1 equ 018Ch ;# ">
+"3547
+[; ;C:/Users/ASUS/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3547: __asm("EECON2 equ 018Dh");
+[; <" EECON2 equ 018Dh ;# ">
+"30 ./CONFIG.h
+[p x FOSC  =  INTRC_CLKOUT ]
+"31
+[p x WDTE  =  OFF        ]
+"32
+[p x PWRTE  =  OFF       ]
+"33
+[p x MCLRE  =  OFF       ]
+"34
+[p x CP  =  OFF          ]
+"35
+[p x CPD  =  OFF         ]
+"36
+[p x BOREN  =  OFF       ]
+"37
+[p x IESO  =  OFF        ]
+"38
+[p x FCMEN  =  OFF       ]
+"39
+[p x LVP  =  OFF         ]
+"42
+[p x BOR4V  =  BOR40V    ]
+"43
+[p x WRT  =  OFF         ]
+"38 LCD.c
+[; ;LCD.c: 38: void LCD_Init(void)
+[v _LCD_Init `(v ~T0 @X0 1 ef ]
+"39
+[; ;LCD.c: 39: {
+{
+[e :U _LCD_Init ]
+[f ]
+"40
+[; ;LCD.c: 40:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
+"41
+[; ;LCD.c: 41:     _delay((unsigned long)((15)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"42
+[; ;LCD.c: 42:     LCD_Command(0x02);
+[e ( _LCD_Command (1 -> -> 2 `i `uc ]
+"43
+[; ;LCD.c: 43:     LCD_Command(0x28);
+[e ( _LCD_Command (1 -> -> 40 `i `uc ]
+"44
+[; ;LCD.c: 44:     LCD_Command(0x01);
+[e ( _LCD_Command (1 -> -> 1 `i `uc ]
+"45
+[; ;LCD.c: 45:     LCD_Command(0x0c);
+[e ( _LCD_Command (1 -> -> 12 `i `uc ]
+"46
+[; ;LCD.c: 46:     LCD_Command(0x06);
+[e ( _LCD_Command (1 -> -> 6 `i `uc ]
+"47
+[; ;LCD.c: 47: }
+[e :UE 138 ]
+}
+"62
+[; ;LCD.c: 62: void LCD_Command(unsigned char cmd )
+[v _LCD_Command `(v ~T0 @X0 1 ef1`uc ]
+"63
+[; ;LCD.c: 63: {
+{
+[e :U _LCD_Command ]
+"62
+[; ;LCD.c: 62: void LCD_Command(unsigned char cmd )
+[v _cmd `uc ~T0 @X0 1 r1 ]
+"63
+[; ;LCD.c: 63: {
+[f ]
+"64
+[; ;LCD.c: 64:  PORTD = (PORTD & 0x0f) |(0xF0 & cmd);
+[e = _PORTD -> | & -> _PORTD `i -> 15 `i & -> 240 `i -> _cmd `i `uc ]
+"65
+[; ;LCD.c: 65:  PORTDbits.RD0 = 0;
+[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
+"66
+[; ;LCD.c: 66:  PORTDbits.RD1 = 1;
+[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
+"67
+[; ;LCD.c: 67:  __nop();
+[e ( ___nop ..  ]
+"68
+[; ;LCD.c: 68:  PORTDbits.RD1 = 0;
+[e = . . _PORTDbits 0 1 -> -> 0 `i `uc ]
+"69
+[; ;LCD.c: 69:  _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"70
+[; ;LCD.c: 70:     PORTD = (unsigned char)((PORTD & 0x0f) | (cmd<<4));
+[e = _PORTD -> | & -> _PORTD `i -> 15 `i << -> _cmd `i -> 4 `i `uc ]
+"71
+[; ;LCD.c: 71:  PORTDbits.RD1 = 1;
+[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
+"72
+[; ;LCD.c: 72:  __nop();
+[e ( ___nop ..  ]
+"73
+[; ;LCD.c: 73:  PORTDbits.RD1 = 0;
+[e = . . _PORTDbits 0 1 -> -> 0 `i `uc ]
+"74
+[; ;LCD.c: 74:  _delay((unsigned long)((3)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 3 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"75
+[; ;LCD.c: 75: }
+[e :UE 139 ]
+}
+"91
+[; ;LCD.c: 91: void LCD_Char(unsigned char dat)
+[v _LCD_Char `(v ~T0 @X0 1 ef1`uc ]
+"92
+[; ;LCD.c: 92: {
+{
+[e :U _LCD_Char ]
+"91
+[; ;LCD.c: 91: void LCD_Char(unsigned char dat)
+[v _dat `uc ~T0 @X0 1 r1 ]
+"92
+[; ;LCD.c: 92: {
+[f ]
+"93
+[; ;LCD.c: 93:  PORTD = (PORTD & 0x0f) | (0xF0 & dat);
+[e = _PORTD -> | & -> _PORTD `i -> 15 `i & -> 240 `i -> _dat `i `uc ]
+"94
+[; ;LCD.c: 94:  PORTDbits.RD0 = 1;
+[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
+"95
+[; ;LCD.c: 95:  PORTDbits.RD1 = 1;
+[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
+"96
+[; ;LCD.c: 96:  __nop();
+[e ( ___nop ..  ]
+"97
+[; ;LCD.c: 97:  PORTDbits.RD1 = 0;
+[e = . . _PORTDbits 0 1 -> -> 0 `i `uc ]
+"98
+[; ;LCD.c: 98:  _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"99
+[; ;LCD.c: 99:     PORTD = (unsigned char)((PORTD & 0x0f) | (dat<<4));
+[e = _PORTD -> | & -> _PORTD `i -> 15 `i << -> _dat `i -> 4 `i `uc ]
+"100
+[; ;LCD.c: 100:  PORTDbits.RD1 = 1;
+[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
+"101
+[; ;LCD.c: 101:  __nop();
+[e ( ___nop ..  ]
+"102
+[; ;LCD.c: 102:  PORTDbits.RD1 = 0;
+[e = . . _PORTDbits 0 1 -> -> 0 `i `uc ]
+"103
+[; ;LCD.c: 103:  _delay((unsigned long)((3)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 3 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"104
+[; ;LCD.c: 104: }
+[e :UE 140 ]
+}
+"106
+[; ;LCD.c: 106: void LCD_String(const char *msg)
+[v _LCD_String `(v ~T0 @X0 1 ef1`*Cuc ]
+"107
+[; ;LCD.c: 107: {
+{
+[e :U _LCD_String ]
+"106
+[; ;LCD.c: 106: void LCD_String(const char *msg)
+[v _msg `*Cuc ~T0 @X0 1 r1 ]
+"107
+[; ;LCD.c: 107: {
+[f ]
+"108
+[; ;LCD.c: 108:  while((*msg)!=0)
+[e $U 142  ]
+[e :U 143 ]
+"109
+[; ;LCD.c: 109:  {
+{
+"110
+[; ;LCD.c: 110:    LCD_Char(*msg);
+[e ( _LCD_Char (1 -> *U _msg `uc ]
+"111
+[; ;LCD.c: 111:    msg++;
+[e ++ _msg * -> -> 1 `i `x -> -> # *U _msg `i `x ]
+"112
+[; ;LCD.c: 112:     }
+}
+[e :U 142 ]
+"108
+[; ;LCD.c: 108:  while((*msg)!=0)
+[e $ != -> *U _msg `i -> 0 `i 143  ]
+[e :U 144 ]
+"113
+[; ;LCD.c: 113: }
+[e :UE 141 ]
+}
+"116
+[; ;LCD.c: 116: void LCD_String_xy(char row,char pos,const char *msg)
+[v _LCD_String_xy `(v ~T0 @X0 1 ef3`uc`uc`*Cuc ]
+"117
+[; ;LCD.c: 117: {
+{
+[e :U _LCD_String_xy ]
+"116
+[; ;LCD.c: 116: void LCD_String_xy(char row,char pos,const char *msg)
+[v _row `uc ~T0 @X0 1 r1 ]
+[v _pos `uc ~T0 @X0 1 r2 ]
+[v _msg `*Cuc ~T0 @X0 1 r3 ]
+"117
+[; ;LCD.c: 117: {
+[f ]
+"118
+[; ;LCD.c: 118:     char location=0;
+[v _location `uc ~T0 @X0 1 a ]
+[e = _location -> -> 0 `i `uc ]
+"119
+[; ;LCD.c: 119:     if(row<=1)
+[e $ ! <= -> _row `i -> 1 `i 146  ]
+"120
+[; ;LCD.c: 120:     {
+{
+"121
+[; ;LCD.c: 121:         location=(0x80) | ((pos) & 0x0f);
+[e = _location -> | -> 128 `i & -> _pos `i -> 15 `i `uc ]
+"122
+[; ;LCD.c: 122:         LCD_Command(location);
+[e ( _LCD_Command (1 -> _location `uc ]
+"123
+[; ;LCD.c: 123:     }
+}
+[e $U 147  ]
+"124
+[; ;LCD.c: 124:     else
+[e :U 146 ]
+"125
+[; ;LCD.c: 125:     {
+{
+"126
+[; ;LCD.c: 126:         location=(0xC0) | ((pos) & 0x0f);
+[e = _location -> | -> 192 `i & -> _pos `i -> 15 `i `uc ]
+"127
+[; ;LCD.c: 127:         LCD_Command(location);
+[e ( _LCD_Command (1 -> _location `uc ]
+"128
+[; ;LCD.c: 128:     }
+}
+[e :U 147 ]
+"131
+[; ;LCD.c: 131:     LCD_String(msg);
+[e ( _LCD_String (1 _msg ]
+"133
+[; ;LCD.c: 133: }
+[e :UE 145 ]
+}
+"147
+[; ;LCD.c: 147: void LCD_Clear(void)
+[v _LCD_Clear `(v ~T0 @X0 1 ef ]
+"148
+[; ;LCD.c: 148: {
+{
+[e :U _LCD_Clear ]
+[f ]
+"149
+[; ;LCD.c: 149:     LCD_Command(0x01);
+[e ( _LCD_Command (1 -> -> 1 `i `uc ]
+"150
+[; ;LCD.c: 150:     _delay((unsigned long)((3)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 3 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"151
+[; ;LCD.c: 151: }
+[e :UE 148 ]
+}
